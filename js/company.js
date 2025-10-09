@@ -32,3 +32,24 @@ $(function () {
     window.requestAnimationFrame(update);
   })();
 });
+
+const swiper = new Swiper(".swiper", {
+  loop: true, // ループ有効
+  slidesPerView: 7, // 一度に表示する枚数
+  speed: 6000, // ループの時間
+  allowTouchMove: false, // スワイプ無効
+  autoplay: {
+    delay: 0, // 途切れなくループ
+  },
+});
+
+const CLASSNAME = "-visible";
+const TIMEOUT = 1500;
+const $target = $(".title");
+
+setInterval(() => {
+  $target.addClass(CLASSNAME);
+  setTimeout(() => {
+    $target.removeClass(CLASSNAME);
+  }, TIMEOUT);
+}, TIMEOUT * 2);
