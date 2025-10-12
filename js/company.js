@@ -33,16 +33,6 @@ $(function () {
   })();
 });
 
-const swiper = new Swiper(".swiper", {
-  loop: true, // ループ有効
-  slidesPerView: 7, // 一度に表示する枚数
-  speed: 6000, // ループの時間
-  allowTouchMove: false, // スワイプ無効
-  autoplay: {
-    delay: 0, // 途切れなくループ
-  },
-});
-
 const CLASSNAME = "-visible";
 const TIMEOUT = 1500;
 const $target = $(".title");
@@ -53,3 +43,14 @@ setInterval(() => {
     $target.removeClass(CLASSNAME);
   }, TIMEOUT);
 }, TIMEOUT * 2);
+
+const swiper = new Swiper(".swiper", {
+  loop: true,
+  effect: "fade", // フェード切り替え
+  // 自動再生
+  autoplay: {
+    delay: 4000, // 4秒後に次のスライドへ
+    disableOnInteraction: false, // ユーザーが操作しても自動再生を継続
+  },
+  speed: 2000, // 2秒かけてフェード
+});
