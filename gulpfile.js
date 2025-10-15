@@ -7,7 +7,7 @@ gulp.task('server', function() {
       open: true,
       port: 8000,
       host: '0.0.0.0',  // これを追加（外部アクセス許可）
-      fallback: 'company.html',
+      fallback: 'index.html',
       directoryListing: false
     }));
 });
