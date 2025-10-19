@@ -49,11 +49,9 @@ header {
   position: fixed;
   z-index: 6;
   align-items: center;
-  height: 6.5rem;
+  height: 5rem;
   background-color: #fff;
-  /* padding: 0 180px; */
   padding: 0 11.25rem;
-  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05); */
   box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.05);
 }
 
@@ -69,17 +67,14 @@ header .logo:hover {
 .nav-list ul {
   display: flex;
   gap: 1.875rem;
-  /* gap: 30px; */
 }
 
 .nav-text a {
-  color: rgba(0, 0, 0, 0.786);
-  /* border-bottom: 3px solid #0073e6; */
-  border-bottom: 0.1875rem solid #0073e6;
-  /* padding-bottom: 2px; */
+  color: #333333;
+  border-bottom: 0.15rem solid #0073e6;
   padding-bottom: 0.125rem;
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 .nav-text a:hover {
@@ -93,21 +88,14 @@ header .logo:hover {
   margin-top: 0.5rem;
 }
 
-.nav-list img:hover {
-  opacity: 0.3;
-}
-
 .contact-btn a {
   color: #fff;
   background-color: #0073e6;
-  /* box-shadow: 3px 5px #195998; */
   box-shadow: 0.1875rem 0.3125rem #195998;
   border: 1px solid #0073e6;
-  /* border-radius: 50px; */
-  border-radius: 3.125rem;
+  border-radius: 7rem;
   text-align: center;
   padding: 0.9375rem;
-  /* padding: 15px; */
 }
 
 .contact-btn a:hover {
@@ -117,10 +105,16 @@ header .logo:hover {
   transform: translate(4px,4px);
 }
 
+.drawer_menu {
+  display: none;
+}
+
+/* メインビジュアル */
+
 #keyvisual {
   width: 100%;
   height: 46.75rem;
-  padding-top: 6.5rem;
+  padding-top: 5rem;
 }
 
 .swiper-wrapper {
@@ -128,15 +122,15 @@ header .logo:hover {
 }
 
 .swiper-img {
-  width: 60rem;
-  height: 34rem;
+  width: 63rem;
+  height: 37rem;
   overflow: hidden;
   position: relative;
 }
 
 .swiper-slide img {
-  width: 60rem;
-  height: 34rem;
+  width: 63rem;
+  height: 37rem;
   object-fit: cover;
   object-position: center;
   transform: scale(1);
@@ -192,42 +186,44 @@ header .logo:hover {
   transform: translateX(-50%);
   margin-top: 1.5rem;
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.728rem;
 }
 
+/* 事業内容 */
+
 #services {
-  padding: 5rem 0 15rem;
+  padding: 5rem 0 0;
 }
 
 #services h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.074rem;
   color: #0073e6;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2074rem;
   position: relative;
 }
 
 #services h1::before {
-  background-color: #0073e6; /* 線の色 */
-  border-radius: 5px; /* 線の両端を丸く */
-  bottom: -1rem; /* 線の位置 */
+  background-color: #0073e6;
+  border-radius: 5px;
+  bottom: -1rem;
   content: "";
-  height: 0.1rem; /* 線の高さ */
-  left: 50%; /* 線の中央寄せ */
+  height: 0.1rem;
+  left: 50%;
   position: absolute;
-  transform: translateX(-50%); /* 線の中央寄せ */
-  width: 8rem; /* 線の長さ */
+  transform: translateX(-50%);
+  width: 8rem;
 }
 
 #services h2 {
   font-family: 'Franklin Gothic Medium',sans-serif;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 2.986rem;
   text-align: center;
   color: #0073e6;
   padding-bottom: 1rem;
-  margin: 1rem auto 0;
-  letter-spacing: 1rem;
+  margin: 1rem auto;
+  letter-spacing: 0.8rem;
 }
 
 #services h2 span {
@@ -236,9 +232,9 @@ header .logo:hover {
 }
 
 .services-list {
-  margin: 5rem 8rem;
+  margin: 5rem 8rem 10rem;
   position: relative;
-  height: 43rem;
+  height: 30rem;
 }
 
 .services-list li {
@@ -282,7 +278,9 @@ header .logo:hover {
   transform: translate(-50%,-50%);
   z-index: 2;
   color: #fff;
-  font-size: 2rem;
+  font-size: 2.074rem;
+  letter-spacing: 0.1037rem;
+  line-height: 1.5;
   text-align: center;
   font-weight: 700;
   background-color: #ffffff59;
@@ -297,11 +295,10 @@ header .logo:hover {
   transform: translateX(-50%);
   z-index: 3;
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.44rem;
   text-align: center;
   font-weight: 500;
-  letter-spacing: 0.2rem;
-  padding: 0.5rem;
+  letter-spacing: 0.144rem;
 }
 
 .list-bottom {
@@ -328,19 +325,19 @@ header .logo:hover {
 
 .link-btn {
   margin-left: 75%;
+  margin-bottom: 10rem;
 }
 
 .link-btn a {
+  font-size: 1.2rem;
+  letter-spacing: 0.12rem;
   color: #fff;
   background-color: #0073e6;
-  /* box-shadow: 3px 5px #195998; */
   box-shadow: 0.1875rem 0.3125rem #195998;
   border: 1px solid #0073e6;
-  /* border-radius: 50px; */
-  border-radius: 3.125rem;
+  border-radius: 7rem;
   text-align: center;
-  padding: 0.9375rem;
-  /* padding: 15px; */
+  padding: 2rem 4rem;
 }
 
 .link-btn a:hover {
@@ -358,6 +355,7 @@ header .logo:hover {
 .background {
   position: relative;
 }
+
 .background::before {
   border-color: transparent rgb(246, 246, 252) transparent transparent;
   border-style: solid;
@@ -368,40 +366,42 @@ header .logo:hover {
   position: absolute;
 }
 
+/* 番組制作実績 */
+
 #project {
   background-color: rgb(246, 246, 252);
-  padding: 10rem 0;
+  padding: 10rem 3rem;
 }
 
 #project h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.074rem;
   color: #0073e6;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2074rem;
   position: relative;
 }
 
 #project h1::before {
-  background-color: #0073e6; /* 線の色 */
-  border-radius: 5px; /* 線の両端を丸く */
-  bottom: -1rem; /* 線の位置 */
+  background-color: #0073e6;
+  border-radius: 5px;
+  bottom: -1rem;
   content: "";
-  height: 0.1rem; /* 線の高さ */
-  left: 50%; /* 線の中央寄せ */
+  height: 0.1rem;
+  left: 50%;
   position: absolute;
-  transform: translateX(-50%); /* 線の中央寄せ */
-  width: 8rem; /* 線の長さ */
+  transform: translateX(-50%);
+  width: 8rem;
 }
 
 #project h2 {
   font-family: 'Franklin Gothic Medium',sans-serif;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 2.986rem;
   text-align: center;
   color: #0073e6;
   padding-bottom: 1rem;
   margin: 1rem auto 5rem;
-  letter-spacing: 1rem;
+  letter-spacing: 0.8rem;
 }
 
 #project h2 span {
@@ -419,10 +419,11 @@ header .logo:hover {
 }
 
 .program-card {
-  width: 15rem;
+  color: #333333;
+  width: 20rem;
   background-color: #fff;
-  margin: 2rem;
-  height: 17rem;
+  margin: 0.5rem;
+  height: 26rem;
   box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.05);
   padding: 1rem 0;
   text-align: center;
@@ -430,28 +431,30 @@ header .logo:hover {
 }
 
 .program-card img {
-  width: 10rem;
-  height: 6rem;
+  width: 16rem;
+  height: 12rem;
   object-fit: contain;
   margin: 1rem auto;
 }
 
 .program-card h3 {
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: left;
   margin-left: 2.5rem;
 }
 
 .program-card p {
-  font-size: 0.8rem;
+  font-size: 0.833rem;
   text-align: left;
   margin-left: 2.5rem;
   margin-top: 0.5rem;
 }
 
 .program-card h4 {
-  font-size: 0.7rem;
+  font-size: 0.833rem;
 }
+
+/* 会社情報・採用情報 */
 
 #company {
   width: 100%;
@@ -464,45 +467,41 @@ header .logo:hover {
 }
 
 #company .title-area {
-  padding: 3.75rem 6.25rem;
+  padding: 3.75rem 7.5rem;
   background-color: #0073e6ac;
   width: 45%;
 }
 
 .title-area h1 {
   font-family: 'Segoe UI Symbol',sans-serif;
-  /* letter-spacing: 10px; */
-  letter-spacing: 0.625rem;
-  /* font-size: 80px; */
   font-size: 4.7rem;
+  letter-spacing: 0.47rem;
   color: #fff;
   text-align: center;
 }
 
 .title-area h2 {
-  padding-top: 10px;
-  /* letter-spacing: 10px; */
-  letter-spacing: 0.625rem;
-  /* font-size: 40px; */
+  padding-top: 1rem;
   font-size: 2.5rem;
+  letter-spacing: 0.25rem;
   color: #fff;
-  margin-left: 0.5rem;
 }
 
 .info-list {
-  background-color: #ffffffc4;
-  width: 46%;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-top: 8rem;
   position: absolute;
   top: 0;
   right: 5%;
+  background-color: #ffffffc4;
+  width: 40%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 8rem;
 }
 
 .info-list li {
   display: flex;
   margin: 1rem;
+  line-height: 2;
   border-bottom: 1px solid;
   border-image: linear-gradient(to right, #0073e6, rgb(242, 233, 149)) 1;
 }
@@ -510,17 +509,16 @@ header .logo:hover {
 .info-list li dt {
   width: 8rem;
   color: #0073e6;
-  /* font-size: 24px; */
-  font-size: 1.5rem;
-  padding: 1rem 0;
+  font-size: 1.44rem;
+  letter-spacing: 0.072rem;
   font-weight: 700;
 }
 
 .info-list li dd {
+  color: #333333;
   margin: 0 auto;
-  /* font-size: 22px; */
-  font-size: 1.375rem;
-  padding: 1rem 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
 }
 
 .company-link-btn {
@@ -529,17 +527,15 @@ header .logo:hover {
 }
 
 .company-link-btn a {
-  font-size: 2rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.12rem;
   color: #0073e6;
   background-color: #fff;
-  /* box-shadow: 3px 5px #195998; */
   box-shadow: 0.1875rem 0.3125rem #0073e6;
   border: 1px solid #0073e6;
-  /* border-radius: 50px; */
-  border-radius: 3.125rem;
+  border-radius: 7rem;
   text-align: center;
-  padding: 1.5rem 2rem;
-  /* padding: 15px; */
+  padding: 2rem 4rem;
 }
 
 .company-link-btn a:hover {
@@ -550,18 +546,13 @@ header .logo:hover {
   transform: translate(4px,4px);
 }
 
-.company-recruit {
-  margin: 2rem 0;
-}
-
 .company-recruit h2 {
   font-family: 'Franklin Gothic Medium',sans-serif;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 2.986rem;
   text-align: center;
   color: #0073e6;
-  padding-bottom: 1rem;
-  margin: 1rem auto 0;
+  margin: 3rem auto;
   letter-spacing: 1rem;
 }
 
@@ -587,14 +578,10 @@ header .logo:hover {
 }
 
 #recruit .title-area {
-  padding: 3.75rem 6.25rem;
+  padding: 3.75rem 7.5rem;
   background-color: rgba(250, 230, 55, 0.452);
   width: 45%;
-  margin-left: 50rem;
-}
-
-#recruit .title-area h1 {
-  text-align: center;
+  margin-left: 49.5rem;
 }
 
 #recruit .title-area h2 {
@@ -602,19 +589,21 @@ header .logo:hover {
 }
 
 .recruit-text {
-  font-size: 1.5rem;
-  background-color: #ffffffc4;
-  width: 45%;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-top: 8rem;
+  color: #333333;
   position: absolute;
   top: 0;
   left: 5%;
-  line-height: 3rem;
+  background-color: #ffffffc4;
+  width: 40%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 8rem;
 }
 
 .recruit-text p {
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
+  line-height: 2;
   margin: 1rem;
   border-bottom: 1px solid;
   border-image: linear-gradient(to right, #0073e6, rgb(242, 233, 149)) 1;
@@ -626,17 +615,15 @@ header .logo:hover {
 }
 
 .recruit-link-btn a {
-  font-size: 2rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.12rem;
   color: rgb(247, 194, 4);
   background-color: #fff;
-  /* box-shadow: 3px 5px #195998; */
   box-shadow: 0.1875rem 0.3125rem rgb(247, 194, 4);
   border: 1px solid rgb(247, 194, 4);
-  /* border-radius: 50px; */
-  border-radius: 3.125rem;
+  border-radius: 7rem;
   text-align: center;
-  padding: 1.5rem 2rem;
-  /* padding: 15px; */
+  padding: 2rem 4rem;
 }
 
 .recruit-link-btn a:hover {
@@ -647,11 +634,13 @@ header .logo:hover {
   transform: translate(4px,4px);
 }
 
+/* お問い合わせ */
+
 #contact-area {
   text-align: center;
   background-color: rgb(246, 246, 252);
   height: 67rem;
-  padding-top: 10rem;
+  padding-top: 15rem;
 }
 
 .title {
@@ -660,9 +649,8 @@ header .logo:hover {
   overflow: hidden;
   color: rgb(247, 194, 4);
   opacity: 0.7;
-  font-size: 3rem;
-  padding-top: 5rem;
-  letter-spacing: 1rem;
+  font-size: 2.488rem;
+  letter-spacing: 0.2488rem;
 }
 
 .title span {
@@ -695,31 +683,32 @@ header .logo:hover {
 }
 
 #contact-area h2 {
-  font-size: 3rem;
-  padding: 5rem 0 1rem;
+  font-size: 2.986rem;
+  letter-spacing: 0.1493rem;
+  padding-bottom: 1rem;
   color: #0073e6;
   border-bottom: 2px dotted #0073e6;
   width: 50%;
-  margin: 0 auto 4rem;
+  margin: 5rem auto 4rem;
 }
 
 #contact-area p {
-  font-size: 1.5rem;
-  line-height: 2.5rem;
+  font-size: 1.44rem;
+  line-height: 2;
+  letter-spacing: 0.072rem;
   margin-bottom: 10rem;
-  color: rgba(0, 0, 0, 0.786);
+  color: #333333;
 }
 
 .contact-area-btn a {
   color: #fff;
   background-color: #0073e6c9;
-  /* box-shadow: 3px 5px #195998; */
   box-shadow: 0.3rem 0.7rem #195998;
-  /* border-radius: 50px; */
   border-radius: 7rem;
   text-align: center;
   padding: 3rem 6rem;
-  font-size: 3rem;
+  font-size: 2.986rem;
+  letter-spacing: 0.1493rem;
 }
 
 .contact-area-btn a:hover {
@@ -730,36 +719,34 @@ header .logo:hover {
 }
 
 .btn-area {
-  /* height: 160px; */
   height: 10rem;
   background-color: rgb(246, 246, 252);
 }
 
-.top-btn {
-  /* border: 2px solid rgb(147, 147, 103); */
-  border: 0.125rem solid rgb(147, 147, 103);
+.top-btn p {
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
+  color: #333333;
   background-color: rgb(253, 239, 119);
-  /* box-shadow: 3px 5px rgb(147, 147, 103); */
   box-shadow: 0.1875rem 0.3125rem rgb(147, 147, 103);
-  /* border-radius: 50px; */
-  border-radius: 3.125rem;
+  border: 0.125rem solid rgb(147, 147, 103);
+  border-radius: 7rem;
   text-align: center;
-  /* padding: 15px 30px; */
-  padding: 0.9375rem 1.875rem;
-  width: 9rem;
+  width: 11rem;
   margin: 0 0 5rem 80%;
-  color: rgba(0, 0, 0, 0.786);
+  padding: 2rem 4rem;
 }
 
-.top-btn:hover {
+.top-btn p:hover {
   background-color: rgb(250, 240, 149);
   box-shadow: unset;
   transform: translate(4px,4px);
 }
 
+/* フッター */
+
 .footer-area {
   height: 32rem;
-  /* padding-top: 50px; */
   padding-top: 3.125rem;
   background: linear-gradient(-22deg, #0073e6 36.5%, #fff 119.5%);
 }
@@ -779,7 +766,7 @@ header .logo:hover {
 }
 
 .name a{
-  color: rgba(0, 0, 0, 0.786);;
+  color: #333333;
   font-weight: 700;
 }
 
@@ -788,40 +775,39 @@ header .logo:hover {
 }
 
 .company-name {
-  font-size: 2rem;
+  font-size: 2.074rem;
+  letter-spacing: 0.1037rem;
 }
 
 .postal-code {
   padding-top: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
 }
 
 .adress {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
+  line-height: 1.5;
 }
 
 .footer-nav {
   width: 40%;
   display: flex;
-  /* gap: 100px; */
   gap: 6.25rem;
-  /* line-height: 30px; */
   line-height: 1.875rem;
-  /* margin-top: 30px; */
   margin-top: 1.875rem;
   color: #fff;
 }
 
 .footer-nav p {
-  /* margin-left: -20px; */
-  margin-left: -1.25rem;
-  /* font-size: 20px; */
-  font-size: 1.25rem;
+  margin: 0 -1.5rem 1rem;
+  padding: 0.5rem;
+  font-size: 1.44rem;
+  letter-spacing: 0.144rem;
   font-weight: 700;
   border-bottom: 1px solid #fff;
   text-align: center;
-  /* margin-bottom: 10px; */
-  margin-bottom: 0.625rem;
 }
 
 .footer-nav p:hover {
@@ -842,34 +828,39 @@ header .logo:hover {
 }
 
 .footer-services {
-  /* width: 120px; */
   width: 7.5rem;
 }
 
 .footer-company {
-  /* width: 120px; */
   width: 7.5rem;
 }
 
 .footer-recruit {
-  /* width: 120px; */
   width: 7.5rem;
 }
 
 .footer-nav ul li {
-  /* padding-left: 10px; */
-  padding-left: 0.625rem;
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.12rem;
+  white-space: nowrap;
+  line-height: 2;
 }
 
 .contact-info {
   display: flex;
-  margin-left: 75%;
+  gap: 1rem;
+  margin-left: 60%;
+  white-space: nowrap
 }
 
 .sns {
+  text-align: center;
   width: 7rem;
   margin-right: 1rem;
-  color: rgba(0, 0, 0, 0.786);
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
 }
 
 .sns ul {
@@ -885,16 +876,17 @@ header .logo:hover {
 }
 
 footer .contact-btn {
-  /* margin-top: 30px; */
   margin-top: 1.875rem;
 }
 
 footer .contact-btn a {
-  color: rgba(0, 0, 0, 0.786);;
+  color: #333333;
   background-color: rgb(253, 239, 119);
-  /* box-shadow: 3px 5px #195998; */
   box-shadow: 0.1875rem 0.3125rem rgb(147, 147, 103);
   border: 1px solid rgb(147, 147, 103);
+  padding: 2rem 4rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
 }
 
 footer .contact-btn a:hover {
@@ -904,24 +896,23 @@ footer .contact-btn a:hover {
 }
 
 .copyright {
-  font-size: 1rem;
   text-align: center;
-  margin-top: 3rem;
+  margin: 2rem;
   color: #fff;
 }
 
 .stalker {
-  background-color: rgba(255, 241, 114, 0.697);
-  border-radius: 50%;
-  height: 15px;
-  left: -5px;
-  opacity: 0.7;
-  pointer-events: none;
   position: fixed;
   top: -5px;
-  transition: transform .3s ease-out;
-  width: 15px;
+  left: -5px;
   z-index: 999;
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 241, 114, 0.697);
+  border-radius: 50%;
+  opacity: 0.7;
+  pointer-events: none;
+  transition: transform .3s ease-out;
 }
 
 @media screen and (max-width: 767px) {
@@ -931,24 +922,200 @@ footer .contact-btn a:hover {
   }
 
   header {
-    height: 13rem;
+    height: 12rem;
     font-size: 1.5rem;
+    padding: 0 10rem;
   }
 
   .logo {
-  width: 10rem;
-  height: 10rem;
-}
-  .nav-text a {
-    font-size: 1.85rem;
+    width: 14rem;
+    height: 14rem;
+    margin-top: 2rem;
   }
 
-  .nav-list img {
-  width: 2rem;
-  height: 2rem;
-  vertical-align: middle;
-  margin-top: 0.5rem;
-}
+  .drawer_menu {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+/* モバイル版　メニューボタン */
+
+  .drawer_menu * {
+    font: inherit;
+  }
+
+  .drawer_button {
+    margin-top: -2rem;
+    width: 6rem;
+    height: 4rem;
+    position: relative;
+    background: none;
+    border: none;
+    text-align: center;
+    letter-spacing: 0.1em;
+    z-index: 1001;
+    color: #0073e6;
+  }
+
+  .drawer_button .drawer_bar {
+    width: 6rem;
+    height: 2px;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 0;
+    background-color: #0073e6;
+  }
+
+  .drawer_button .drawer_bar_first {
+    top: 0;
+  }
+
+  .drawer_button .drawer_bar_second {
+    top: 50%;
+  }
+
+  .drawer_button .drawer_bar_third {
+    top: 100%;
+  }
+
+  .drawer_button.active {
+    color: #fff;
+  }
+
+  .drawer_button.active .drawer_bar {
+    width: 6rem;
+    left: 1.3rem;
+    background-color: #fff;
+  }
+
+  .drawer_button.active .drawer_bar_first {
+    transform: rotate(0.7854rad) translateY(-50%);
+    top: 0px;
+  }
+
+  .drawer_button.active .drawer_bar_second {
+    opacity: 0;
+  }
+
+  .drawer_button.active .drawer_bar_third {
+    transform: rotate(-0.7854rad) translateY(-50%);
+    top: calc(100% - 0px);
+  }
+
+  .drawer_button.active .drawer_menu_text {
+    display: none;
+  }
+
+  .drawer_button.active .drawer_close {
+    display: block;
+  }
+
+  .drawer_text {
+    position: absolute;
+    bottom: -4rem;
+    left: 0;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  .drawer_close {
+    letter-spacing: 0.08em;
+    display: none;
+  }
+
+  .drawer_menu a {
+    color: #fff;
+  }
+
+  .drawer_menu .drawer_bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(51, 51, 51, 0.5);
+    display: none;
+    top: 0;
+    left: 0;
+  }
+
+  .drawer_menu .drawer_nav_wrapper {
+    width: 80%;
+    height: 100%;
+    transition: all 0.5s;
+    transform: translate(312px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(-178deg, #0073e6 36.5%, #fff 119.5%);
+  }
+
+  .drawer_menu .drawer_nav_wrapper.open {
+    transform: translate(0);
+  }
+
+  .drawer_menu.left .drawer_nav_wrapper {
+    transform: translate(-80%);
+    right: auto;
+    left: 0;
+  }
+
+  .drawer_menu.left .drawer_nav_wrapper.open {
+    transform: translate(0);
+  }
+
+  .drawer_menu .drawer_nav {
+    padding: 25rem 10rem 10rem;
+    color: #fff;
+  }
+
+  .drawer_menu .drawer_nav li {
+    border-bottom: 1px solid #fff;
+    padding: 2rem 0;
+  }
+
+  .drawer_menu .drawer_nav li h1 {
+    font-size: 4.5rem;
+  }
+
+  .drawer_menu .drawer_nav li h2 {
+    font-size: 3rem;
+  }
+
+  .drawer_sns {
+    display: flex;
+    gap: 5rem;
+    padding-left: 10rem;
+    margin-bottom: 5rem;
+  }
+
+  .drawer_sns img {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .menu-name {
+    display: flex;
+  }
+
+  .menu-name img {
+    width: 15rem;
+    height: 15rem;
+    margin-left: 8rem;
+  }
+
+  .menu-name-text {
+    margin-top: 3rem;
+    color: #333333;
+  }
+
+/* モバイル版　メインビジュアル */
 
   #keyvisual {
   width: 100%;
@@ -1001,361 +1168,279 @@ footer .contact-btn a:hover {
   border: 1px solid #0073e6;
 }
 
-  #services {
-    height: 140rem;
-    margin-bottom: 15rem;
-  }
+/* モバイル版　事業内容 */
 
   #services h1 {
-  text-align: center;
-  font-size: 3rem;
-  color: #0073e6;
-  letter-spacing: 0.5rem;
-  position: relative;
-}
-
-#services h2 {
-  font-family: 'Franklin Gothic Medium',sans-serif;
-  font-weight: 900;
-  font-size: 6rem;
-  text-align: center;
-  color: #0073e6;
-  padding-bottom: 1rem;
-  margin: 1rem auto 0;
-  letter-spacing: 1rem;
-}
-
-#services h2 span {
-  color: rgb(247, 194, 4);
-  font-size: 7rem;
-}
-
-
-  .services-list {
-    margin: 5rem 8rem;
+    font-size: 2.986rem;
+    letter-spacing: 0.2986rem;
   }
 
-.services-list li {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  border-radius: 0.5rem;
-}
+  #services h2 {
+    font-size: 6rem;
+    text-align: center;
+    letter-spacing: 0.6rem;
+  }
 
-.services-list img {
-  object-fit: cover;
-  position: relative;
-  transition: transform .6s ease;
-  width: 100%;
-}
+  #services h2 span {
+    font-size: 7rem;
+  }
 
-.service1 {
-  margin-bottom: 5rem;
-}
+  .services-list {
+    height: 100rem;
+  }
 
-.service2 {
-  margin-bottom: 5rem;
-}
+  .services-list li {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
 
-.service1 p {
-  position: absolute;
-  top: 25%;
-  left: 17%;
-  z-index: 2;
-  color: #fff;
-  font-size: 3rem;
-  text-align: center;
-  font-weight: 700;
-  background-color: #89878759;
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
+  .services-list img {
+    width: 100%;
+  }
 
-.service2 p {
-  position: absolute;
-  top: 9%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  color: #fff;
-  font-size: 3rem;
-  text-align: center;
-  font-weight: 700;
-  background-color: #89878759;
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
+  .service1 {
+    margin-bottom: 5rem;
+  }
 
-.service3 p {
-  position: absolute;
-  top: 25%;
-  left: 80%;
-  z-index: 2;
-  color: #fff;
-  font-size: 3rem;
-  text-align: center;
-  font-weight: 700;
-  background-color: #89878759;
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
+  .service2 {
+    margin-bottom: 5rem;
+  }
 
-.services-list span {
-  position: absolute;
-  bottom: 4%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  color: #fff;
-  font-size: 2rem;
-  text-align: center;
-  font-weight: 500;
-  letter-spacing: 0.2rem;
-  padding: 0.5rem;
-}
+  .service1 p {
+    top: 25%;
+    left: 17%;
+    font-size: 2.986rem;
+    background-color: #89878759;
+  }
 
-.list-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 5.5rem;
-  z-index: 2;
-}
+  .service2 p {
+    top: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.986rem;
+    background-color: #89878759;
+  }
 
-.service1-bottom {
-  background: radial-gradient(circle,rgba(250, 230, 55, 0.414), rgba(250, 230, 55, 0.036));
-}
+  .service3 p {
+    top: 25%;
+    left: 80%;
+    font-size: 2.986rem;
+    background-color: #89878759;
+  }
 
-.service2-bottom {
-  background: radial-gradient(circle,#89878759,#ffffff17);
-}
+  .services-list span {
+    bottom: 4%;
+    font-size: 2.07rem;
+    letter-spacing: 0.27rem;
+  }
 
-.service3-bottom {
-  background: radial-gradient(circle,#0073e678,#0073e60c);
-}
+  .list-bottom {
+    width: 100%;
+    height: 5.5rem;
+  }
 
-.link-btn {
-  margin-left: 65%;
-  margin-top: 67rem;
-}
+  .link-btn {
+    margin-left: 70%;
+  }
 
-.link-btn a {
-  color: #fff;
-  background-color: #0073e6;
-  /* box-shadow: 3px 5px #195998; */
-  box-shadow: 0.3rem 0.5rem #195998;
-  border: 1px solid #0073e6;
-  /* border-radius: 50px; */
-  border-radius: 3.125rem;
-  text-align: center;
-  padding: 2.5rem 3rem;
-  font-size: 3rem;
-}
+  .link-btn a {
+    box-shadow: 0.3rem 0.6rem #195998;
+    padding: 3rem 4rem;
+    font-size: 2.074rem;
+  }
 
-.link-btn a:hover {
-  background-color: #0073e68d;
-  box-shadow: unset;
-  border: none;
-  transform: translate(4px,4px);
-}
+/* モバイル版　番組制作実績 */
+
+  #project {
+    padding: 10rem 1.5rem;
+  }
 
   #project h1 {
-  text-align: center;
-  font-size: 3rem;
-  color: #0073e6;
-  letter-spacing: 0.5rem;
-  position: relative;
-}
+    font-size: 2.986rem;
+    letter-spacing: 0.2986rem;
+  }
 
-#project h2 {
-  font-family: 'Franklin Gothic Medium',sans-serif;
-  font-weight: 900;
-  font-size: 6rem;
-  text-align: center;
-  color: #0073e6;
-  padding-bottom: 1rem;
-  margin: 1rem auto 0;
-  letter-spacing: 1rem;
-}
+  #project h2 {
+    font-size: 6rem;
+    text-align: center;
+    letter-spacing: 0.6rem;
+  }
 
-#project h2 span {
-  color: rgb(247, 194, 4);
-  font-size: 7rem;
-}
-
+  #project h2 span {
+    font-size: 7rem;
+  }
 
   .program-list {
     display: block;
   }
 
   .program-card {
-    width: 35rem;
-    height: 35rem;
+    width: 40rem;
+    height: 52rem;
+    margin: 1rem;
   }
 
   .program-card img {
-    width: 23rem;
-    height: 15rem;
+    width: 32rem;
+    height: 24rem;
   }
 
-.program-card p {
-  font-size: 2rem;
-  text-align: left;
-  margin-left: 2.5rem;
-  margin-top: 0.5rem;
-}
+  .program-card h3 {
+    font-size: 2.488rem;
+  }
 
-.program-card h3 {
-  font-size: 2rem;
-}
+  .program-card h4 {
+    font-size: 1.728rem;
+  }
 
-.program-card h4 {
-  font-size: 1.5rem;
-  text-align: left;
-  margin-left: 2.5rem;
-}
+  .sub-title {
+    text-align: left;
+    margin-left: 2.5rem;
+  }
 
-#company {
-  width: 100%;
-  height: 68rem;
-  padding: 5rem;
-}
+  .program-card p {
+    font-size: 2.074rem;
+  }
 
-#company .title-area {
-  padding: 3.75rem 6.25rem;
-  background-color: #0073e635;
-  width: 55%;
-  margin-left: 14rem;
-}
+/* モバイル版　会社情報・採用情報 */
 
-.info-list {
-  background-color: #ffffffc4;
-  width: 53%;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-top: 23rem;
-  position: absolute;
-  left: 30%;
-}
+  #company {
+    height: 68rem;
+  }
 
-.info-list li dt {
-  width: 10rem;
-  color: #0073e6;
-  /* font-size: 24px; */
-  font-size: 2rem;
-  padding: 1rem 0;
-  font-weight: 700;
-}
+  #company .title-area {
+    width: 50%;
+  }
 
-.info-list li dd {
-  margin: 0 auto;
-  /* font-size: 22px; */
-  font-size: 1.9rem;
-  padding: 1rem 0;
-}
+  #company .title-area h2 {
+    margin-left: 3rem;
+  }
 
-.company-link-btn {
-  margin-top: 33rem;
-  margin-left: 50rem;
-}
+  .info-list {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    margin-top: 21rem;
+  }
 
-#recruit {
-  width: 100%;
-  height: 68rem;
-  padding: 5rem;
-}
+  .info-list li dt {
+    width: 15rem;
+    font-size: 2.488rem;
+    letter-spacing: 0.1244rem;
+  }
 
-#recruit .title-area {
-  padding: 3.75rem 6.25rem;
-  background-color: rgba(250, 230, 55, 0.452);
-  width: 55%;
-  margin-left: 35rem;
-}
+  .info-list li dd {
+    font-size: 2.074rem;
+    letter-spacing: 0.1037rem;
+  }
 
-#recruit .title-area h1 {
-  text-align: center;
-}
+  .company-link-btn {
+    margin-top: 36rem;
+    margin-left: 50rem;
+  }
 
-.recruit-text {
-  font-size: 1.5rem;
-  background-color: #ffffffc4;
-  width: 53%;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-top: 23rem;
-  position: absolute;
-  top: 0;
-  left: 20%;
-  line-height: 3rem;
-}
+  .company-link-btn a {
+    font-size: 2.074rem;
+    letter-spacing: 0.1493rem;
+    padding: 3rem 4rem;
+    box-shadow: 0.3rem 0.6rem #0073e6;
+  }
 
-.recruit-text p {
-  line-height: 6rem;
-  font-size: 1.9rem;
-  margin: 1rem;
-  border-bottom: 1px solid;
-  border-image: linear-gradient(to right, #0073e6, rgb(242, 233, 149)) 1;
-}
+  #recruit {
+    height: 68rem;
+  }
 
-.recruit-link-btn {
-  margin-top: 35rem;
-  margin-left: 20rem;
-}
+  #recruit .title-area {
+    width: 50%;
+    margin-left: 45rem;
+  }
 
-#contact-area h2 {
-  font-size: 5rem;
-  padding: 5rem 0 1rem;
-  color: #0073e6;
-  border-bottom: 2px dotted #0073e6;
-  width: 70%;
-  margin: 0 auto 4rem;
-}
+  #recruit .title-area h2 {
+    margin-left: 5rem;
+  }
 
-#contact-area p {
-  font-size: 2rem;
-  line-height: 3.5rem;
-  margin-bottom: 10rem;
-  color: rgba(0, 0, 0, 0.786);
-}
+  .recruit-text {
+    width: 60%;
+    margin-top: 21rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-.title {
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  color: rgb(247, 194, 4);
-  opacity: 0.7;
-  font-size: 4rem;
-  padding-top: 5rem;
-  letter-spacing: 1rem;
-}
-  .top-btn {
-    font-size: 1.5rem;
-    padding: 1.5rem 3rem;
+  .recruit-text p {
+    font-size: 2.074rem;
+    padding: 0.5rem;
+  }
+
+  .recruit-link-btn {
+    margin-top: 36rem;
+    margin-left: 20rem;
+  }
+
+  .recruit-link-btn a {
+    font-size: 2.074rem;
+    letter-spacing: 0.1493rem;
+    padding: 3rem 4rem;
+    box-shadow: 0.3rem 0.6rem rgb(250, 211, 70);
+  }
+
+/* モバイル版お問い合わせ */
+
+  .title {
+    font-size: 4rem;
+    letter-spacing: 0.4rem;
+  }
+
+  #contact-area h2 {
+    font-size: 5rem;
+    width: 70%;
+  }
+
+  #contact-area p {
+    font-size: 2rem;
+    line-height: 3.5rem;
+    margin-bottom: 10rem;
+  }
+
+  .btn-area {
+    height: 13rem;
+  }
+
+  .top-btn p {
+    font-size: 2.074rem;
+    letter-spacing: 0.1493rem;
+    padding: 2rem 4rem;
     box-shadow: 0.3rem 0.6rem rgb(147, 147, 103);
-    top: 20%;
     background-color: rgb(250, 211, 70);
+    text-align: center;
+    width: 12.5rem;
+  }
+
+  /* モバイル版フッター */
+
+  footer .contact-btn {
+    margin-top: 6.5rem;
   }
 
   footer .contact-btn a {
-    font-size: 2rem;
-    padding: 2rem;
+    font-size: 2.074rem;
+    letter-spacing: 0.1493rem;
+    padding: 3rem 4rem;
     box-shadow: 0.3rem 0.6rem rgb(147, 147, 103);
     background-color: rgb(250, 211, 70);
+    border-radius: 7rem;
   }
 
   .footer-area {
     position: relative;
-    height: 40rem;
-    padding-right: 5rem;
-    padding-left: 10rem;
+    height: 45rem;
   }
 
   footer .logo {
-  width: 13rem;
-  height: 13rem;
-}
+    width: 13rem;
+    height: 13rem;
+  }
 
   .footer-flex-pc {
     display: block;
@@ -1363,51 +1448,46 @@ footer .contact-btn a:hover {
 
   .footer-flex-mobile {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  .name {
-    padding: 0;
-  }
-
-  .name a {
-    font-size: 2rem;
+    justify-content: space-around;
   }
 
   .company-name {
-  font-size: 3rem;
-}
+    font-size: 2.986rem;
+    letter-spacing: 0.1493rem;
+  }
 
-.postal-code {
-  padding-top: 1rem;
-  font-size: 1.7rem;
-}
+  .postal-code {
+    font-size: 2.074rem;
+    letter-spacing: 0.1493rem;
+  }
 
-.adress {
-  font-size: 2rem;
-}
+  .adress {
+    font-size: 2.074rem;
+    letter-spacing: 0.1493rem;
+  }
 
   .footer-nav {
     display: none;
   }
 
   .contact-info {
-    margin-left: 0;
+    display: block;
+    margin: 3rem 0 0 0;
   }
 
   .sns ul {
-    gap: 5rem;
+    justify-content: space-between;
   }
 
   .sns {
-    width: 15rem;
-    margin-right: 5rem;
+    width: 18rem;
+    margin-right: 0;
   }
 
   .sns p {
-    text-align: center;
-    font-size: 2rem;
+    font-size: 2.074rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1493rem;
   }
 
   .sns img {
@@ -1416,10 +1496,9 @@ footer .contact-btn a:hover {
   }
 
   .copyright {
-    margin-top: 2.5rem;
-    font-size: 1.5rem;
-    margin-bottom: 10rem;
+    margin: 2.5rem 0 10rem;
+    font-size: 1.44rem;
+    letter-spacing: 0.072rem;
   }
-
 
 }

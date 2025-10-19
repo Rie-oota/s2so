@@ -10,6 +10,10 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -43,13 +47,11 @@ header {
   display: flex;
   justify-content: space-between;
   position: fixed;
-  z-index: 3;
+  z-index: 6;
   align-items: center;
-  height: 6.5rem;
+  height: 5rem;
   background-color: #fff;
-  /* padding: 0 180px; */
   padding: 0 11.25rem;
-  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05); */
   box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.05);
 }
 
@@ -65,17 +67,14 @@ header .logo:hover {
 .nav-list ul {
   display: flex;
   gap: 1.875rem;
-  /* gap: 30px; */
 }
 
 .nav-text a {
-  color: black;
-  /* border-bottom: 3px solid #0073e6; */
-  border-bottom: 0.1875rem solid #0073e6;
-  /* padding-bottom: 2px; */
+  color: #333333;
+  border-bottom: 0.15rem solid #0073e6;
   padding-bottom: 0.125rem;
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 .nav-text a:hover {
@@ -89,21 +88,14 @@ header .logo:hover {
   margin-top: 0.5rem;
 }
 
-.nav-list img:hover {
-  opacity: 0.3;
-}
-
 .contact-btn a {
   color: #fff;
   background-color: #0073e6;
-  /* box-shadow: 3px 5px #195998; */
   box-shadow: 0.1875rem 0.3125rem #195998;
   border: 1px solid #0073e6;
-  /* border-radius: 50px; */
-  border-radius: 3.125rem;
+  border-radius: 7rem;
   text-align: center;
   padding: 0.9375rem;
-  /* padding: 15px; */
 }
 
 .contact-btn a:hover {
@@ -113,67 +105,61 @@ header .logo:hover {
   transform: translate(4px,4px);
 }
 
+.drawer_menu {
+  display: none;
+}
+
+/* タイトルエリア */
+
 .title-area {
   width: 100%;
-  /* height: 700px; */
-  height: 43.75rem;
+  height: 35rem;
   position: relative;
-  padding-top: 6.7rem;
+  padding-top: 5rem;
 }
 
 .text-area {
   width: 50%;
-  /* height: 600px; */
-  height: 37.5rem;
+  height: 25rem;
   background: linear-gradient(158deg, #0073e6 36.5%, #fff 119.5%);
-  /* padding-left: 100px; */
   padding-left: 6.25rem;
+  color: #fff;
 }
 
 .text-area h1 {
   font-family: 'Segoe UI Symbol',sans-serif;
-  /* padding-top: 60px; */
-    padding-top: 3.75rem;
-  /* letter-spacing: 10px; */
-  letter-spacing: 0.625rem;
-  /* font-size: 80px; */
-  font-size: 4.7rem;
-  color: #fff;
+  padding-top: 3.75rem;
+  font-size: 4rem;
+  letter-spacing: 0.4rem;
 }
 
 .text-area h2 {
-  padding-top: 10px;
-  /* letter-spacing: 10px; */
-  letter-spacing: 0.625rem;
-  /* font-size: 40px; */
-  font-size: 2.5rem;
-  color: #fff;
+  padding-top: 1rem;
+  font-size: 2rem;
+  letter-spacing: 0.4rem;
 }
 
 .img-area {
   position: absolute;
-  /* top: 150px; */
-  top: 9.375rem;
+  top: 0;
   right: 0;
-  /* width: 920px; */
-  width: 57.5rem;
-  /* height: 600px; */
-  height: 37.5rem;
-  /* border-radius: 30px; */
-  border-radius: 1.875rem;
-  padding-top: 9.375rem;
+  width: 50rem;
+  height: 35rem;
+  padding-top: 9rem;
 }
 
 .title-area img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 7%;
+  border-radius: 3rem;
 }
+
+/* 会社概要 */
 
 #information {
   width: 100%;
-  padding: 5rem 0 10rem 0;
+  padding: 5rem 0;
 }
 
 /* .company-logo {
@@ -205,34 +191,33 @@ header .logo:hover {
 
 #information h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.074rem;
   color: #0073e6;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2074rem;
   position: relative;
-  margin-top: 5rem;
 }
 
 #information h1::before {
-  background-color: #0073e6; /* 線の色 */
-  border-radius: 5px; /* 線の両端を丸く */
-  bottom: -1rem; /* 線の位置 */
+  background-color: #0073e6;
+  border-radius: 5px;
+  bottom: -1rem;
   content: "";
-  height: 0.1rem; /* 線の高さ */
-  left: 50%; /* 線の中央寄せ */
+  height: 0.1rem;
+  left: 50%;
   position: absolute;
-  transform: translateX(-50%); /* 線の中央寄せ */
-  width: 8rem; /* 線の長さ */
+  transform: translateX(-50%);
+  width: 8rem;
 }
 
 #information h2 {
   font-family: 'Franklin Gothic Medium',sans-serif;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 2.986rem;
   text-align: center;
   color: #0073e6;
   padding-bottom: 1rem;
-  margin: 1rem auto 0;
-  letter-spacing: 1rem;
+  margin: 1rem auto;
+  letter-spacing: 0.8rem;
 }
 
 #information h2 span {
@@ -241,97 +226,72 @@ header .logo:hover {
 }
 
 .info-list {
-  /* width: 700px; */
-  width: 43.75rem;
-  /* gap: 30px; */
-  gap: 1.875rem;
-  padding-top: 3.125rem;
-  /* margin: 0 425px 0 315px; */
-  margin: 0 26.5625rem 0 19.6875rem;
+  width: 70%;
+  margin: 5rem auto 0;
+  color: #333333;
 }
 
 .info-list li {
   display: flex;
-  margin-top: 4rem;
+  padding: 1.5rem 0;
   border-bottom: 1px solid;
   border-image: linear-gradient(to right, #0073e6, rgb(242, 233, 149)) 1;
 }
 
 .info-list li dt {
-  width: 8rem;
+  width: 10rem;
   color: #0073e6;
   font-weight: 700;
-  /* font-size: 24px; */
-  font-size: 1.5rem;
-  padding: 1.875rem 0;
+  font-size: 1.728rem;
+  letter-spacing: 0.1728rem;
 }
 
 .info-list li dd {
   margin: 0 auto;
-  /* font-size: 22px; */
-  font-size: 1.375rem;
-  padding: 1.875rem 0;
+  font-size: 1.44rem;
+  letter-spacing: 0.144rem;
+  padding-right: 10rem;
 }
+
+/* アクセス */
 
 #access {
   width: 100%;
   position: relative;
-  /* padding: 160px 0; */
-  padding: 10rem 0;
+  padding-top: 5rem;
   background-color: rgb(246, 246, 252);
   overflow: hidden;
 }
 
-.access-title {
-  text-align: center;
-  /* width: 250px; */
-  width: 15.625rem;
-  margin: 0 auto;
-}
-
-.access-list {
-  /* padding: 4rem 180px; */
-  padding: 4rem 11.25rem;
-}
-
-.head-office {
-  /* padding-top: 80px; */
-  padding-top: 5rem;
-}
-
-.sales-office {
-  padding-top: 10rem;
-}
-
 #access h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.074rem;
   color: #0073e6;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2074rem;
   position: relative;
 }
 
 #access h1::before {
-  background-color: #0073e6; /* 線の色 */
-  border-radius: 5px; /* 線の両端を丸く */
-  bottom: -1rem; /* 線の位置 */
+  background-color: #0073e6;
+  border-radius: 5px;
+  bottom: -1rem;
   content: "";
-  height: 0.1rem; /* 線の高さ */
-  left: 50%; /* 線の中央寄せ */
+  height: 0.1rem;
+  left: 50%;
   position: absolute;
-  transform: translateX(-50%); /* 線の中央寄せ */
-  width: 8rem; /* 線の長さ */
+  transform: translateX(-50%);
+  width: 8rem;
 }
 
 #access h2 {
   font-family: 'Franklin Gothic Medium',sans-serif;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 2.986rem;
   text-align: center;
   color: #0073e6;
   padding-bottom: 1rem;
-  margin: 1rem auto 0;
-  letter-spacing: 1rem;
+  margin: 1rem auto;
+  letter-spacing: 0.8rem;
 }
 
 #access h2 span {
@@ -339,27 +299,37 @@ header .logo:hover {
   font-size: 4rem;
 }
 
+.access-list {
+  padding: 0 11rem;
+}
+
+.head-office {
+  padding-top: 5rem;
+}
+
+.sales-office {
+  padding-top: 10rem;
+}
+
 .office-title {
-  /* padding: 10px 0; */
-  padding: 0.625rem;
-  /* margin-bottom: 60px; */
-  margin-bottom: 3.75rem;
+  padding: 1rem;
+  margin-bottom: 3rem;
   background: linear-gradient(to right, #0073e6a1, rgb(246, 246, 252));
-  /* border-radius: 5px; */
-  border-radius: 0.3125rem;
+  border-radius: 0.5rem;
   text-align: center;
+  color: #333333;
 }
 
 .office-info {
   display: flex;
-  gap: 8%;
+  gap: 4rem;
 }
 
 .office-info iframe {
   width: 55%;
-  /* height: 450px; */
-  height: 28.125rem;
-  border-radius: 5%;
+  height: 28rem;
+  border-radius: 3rem;
+  margin: auto 0;
 }
 
 .office-info iframe:hover {
@@ -375,27 +345,22 @@ header .logo:hover {
   display: flex;
   border-bottom: 1px solid;
   border-image: linear-gradient(to right, #0073e6, rgb(242, 233, 149)) 1;
-  /* font-size: 14px; */
-  font-size: 0.875rem;
   align-items: center;
+  padding: 1.5rem 0;
 }
 
 .text-list li dt {
-  /* width: 100px; */
   width: 6.25rem;
   color: #0073e6;
   font-weight: 700;
-  /* font-size: 24px; */
   font-size: 1.2rem;
-  padding: 1.875rem 0;
+  letter-spacing: 0.06rem;
 }
 
 .text-list li dd {
-  padding: 1.875rem 0;
-}
-
-.sales-office .text-list li dt:first-child{
-  padding: 1.875rem 0 3rem 0;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  color: #333333;
 }
 
 .slide-logo {
@@ -404,26 +369,23 @@ header .logo:hover {
   position: absolute;
   top: 0;
   writing-mode: vertical-rl;
-  /* height: 1316px; */
-  height: 82.25rem;
+  height: 82rem;
 }
 
 .slide-logo p {
   font-family: 'Segoe UI Historic',sans-serif;
   color: #fff;
-  /* font-size: 200px; */
-  font-size: 12.5rem;
+  font-size: 12rem;
   font-weight: 700;
-  /* margin-bottom: 30px; */
-  margin-bottom: 1.875rem;
+  margin-bottom: 3rem;
 }
 
 .slide-logo-main {
-  left: -5%;
+  left: -8%;
 }
 
 .slide-logo-sub {
-  right: -10%;
+  right: -8%;
 }
 
 .slide-logo-main p {
@@ -452,36 +414,30 @@ header .logo:hover {
   }
 }
 
-.btn-area {
-  /* height: 160px; */
-  height: 10rem;
-  background-color: rgb(246, 246, 252);
-}
-
-.top-btn {
-  /* border: 2px solid rgb(147, 147, 103); */
-  border: 0.125rem solid rgb(147, 147, 103);
+.top-btn p {
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
+  color: #333333;
   background-color: rgb(253, 239, 119);
-  /* box-shadow: 3px 5px rgb(147, 147, 103); */
   box-shadow: 0.1875rem 0.3125rem rgb(147, 147, 103);
-  /* border-radius: 50px; */
-  border-radius: 3.125rem;
+  border: 0.125rem solid rgb(147, 147, 103);
+  border-radius: 7rem;
   text-align: center;
-  margin-left: 80%;
-  /* padding: 15px 30px; */
-  padding: 0.9375rem 1.875rem;
-  width: 9rem;
+  width: 11rem;
+  margin: 10rem 0 5rem 80%;
+  padding: 2rem 4rem;
 }
 
-.top-btn:hover {
+.top-btn p:hover {
   background-color: rgb(250, 240, 149);
   box-shadow: unset;
   transform: translate(4px,4px);
 }
 
+/* フッター */
+
 .footer-area {
   height: 32rem;
-  /* padding-top: 50px; */
   padding-top: 3.125rem;
   background: linear-gradient(-22deg, #0073e6 36.5%, #fff 119.5%);
 }
@@ -501,7 +457,7 @@ header .logo:hover {
 }
 
 .name a{
-  color: black;
+  color: #333333;
   font-weight: 700;
 }
 
@@ -510,40 +466,39 @@ header .logo:hover {
 }
 
 .company-name {
-  font-size: 2rem;
+  font-size: 2.074rem;
+  letter-spacing: 0.1037rem;
 }
 
 .postal-code {
   padding-top: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
 }
 
 .adress {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
+  line-height: 1.5;
 }
 
 .footer-nav {
   width: 40%;
   display: flex;
-  /* gap: 100px; */
   gap: 6.25rem;
-  /* line-height: 30px; */
   line-height: 1.875rem;
-  /* margin-top: 30px; */
   margin-top: 1.875rem;
   color: #fff;
 }
 
 .footer-nav p {
-  /* margin-left: -20px; */
-  margin-left: -1.25rem;
-  /* font-size: 20px; */
-  font-size: 1.25rem;
+  margin: 0 -1.5rem 1rem;
+  padding: 0.5rem;
+  font-size: 1.44rem;
+  letter-spacing: 0.144rem;
   font-weight: 700;
   border-bottom: 1px solid #fff;
   text-align: center;
-  /* margin-bottom: 10px; */
-  margin-bottom: 0.625rem;
 }
 
 .footer-nav p:hover {
@@ -564,33 +519,39 @@ header .logo:hover {
 }
 
 .footer-services {
-  /* width: 120px; */
   width: 7.5rem;
 }
 
 .footer-company {
-  /* width: 120px; */
   width: 7.5rem;
 }
 
 .footer-recruit {
-  /* width: 120px; */
   width: 7.5rem;
 }
 
 .footer-nav ul li {
-  /* padding-left: 10px; */
-  padding-left: 0.625rem;
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.12rem;
+  white-space: nowrap;
+  line-height: 2;
 }
 
 .contact-info {
   display: flex;
-  margin-left: 75%;
+  gap: 1rem;
+  margin-left: 60%;
+  white-space: nowrap
 }
 
 .sns {
+  text-align: center;
   width: 7rem;
   margin-right: 1rem;
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
 }
 
 .sns ul {
@@ -606,16 +567,17 @@ header .logo:hover {
 }
 
 footer .contact-btn {
-  /* margin-top: 30px; */
   margin-top: 1.875rem;
 }
 
 footer .contact-btn a {
-  color: black;
+  color: #333333;
   background-color: rgb(253, 239, 119);
-  /* box-shadow: 3px 5px #195998; */
   box-shadow: 0.1875rem 0.3125rem rgb(147, 147, 103);
   border: 1px solid rgb(147, 147, 103);
+  padding: 2rem 4rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
 }
 
 footer .contact-btn a:hover {
@@ -625,9 +587,8 @@ footer .contact-btn a:hover {
 }
 
 .copyright {
-  font-size: 1rem;
   text-align: center;
-  margin-top: 3rem;
+  margin: 2rem;
   color: #fff;
 }
 
@@ -652,7 +613,305 @@ footer .contact-btn a:hover {
   }
 
   header {
-    height: 9rem;
+    height: 12rem;
+    font-size: 1.5rem;
+    padding: 0 10rem;
+  }
+
+  .logo {
+    width: 14rem;
+    height: 14rem;
+    margin-top: 2rem;
+  }
+
+  .drawer_menu {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+/* モバイル版　メニューボタン */
+
+  .drawer_menu * {
+    font: inherit;
+  }
+
+  .drawer_button {
+    margin-top: -2rem;
+    width: 6rem;
+    height: 4rem;
+    position: relative;
+    background: none;
+    border: none;
+    text-align: center;
+    letter-spacing: 0.1em;
+    z-index: 1001;
+    color: #0073e6;
+  }
+
+  .drawer_button .drawer_bar {
+    width: 6rem;
+    height: 2px;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 0;
+    background-color: #0073e6;
+  }
+
+  .drawer_button .drawer_bar_first {
+    top: 0;
+  }
+
+  .drawer_button .drawer_bar_second {
+    top: 50%;
+  }
+
+  .drawer_button .drawer_bar_third {
+    top: 100%;
+  }
+
+  .drawer_button.active {
+    color: #fff;
+  }
+
+  .drawer_button.active .drawer_bar {
+    width: 6rem;
+    left: 1.3rem;
+    background-color: #fff;
+  }
+
+  .drawer_button.active .drawer_bar_first {
+    transform: rotate(0.7854rad) translateY(-50%);
+    top: 0px;
+  }
+
+  .drawer_button.active .drawer_bar_second {
+    opacity: 0;
+  }
+
+  .drawer_button.active .drawer_bar_third {
+    transform: rotate(-0.7854rad) translateY(-50%);
+    top: calc(100% - 0px);
+  }
+
+  .drawer_button.active .drawer_menu_text {
+    display: none;
+  }
+
+  .drawer_button.active .drawer_close {
+    display: block;
+  }
+
+  .drawer_text {
+    position: absolute;
+    bottom: -4rem;
+    left: 0;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  .drawer_close {
+    letter-spacing: 0.08em;
+    display: none;
+  }
+
+  .drawer_menu a {
+    color: #fff;
+  }
+
+  .drawer_menu .drawer_bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(51, 51, 51, 0.5);
+    display: none;
+    top: 0;
+    left: 0;
+  }
+
+  .drawer_menu .drawer_nav_wrapper {
+    width: 80%;
+    height: 100%;
+    transition: all 0.5s;
+    transform: translate(312px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(-178deg, #0073e6 36.5%, #fff 119.5%);
+  }
+
+  .drawer_menu .drawer_nav_wrapper.open {
+    transform: translate(0);
+  }
+
+  .drawer_menu.left .drawer_nav_wrapper {
+    transform: translate(-80%);
+    right: auto;
+    left: 0;
+  }
+
+  .drawer_menu.left .drawer_nav_wrapper.open {
+    transform: translate(0);
+  }
+
+  .drawer_menu .drawer_nav {
+    padding: 25rem 10rem 10rem;
+    color: #fff;
+  }
+
+  .drawer_menu .drawer_nav li {
+    border-bottom: 1px solid #fff;
+    padding: 2rem 0;
+  }
+
+  .drawer_menu .drawer_nav li h1 {
+    font-size: 4.5rem;
+  }
+
+  .drawer_menu .drawer_nav li h2 {
+    font-size: 3rem;
+  }
+
+  .drawer_sns {
+    display: flex;
+    gap: 5rem;
+    padding-left: 10rem;
+    margin-bottom: 5rem;
+  }
+
+  .drawer_sns img {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .menu-name {
+    display: flex;
+  }
+
+  .menu-name img {
+    width: 15rem;
+    height: 15rem;
+    margin-left: 8rem;
+  }
+
+  .menu-name-text {
+    margin-top: 3rem;
+    color: #333333;
+  }
+
+  /* モバイル版　タイトルエリア */
+
+  .title-area {
+    height: 65rem;
+    padding-top: 12rem;
+  }
+
+  .text-area {
+    height: 45rem;
+  }
+
+  .text-area h1 {
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+    padding-top: 7rem;
+  }
+
+  .text-area h2 {
+    font-size: 3.5rem;
+    letter-spacing: 0.7rem;
+  }
+
+  .img-area {
+    padding-top: 30rem;
+    width: 60rem;
+    height: 65rem;
+  }
+
+  /* モバイル版　会社概要 */
+
+  #information {
+    padding: 10rem 0;
+  }
+
+  #information h1 {
+    font-size: 2.986rem;
+    letter-spacing: 0.2986rem;
+  }
+
+  #information h2 {
+    font-size: 6rem;
+    text-align: center;
+    letter-spacing: 0.6rem;
+  }
+
+  #information h2 span {
+    font-size: 7rem;
+  }
+
+  .info-list {
+    width: 80%;
+  }
+
+  .info-list li {
+    padding: 3rem 0;
+  }
+
+  .info-list li dt {
+    font-size: 2.8rem;
+    white-space: nowrap;
+  }
+
+  .info-list li dd {
+    font-size: 2.488rem;
+  }
+
+  /* モバイル版　アクセス */
+
+  #access {
+    padding: 10rem 0;
+  }
+
+  #access h1 {
+    font-size: 2.986rem;
+    letter-spacing: 0.2986rem;
+  }
+
+  #access h2 {
+    font-size: 6rem;
+    text-align: center;
+    letter-spacing: 0.6rem;
+  }
+
+  #access h2 span {
+    font-size: 7rem;
+  }
+
+  .access-list {
+    padding: 0 10rem;
+  }
+
+  .office-title {
+    font-size: 2.488rem;
+  }
+
+  .text-list li {
+    padding: 3rem 0;
+  }
+
+  .text-list li dt {
+    font-size: 2.3rem;
+    white-space: nowrap;
+  }
+
+  .text-list li dd {
+    font-size: 2.074rem;
   }
 
   .office-info {
@@ -680,65 +939,40 @@ footer .contact-btn a:hover {
     margin: 0 auto;
   }
 
-  .contact-btn a {
-  font-size: 1.5rem;
-  box-shadow: 0.3rem 0.6rem #195998;
-  border: 1px solid #0073e6;
-  /* border-radius: 50px; */
-  border-radius: 3.125rem;
-  text-align: center;
-  padding: 1.5rem;
+  .top-btn p {
+    font-size: 2.074rem;
+    letter-spacing: 0.1493rem;
+    padding: 2rem 4rem;
+    box-shadow: 0.3rem 0.6rem rgb(147, 147, 103);
+    background-color: rgb(250, 211, 70);
+    text-align: center;
+    width: 12.5rem;
+    margin: 10rem 0 5rem 75%;
   }
 
-  .top-btn {
-    font-size: 1.5rem;
-    padding: 1.5rem 3rem;
-    box-shadow: 0.3rem 0.6rem rgb(147, 147, 103);
-    top: 20%;
+  /* モバイル版フッター */
+
+  footer .contact-btn {
+    margin-top: 6.5rem;
   }
 
   footer .contact-btn a {
-    font-size: 1.5rem;
-    padding: 2rem;
+    font-size: 2.074rem;
+    letter-spacing: 0.1493rem;
+    padding: 3rem 4rem;
     box-shadow: 0.3rem 0.6rem rgb(147, 147, 103);
-  }
-
-  .info-list li dt {
-    font-size: 2.5rem;
-    white-space: nowrap;
-  }
-
-  .info-list li dd {
-    font-size: 2rem;
-  }
-
-  .info-list {
-    margin: 0 auto;
-    width: 80%;
-  }
-
-  .office-title h3 {
-    font-size: 3rem;
-  }
-
-  .office-title span {
-    font-size: 2.5rem;
-  }
-
-  .text-list li dt {
-    font-size: 2.5rem;
-    white-space: nowrap;
-  }
-
-  .text-list li dd {
-    font-size: 1.5rem;
+    background-color: rgb(250, 211, 70);
+    border-radius: 7rem;
   }
 
   .footer-area {
     position: relative;
-    height: 27rem;
-    padding-right: 5rem;
-    padding-left: 10rem;
+    height: 45rem;
+  }
+
+  footer .logo {
+    width: 13rem;
+    height: 13rem;
   }
 
   .footer-flex-pc {
@@ -747,16 +981,22 @@ footer .contact-btn a:hover {
 
   .footer-flex-mobile {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: space-around;
   }
 
-  .name {
-    padding: 0;
+  .company-name {
+    font-size: 2.986rem;
+    letter-spacing: 0.1493rem;
   }
 
-  .name a {
-    font-size: 2rem;
+  .postal-code {
+    font-size: 2.074rem;
+    letter-spacing: 0.1493rem;
+  }
+
+  .adress {
+    font-size: 2.074rem;
+    letter-spacing: 0.1493rem;
   }
 
   .footer-nav {
@@ -764,27 +1004,34 @@ footer .contact-btn a:hover {
   }
 
   .contact-info {
-    margin-left: 0;
+    display: block;
+    margin: 3rem 0 0 0;
+  }
+
+  .sns ul {
+    justify-content: space-between;
   }
 
   .sns {
-    width: 9rem;
-    margin-right: 1.5rem;
+    width: 18rem;
+    margin-right: 0;
   }
 
   .sns p {
-    font-size: 1.5rem;
+    font-size: 2.074rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1493rem;
   }
 
   .sns img {
-    width: 2rem;
-    height: 2rem;
+    width: 4rem;
+    height: 4rem;
   }
 
   .copyright {
-    margin-top: 2.5rem;
-    font-size: 1.5rem;
-    padding-bottom: 2rem;
+    margin: 2.5rem 0 10rem;
+    font-size: 1.44rem;
+    letter-spacing: 0.072rem;
   }
 
 }

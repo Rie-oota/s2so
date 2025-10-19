@@ -2,13 +2,14 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>s2so</title>
     <link rel="stylesheet" href="./css/services.css">
   </head>
   <body>
     <header>
-      <a href="./index.html">
+      <a href="#">
         <img class="logo" src="./img/logo.png">
       </a>
       <nav class="nav-list">
@@ -36,6 +37,56 @@
           </li>
         </ul>
       </nav>
+        <div class="drawer_menu">
+          <div class="drawer_bg"></div>
+          <button type="button" class="drawer_button">
+            <span class="drawer_bar drawer_bar_first"></span>
+            <span class="drawer_bar drawer_bar_second"></span>
+            <span class="drawer_bar drawer_bar_third"></span>
+            <span class="drawer_menu_text drawer_text">MENU</span>
+            <span class="drawer_close drawer_text">CLOSE</span>
+          </button>
+          <nav class="drawer_nav_wrapper">
+            <ul class="drawer_nav">
+              <li><a href="./index.html">
+                <h1>HOME</h1>
+                <h2>ホーム</h2>
+              </a></li>
+              <li><a href="./services.html">
+                <h1>SERVICE</h1>
+                <h2>事業内容</h2>
+              </a></li>
+              <li><a href="./company.html">
+                <h1>COMPANY</h1>
+                <h2>会社情報</h2>
+              </a></li>
+              <li><a href="./recruit.html">
+                <h1>RECRUIT</h1>
+                <h2>採用情報</h2>
+              </a></li>
+              <li><a href="./contact.html">
+                <h1>CONTACT</h1>
+                <h2>お問い合わせ</h2>
+              </a></li>
+            </ul>
+            <ul class="drawer_sns">
+              <li>
+                <a href="#"><img class="Instagram" src="./img/Instagram.png"></a>
+              </li>
+              <li>
+                <a href="#"><img class="x" src="./img/x.png"></a>
+              </li>
+            </ul>
+            <div class="menu-name">
+              <img class="logo" src="./img/logo.png">
+              <div class="menu-name-text">
+                <p class="company-name">株式会社S</p>
+                <p class="postal-code">〒 142-0051</p>
+                <p class="adress">東京都品川区平塚1-7-6 502</p>
+              </div>
+            </div>
+          </nav>
+        </div>
     </header>
     <main>
       <div class="inview title-area">
@@ -69,47 +120,50 @@
       </section>
       <div class="background"></div>
       <section id="program-production">
-        <div class="program-production-flex">
+        <div class="services-gide-title">
+          <h2><span>01</span>番組制作事業</h2>
+        </div>
+        <div class="services-gide-flex">
+          <div class="services-gide-text">
+            <p>TV番組、映像コンテンツの企画・制作・キャスティングを行います。
+              TV番組制作を軸として、Web番組、YouTube、CM、プロモーション映像、ショートムービー、イベントなど、あらゆるジャンルを取り扱っております。
+            </p>
+          </div>
           <div class="services-img">
             <img src="./img/media.jpg">
-          </div>
-          <div class="services-text">
-            <span>01</span>
-            <h2>番組制作事業</h2>
-            <p>TV番組、映像コンテンツの企画・制作・キャスティングを行います。
-            TV番組制作を軸として、Web番組、YouTube、CM、プロモーション映像、ショートムービー、イベントなど、あらゆるジャンルを取り扱っております。
-            </p>
           </div>
         </div>
       </section>
       <section id="ses">
-        <div class="ses-flex">
+        <div class="services-gide-title">
+          <h2><span>02</span>SES事業</h2>
+        </div>
+        <div class="services-gide-flex">
           <div class="ses-img">
             <div class="pie-chart-1"></div>
+            <div class="speechBubble">案件：人材<br>３：７</div>
           </div>
-          <div class="services-text">
-            <span>02</span>
-            <h2>SES事業</h2>
-            <p>案件：人材=３：７<br>
-                弊社案件<br>
-                コンサルティング（PM/PMO）案件<br>
-                弊社人材<br>
-                基本的にフリーランス人材<br>
-                コンサル(PM/PMO)人材〜開発人材
+          <div class="services-gide-text">
+            <p>弊社案件<br>
+              コンサルティング（PM/PMO）案件<br>
+              弊社人材<br>
+              基本的にフリーランス人材<br>
+              コンサル(PM/PMO)人材〜開発人材
             </p>
           </div>
         </div>
       </section>
       <section id="employment-introduction">
-        <div class="employment-introduction-flex">
-          <div class="services-img">
-            <img src="./img/syoukai.jpg">
-          </div>
-          <div class="services-text">
-            <span>03</span>
-            <h2>人材紹介事業</h2>
+        <div class="services-gide-title">
+          <h2><span>03</span>人材紹介事業</h2>
+        </div>
+        <div class="services-gide-flex">
+          <div class="services-gide-text">
             <p>テキストテキストテキストテキストテキストテキストテキストテキスト
             テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          </div>
+          <div class="services-img">
+            <img src="./img/syoukai.jpg">
           </div>
         </div>
       </section>
@@ -129,8 +183,10 @@
         <div class="contact-area-btn">
           <a href="./contact.html">無料で相談する</a>
         </div>
-        <div class="top-btn">TOP</div>
       </section>
+      <div class="btn-area">
+        <div class="top-btn"><p>TOP</p></div>
+      </div>
     </main>
     <footer>
       <div class="footer-area">
