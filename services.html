@@ -5,6 +5,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>s2so</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/services.css">
   </head>
   <body>
@@ -32,10 +34,10 @@
           <li>
             <a href="#"><img class="x" src="./img/x.png"></a>
           </li>
-          <li class="contact-btn">
-            <a href="./contact.html">お問い合わせ</a>
-          </li>
         </ul>
+        <div class="contact-btn">
+          <a href="./contact.html"><p>お問い合わせ</p></a>
+        </div>
       </nav>
         <div class="drawer_menu">
           <div class="drawer_bg"></div>
@@ -95,35 +97,35 @@
           <h2>事業内容</h1>
         </div>
         <div class="img-area">
-          <img src="./img/service.jpg">
+          <img src="./img/office.jpg">
         </div>
       </div>
       <section id="s-services">
-        <div class="services-title">
+        <div class="inview services-title">
           <h1>Sの事業</h1>
           <h2><span>S</span>ERVICE</h2>
         </div>
-        <div class="circle-flex">
+        <div class="inview circle-flex">
           <p class="services-gide">株式会社Sでは、TV番組・ショートムービー・YouTube等を取り扱う番組制作事業と、
           最適なIT人材を派遣するSES事業、人材紹介事業を主軸にビジネスを展開しています。</p>
           <div class="circle-position">
             <div class="circle">
               <img class="circle-logo" src="./img/logo.png">
             </div>
-            <p class="circle-title program-production-circle"><a href="#">番組制作事業</a></p>
+            <a href="#program-production" class="circle-title program-production-circle"><span>番組制作事業</span></a>
             <div class="s-services-flex">
-              <p class="circle-title ses-circle"><a href="#">SES事業</a></p>
-              <p class="circle-title employment-introduction-circle"><a href="#" class="employment-introduction">人材紹介事業</a></p>
+              <a href="#ses" class="circle-title ses-circle"><span>SES事業</span></a>
+              <a href="#employment-introduction" class="circle-title employment-introduction-circle"><span>人材紹介事業</span></a>
             </div>
           </div>
         </div>
       </section>
-      <div class="background"></div>
+      <div class="inview background"></div>
       <section id="program-production">
-        <div class="services-gide-title">
+        <div class="inview services-gide-title">
           <h2><span>01</span>番組制作事業</h2>
         </div>
-        <div class="services-gide-flex">
+        <div class="inview services-gide-flex">
           <div class="services-gide-text">
             <p>TV番組、映像コンテンツの企画・制作・キャスティングを行います。
               TV番組制作を軸として、Web番組、YouTube、CM、プロモーション映像、ショートムービー、イベントなど、あらゆるジャンルを取り扱っております。
@@ -133,12 +135,58 @@
             <img src="./img/media.jpg">
           </div>
         </div>
+        <div class="achievement">
+          <div class="achievement-title">
+            <h3>実績紹介</h3>
+            <h4><span>A</span>CHIEVEMENT</h4>
+          </div>
+          <div class="swiper swiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="achievement-content">
+                  <img src="./img/tv.jpg">
+                  <div class="swiper-text">
+                    <h5>テレビ番組の制作</h5>
+                    <p>テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキスト</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="achievement-content">
+                  <img src="./img/zinzai.jpg">
+                  <div class="swiper-text">
+                    <h5>CMの制作</h5>
+                    <p>テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキスト</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="achievement-content">
+                  <img src="./img/syoukai.jpg">
+                  <div class="swiper-text">
+                    <h5>ショートムービーの制作</h5>
+                    <p>テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキスト</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
       </section>
       <section id="ses">
-        <div class="services-gide-title">
+        <div class="inview services-gide-title">
           <h2><span>02</span>SES事業</h2>
         </div>
-        <div class="services-gide-flex">
+        <div class="inview services-gide-flex">
           <div class="ses-img">
             <div class="pie-chart-1"></div>
             <div class="speechBubble">案件：人材<br>３：７</div>
@@ -152,12 +200,58 @@
             </p>
           </div>
         </div>
+        <div class="achievement">
+          <div class="achievement-title">
+            <h3>実績紹介</h3>
+            <h4><span>A</span>CHIEVEMENT</h4>
+          </div>
+          <div class="swiper swiper3">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="achievement-content">
+                  <img src="./img/service.jpg">
+                  <div class="swiper-text">
+                    <h5>アプリ開発</h5>
+                    <p>テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキスト</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="achievement-content">
+                  <img src="./img/engineer.jpg">
+                  <div class="swiper-text">
+                    <h5>システム構築</h5>
+                    <p>テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキスト</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="achievement-content">
+                  <img src="./img/programar.jpg">
+                  <div class="swiper-text">
+                    <h5>サイト制作</h5>
+                    <p>テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキスト</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
       </section>
       <section id="employment-introduction">
-        <div class="services-gide-title">
+        <div class="inview services-gide-title">
           <h2><span>03</span>人材紹介事業</h2>
         </div>
-        <div class="services-gide-flex">
+        <div class="inview services-gide-flex">
           <div class="services-gide-text">
             <p>テキストテキストテキストテキストテキストテキストテキストテキスト
             テキストテキストテキストテキストテキストテキストテキストテキスト</p>
@@ -167,7 +261,7 @@
           </div>
         </div>
       </section>
-      <section id="contact-area">
+      <section id="contact-area" class="inview">
         <h1 class="title">
           <span>\ C</span>
           <span>O</span>
@@ -178,18 +272,18 @@
           <span>T /</span>
         </h1>
         <h2>お気軽にご相談ください</h2>
-        <p>番組制作・IT・人材紹介に関してお困りなら株式会社Sにご相談ください。<br>
+        <p class="contact-text">番組制作・IT・人材紹介に関してお困りなら株式会社Sにご相談ください。<br>
         人材、制作、システム開発、様々なお悩みを私たちが解決します。</p>
         <div class="contact-area-btn">
-          <a href="./contact.html">無料で相談する</a>
+          <a href="./contact.html"><p>無料で相談する</p></a>
         </div>
       </section>
-      <div class="btn-area">
+      <div class="inview btn-area">
         <div class="top-btn"><p>TOP</p></div>
       </div>
     </main>
     <footer>
-      <div class="footer-area">
+      <div class="inview footer-area">
         <div class="footer-flex-mobile">
           <div class="footer-flex-pc">
             <div class="name">
@@ -238,8 +332,8 @@
                 </li>
               </ul>
             </div>
-            <div class="contact-btn">
-              <a href="./contact.html">お問い合わせ</a>
+            <div class="footer-contact-btn">
+              <a href="./contact.html"><p>お問い合わせ</p></a>
             </div>
           </div>
         </div>
