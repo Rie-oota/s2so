@@ -1,48 +1,3 @@
-/* タイトルエリア */
-
-.title-area {
-  width: 100%;
-  height: 35rem;
-  position: relative;
-  padding-top: 5rem;
-}
-
-.text-area {
-  width: 50%;
-  height: 25rem;
-  background: linear-gradient(158deg, #0073e6 36.5%, #fff 119.5%);
-  padding-left: 6.25rem;
-  color: #fff;
-}
-
-.text-area h1 {
-  font-family: 'Segoe UI Symbol',sans-serif;
-  padding-top: 3.75rem;
-  font-size: 4rem;
-  letter-spacing: 0.4rem;
-}
-
-.text-area h2 {
-  font-size: 2rem;
-  letter-spacing: 0.4rem;
-}
-
-.img-area {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50rem;
-  height: 35rem;
-  padding-top: 9rem;
-}
-
-.title-area img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 3rem;
-}
-
 /* タブエリア */
 
 #recruit-btn-area {
@@ -91,17 +46,26 @@
   display: block;
 }
 
-/* 新卒採用 */
+/* 採用概要 */
 
-.background {
+.new-graduate-text {
+  text-align: center;
+  font-size: 1rem;
+  color: #333333;
+  letter-spacing: 0.072rem;
+  line-height: 1.5;
+  margin-bottom: 5rem;
+}
+
+.section-background--blue {
   padding-bottom: 7rem;
   background-color: #0073e6;
 }
 
-.background {
+.section-background--blue {
   position: relative;
 }
-.background::before {
+.section-background--blue::before {
   border-color: transparent #fff transparent transparent;
   border-style: solid;
   border-width: 4rem 100vw 0 0;
@@ -141,7 +105,6 @@
   font-size: 3rem;
   text-align: center;
   color: #0073e6;
-  padding-bottom: 1rem;
   margin: 1rem auto 5rem;
   letter-spacing: 0.5rem;
 }
@@ -251,57 +214,51 @@
 /* 募集要項 */
 
 .general-position {
-  padding: 13rem 0 10rem;
+  padding: 0 0 10rem;
 }
 
 .job-description-title-area {
-  text-align: center;
+  background-color: #0073e6;
+  border-radius: 3rem;
+  margin-left: 7rem;
+  width: 20rem;
+  padding: 2rem;
 }
 
 .job-description-title-area h3 {
   font-family: 'Franklin Gothic Medium',sans-serif;
   font-weight: 900;
   font-size: 2.488rem;
-  color: #0073e6;
+  color: #fff;
   letter-spacing: 0.5rem;
   position: relative;
-}
-
-.job-description-title-area h3:before,h3:after{
-  position:absolute;
-  top: 50%;
-  width: 4rem;
-  content:'';
-  border-top:solid 0.2rem #0073e6;
-}
-
-.job-description-title-area h3:before {
-  left: 38%;
-}
-
-.job-description-title-area h3:after{
-  right: 38%;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .job-description-title-area h4 {
   font-size: 1.728rem;
-  color: #0073e6;
+  color: #fff;
   letter-spacing: 0.1728rem;
-  padding-bottom: 1rem;
-  margin: 1rem auto 5rem;
+  text-align: center;
+  background-color: rgb(247, 194, 4);
+  position: absolute;
+  left: 15rem;
+  border-radius: 3rem;
+  padding: 0 1rem;
 }
 
 .job-description-title-area h4 span {
-  color: rgb(247, 194, 4);
   font-size: 2.074rem;
 }
 
 .work-content {
-  margin: 3rem 7rem 5rem;
+  margin: 5.5rem auto 5rem;
   font-size: 1rem;
   color: #333333;
   letter-spacing: 0.072rem;
   line-height: 1.5;
+  width: 70%;
 }
 
 .employment-title {
@@ -518,32 +475,6 @@
 
   /* モバイル版　タイトルエリア */
 
-  .title-area {
-    height: 65rem;
-    padding-top: 12rem;
-  }
-
-  .text-area {
-    height: 45rem;
-  }
-
-  .text-area h1 {
-    font-size: 5rem;
-    letter-spacing: 0.5rem;
-    padding-top: 7rem;
-  }
-
-  .text-area h2 {
-    font-size: 3rem;
-    letter-spacing: 0.7rem;
-  }
-
-  .img-area {
-    padding-top: 30rem;
-    width: 60rem;
-    height: 65rem;
-  }
-
   .tab p {
     font-size: 2.986rem;
   }
@@ -566,13 +497,11 @@
     font-size: 2.986rem;
   }
 
-  /* .work-content {
+  .new-graduate-text {
     font-size: 2.986rem;
-    letter-spacing: 0.072rem;
-    line-height: 1.5;
-  } */
+  }
 
-    .services-list {
+  .services-list {
     height: 100rem;
   }
 
@@ -595,7 +524,7 @@
     margin-bottom: 5rem;
   }
 
-    .service1 p {
+  .service1 p {
     top: 25%;
     left: 17%;
     font-size: 2.986rem;
@@ -630,17 +559,13 @@
 
   /* モバイル版募集要項 */
 
+  .job-description-title-area {
+    width: 30rem;
+  }
+
   .job-description-title-area h3 {
     font-size: 5rem;
     letter-spacing: 0.5rem;
-  }
-
-  .job-description-title-area h3:before {
-    left: 33%;
-  }
-
-  .job-description-title-area h3:after{
-    right: 33%;
   }
 
   .job-description-title-area h4 {
@@ -654,6 +579,7 @@
 
   .work-content {
     font-size: 2.986rem;
+    margin: 8rem auto 5rem;
   }
 
   .employment-title {

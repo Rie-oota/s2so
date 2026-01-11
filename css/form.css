@@ -1,51 +1,6 @@
-/* タイトルエリア */
-
-.title-area {
-  width: 100%;
-  height: 35rem;
-  position: relative;
-  padding-top: 5rem;
-}
-
-.text-area {
-  width: 50%;
-  height: 25rem;
-  background: linear-gradient(158deg, #0073e6 36.5%, #fff 119.5%);
-  padding-left: 6.25rem;
-  color: #fff;
-}
-
-.text-area h1 {
-  font-family: 'Segoe UI Symbol',sans-serif;
-  padding-top: 3.75rem;
-  font-size: 4rem;
-  letter-spacing: 0.4rem;
-}
-
-.text-area h2 {
-  font-size: 2rem;
-  letter-spacing: 0.4rem;
-}
-
-.img-area {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50rem;
-  height: 35rem;
-  padding-top: 9rem;
-}
-
-.title-area img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 3rem;
-}
-
 /* お問い合わせ */
 
-.contact-gide {
+.contact-guide {
   margin: 5rem 0;
   text-align: center;
   line-height: 3rem;
@@ -53,29 +8,29 @@
   justify-content: center;
 }
 
-.gide-text p {
+.guide-text p {
   border-bottom: 0.125rem dotted #0073e691;
   font-size: 1.44rem;
   color: #333333;
 }
 
-.contact-gide img {
+.contact-guide img {
   margin: 3.5rem 0 0 0.5rem;
   width: 6rem;
   height: 6rem;
 }
 
 
-.background {
+.section-background--blue {
   padding-bottom: 7rem;
   background-color: #0073e6;
 }
 
-.background {
+.section-background--blue {
   position: relative;
 }
 
-.background::before {
+.section-background--blue::before {
   border-color: transparent #fff transparent transparent;
   border-style: solid;
   border-width: 4rem 100vw 0 0;
@@ -132,49 +87,23 @@
 }
 
 @media screen and (max-width: 767px) {
-    /* モバイル版　タイトルエリア */
-
-  .title-area {
-    height: 65rem;
-    padding-top: 12rem;
-  }
-
-  .text-area {
-    height: 45rem;
-  }
-
-  .text-area h1 {
-    font-size: 5rem;
-    letter-spacing: 0.5rem;
-    padding-top: 7rem;
-  }
-
-  .text-area h2 {
-    font-size: 3rem;
-    letter-spacing: 0.7rem;
-  }
-
-  .img-area {
-    padding-top: 30rem;
-    width: 60rem;
-    height: 65rem;
-  }
+  /* モバイル版　タイトルエリア */
 
   .contact-form {
     width: 100%;
     margin: 0;
   }
 
-  .contact-gide {
+  .contact-guide {
     margin: 10rem 0;
   }
 
-  .gide-text p {
+  .guide-text p {
     font-size: 2rem;
     line-height: 3.5rem;
   }
 
-  .contact-gide img {
+  .contact-guide img {
     width: 8rem;
     height: 8rem;
   }
@@ -194,6 +123,8 @@
     font-size: 7rem;
   }
 
+  /* お問い合わせフォームページではフッターに問い合わせボタンが無いため、
+   TOPボタン用に footer-contact-btn の余白を調整 */
   .footer-contact-btn {
     margin-left: 5rem;
   }
