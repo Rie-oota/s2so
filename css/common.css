@@ -288,7 +288,7 @@ header .logo:hover {
 
 .sns ul {
   display: flex;
-  justify-content: ;
+  justify-content: center;
   list-style: none;
   padding: 1rem;
 }
