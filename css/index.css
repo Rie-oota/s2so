@@ -851,10 +851,11 @@
   }
 
   .info-list {
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
     width: 60%;
-    margin-top: 21rem;
+    margin-top: 5rem;
+    margin-left: 28rem;
+    transform: none;
   }
 
   .info-list li dt {
@@ -895,10 +896,11 @@
   }
 
   .recruit-text {
+    position: static;
     width: 60%;
-    margin-top: 21rem;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 5rem;
+    margin-left: 8rem;
+    transform: none;
   }
 
   .recruit-text p {
