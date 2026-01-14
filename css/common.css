@@ -254,8 +254,16 @@ header .logo:hover {
   width: 7.5rem;
 }
 
+.footer-company ul {
+  padding: 0 1rem;
+}
+
 .footer-recruit {
   width: 7.5rem;
+}
+
+.footer-recruit ul {
+  padding: 0 1rem;
 }
 
 .footer-nav ul li {
