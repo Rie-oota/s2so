@@ -60,11 +60,10 @@
 .section-background--blue {
   padding-bottom: 7rem;
   background-color: #0073e6;
+  position: relative;
+  overflow: hidden;
 }
 
-.section-background--blue {
-  position: relative;
-}
 .section-background--blue::before {
   border-color: transparent #fff transparent transparent;
   border-style: solid;
@@ -246,6 +245,7 @@
   left: 15rem;
   border-radius: 3rem;
   padding: 0 1rem;
+  white-space: nowrap;
 }
 
 .job-description-title-area h4 span {

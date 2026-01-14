@@ -47,7 +47,7 @@
   font-size: 4rem;
 }
 
-.services-gide {
+.services-guide {
   font-size: 1rem;
   letter-spacing: 0.05rem;
   width: 27rem;
@@ -87,8 +87,8 @@
 }
 
 #s-services .circle-title {
-  width: 10rem;
-  height: 10rem;
+  width: 11rem;
+  height: 11rem;
   line-height: 10rem;
   background-color: #0073e6;
   box-shadow: 0.4rem 0.4rem 0.4rem #7ebaf6;
@@ -111,6 +111,10 @@
   padding-bottom: 0.3rem;
 }
 
+.employment-introduction-circle span {
+  font-size: 0.9rem;
+}
+
 .circle-position {
   position: relative;
   margin: 0 auto;
@@ -118,7 +122,7 @@
 
 .program-production-circle {
   position: absolute;
-  top: -5rem;
+  top: -6rem;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -137,11 +141,10 @@
 .section-background--blue {
   padding-bottom: 7rem;
   background-color: #0073e6;
+  position: relative;
+  overflow: hidden;
 }
 
-.section-background--blue {
-  position: relative;
-}
 .section-background--blue::before {
   border-color: transparent #ffffff transparent transparent;
   border-style: solid;
@@ -152,7 +155,7 @@
   position: absolute;
 }
 
-.services-gide-title span {
+.services-guide-title span {
   font-size: 5rem;
   color: #0073e6;
   font-weight: 700;
@@ -160,7 +163,7 @@
   margin-right: 1rem;
 }
 
-.services-gide-title h2 {
+.services-guide-title h2 {
   font-size: 2.488rem;
   letter-spacing: 0.2985rem;
   margin: 2rem 0 3rem;
@@ -174,18 +177,18 @@
   margin-top: 5rem;
 }
 
-.services-gide-title {
+.services-guide-title {
   padding: 0 8rem;
 }
 
-.services-gide-flex {
+.services-guide-flex {
   display: flex;
   justify-content: space-between;
   gap: 5rem;
   padding: 0 8rem;
 }
 
-.services-gide-text {
+.services-guide-text {
   width: 50%;
   font-size: 1rem;
   letter-spacing: 0.05rem;
@@ -273,17 +276,6 @@
   padding-bottom: 5rem;
 }
 
-#employment-introduction {
-  padding: 0 8rem 5rem;
-}
-
-#employment-introduction img {
-  border-radius: 1.875rem;
-  object-fit: cover;
-  width: 40rem;
-  height: 20rem;
-}
-
 #ses h3 {
   font-family: 'Franklin Gothic Medium',sans-serif;
   font-weight: 900;
@@ -318,6 +310,10 @@
 #ses h4 span {
   color: rgb(247, 194, 4);
   font-size: 1.728rem;
+}
+
+#consulting {
+  padding-bottom: 7rem;
 }
 
 
@@ -473,7 +469,7 @@
     margin: 0 8rem;
   }
 
-  .services-gide {
+  .services-guide {
     font-size: 2.986rem;
     letter-spacing: 0.1493rem;
     margin-top: 5rem;
@@ -496,6 +492,10 @@
     letter-spacing: 0.144rem;
   }
 
+  .consulting-circle span {
+    font-size: 1.7rem;
+  }
+
   .circle {
     margin: 10rem auto;
     width: 40rem;
@@ -513,19 +513,19 @@
 
   /* モバイル版　事業内容 詳細 */
 
-  .services-gide-title span {
+  .services-guide-title span {
     font-size: 7rem;
   }
 
-  .services-gide-title h2 {
+  .services-guide-title h2 {
     font-size: 5rem;
   }
 
-  .services-gide-flex {
+  .services-guide-flex {
     flex-direction: column-reverse;
   }
 
-  .services-gide-text {
+  .services-guide-text {
     font-size: 2.986rem;
     margin: 0 auto;
     width: 100%;
@@ -599,11 +599,11 @@
     font-size: 2.5rem;
   }
 
-  #ses .services-gide-flex {
+  #ses .services-guide-flex {
     flex-direction: column;
   }
 
-  #employment-introduction img {
+  #consulting img {
     object-fit: cover;
     width: 60rem;
     height: 30rem;

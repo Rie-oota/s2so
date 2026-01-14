@@ -20,14 +20,11 @@
   height: 6rem;
 }
 
-
 .section-background--blue {
   padding-bottom: 7rem;
   background-color: #0073e6;
-}
-
-.section-background--blue {
   position: relative;
+  overflow: hidden;
 }
 
 .section-background--blue::before {
