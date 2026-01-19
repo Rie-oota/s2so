@@ -5,6 +5,7 @@ html {
   box-sizing: border-box;
   font-size: calc(100vw / (1440 / 16));
   font-family:   sans-serif,'Yu Gothic UI', 'ヒラギノ角ゴシック','Hiragino Sans';
+  background-color: #fff;
 }
 
 * {
@@ -110,6 +111,7 @@ header {
 
 header .logo:hover {
   opacity: 0.5;
+  transition: 0.5s ease;
 }
 
 .nav-list ul {
@@ -129,6 +131,7 @@ header .logo:hover {
 
 .nav-text a:hover {
   opacity: 0.3;
+  transition: 0.5s ease;
 }
 
 .nav-list img {
@@ -145,7 +148,7 @@ header .logo:hover {
   border-radius: 7rem;
   text-align: center;
   padding: 0.9375rem;
-  transition: 0.3s ease;
+  transition: 0.5s ease;
   width: 10rem;
   position: absolute;
   top: 0.7rem;
@@ -156,6 +159,7 @@ header .logo:hover {
   background-color: #0073e68d;
   box-shadow: unset;
   transform: translate(0.1875rem,0.3125rem);
+  transition: 0.5s ease;
 }
 
 .drawer_menu {
@@ -192,6 +196,7 @@ header .logo:hover {
 
 .name:hover {
   background-color: #fff;
+  transition: 0.5s ease;
 }
 
 .company-name {
@@ -231,10 +236,12 @@ header .logo:hover {
 
 .footer-nav p:hover {
   border-bottom: 1px solid rgb(253, 239, 119);
+  transition: 0.5s ease;
 }
 
 .footer-nav p a:hover {
   color: rgb(253, 239, 119);
+  transition: 0.5s ease;
 }
 
 .footer-nav a {
@@ -244,6 +251,7 @@ header .logo:hover {
 .footer-nav li a:hover{
   color: rgb(250, 240, 149);
   border-bottom: 1px solid rgb(250, 240, 149);
+  transition: 0.5s ease;
 }
 
 .footer-services {
@@ -315,13 +323,13 @@ header .logo:hover {
   padding: 2rem 4rem;
   font-size: 1.2rem;
   letter-spacing: 0.06rem;
-  transition: 0.3s ease;
 }
 
 .footer-contact-btn p:hover {
   background-color: rgb(250, 240, 149);
   box-shadow: unset;
   transform: translate(0.1875rem,0.3125rem);
+  transition: 0.5s ease;
 }
 
 .copyright {

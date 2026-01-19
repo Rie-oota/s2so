@@ -5,6 +5,16 @@ $(function () {
   });
 });
 
+// ファーストビューを抜けるとトップ遷移ボタンが表示される
+const $topBtn = $('.top-btn');
+$(window).on('scroll', function () {
+  if ($(this).scrollTop() > 300) {
+    $topBtn.addClass('is-show');
+  } else {
+    $topBtn.removeClass('is-show');
+  }
+});
+
 // トップ遷移ボタンをクリックするとトップに遷移する
 $(function() {
   $(".top-btn").click(function(){
