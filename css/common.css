@@ -376,7 +376,7 @@ header .logo:hover {
   header {
     height: 12rem;
     font-size: 1.5rem;
-    padding: 0 2rem;
+    padding: 0 10rem;
   }
 
   .logo {
@@ -400,8 +400,6 @@ header .logo:hover {
   }
 
   .common-text-area {
-    width: 100%;
-    padding-left: 2rem;
     height: 45rem;
   }
 
@@ -418,7 +416,7 @@ header .logo:hover {
 
   .common-img-area {
     padding-top: 30rem;
-    width: 100%;
+    width: 60rem;
     height: 65rem;
   }
 
@@ -528,7 +526,7 @@ header .logo:hover {
     width: 80%;
     height: 100%;
     transition: all 0.5s;
-    transform: translateX(100%);
+    transform: translate(800px);
     position: fixed;
     top: 0;
     right: 0;
