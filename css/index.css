@@ -108,31 +108,20 @@
 }
 
 .services-list {
-  margin: 5rem 8rem;
-  position: relative;
-  height: 30rem;
+  margin: 5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  align-items: stretch;
+  height: auto;
 }
 
 .services-list li {
-  position: absolute;
-  top: 0;
-  z-index: 1;
+  position: relative;
+  width: 20rem;
+  height: 30rem;
   overflow: hidden;
   border-radius: 0.5rem;
-  height: 30rem;
-}
-
-.service1 {
-  left: 0;
-}
-
-.service2 {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.service3 {
-  right: 0;
 }
 
 .services-list img {
@@ -525,6 +514,7 @@
   border-bottom: 2px dotted #0073e6;
   width: 50%;
   margin: 2rem auto 3rem;
+  white-space: nowrap;
 }
 
 .contact-text {
@@ -896,4 +886,5 @@
     text-align: center;
     width: 12.5rem;
   }
+
 }

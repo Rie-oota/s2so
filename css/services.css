@@ -51,8 +51,8 @@
   font-size: 1rem;
   letter-spacing: 0.05rem;
   width: 27rem;
-  height: 10rem;
   line-height: 2;
+  align-self: flex-start;
   color: #333333;
   background-color: #ffffff75;
   padding: 1rem;
@@ -63,7 +63,8 @@
 .circle-flex {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 4rem;
   margin: 8rem 8rem 0;
 }
 
@@ -240,11 +241,11 @@
 }
 
 #program-production h3:before {
-  left: 38%;
+  left: calc(50% - 8rem);
 }
 
 #program-production h3:after{
-  right: 38%;
+  right: calc(50% - 8rem);
 }
 
 #program-production h4 {
@@ -258,8 +259,11 @@
   font-size: 1.728rem;
 }
 
-.achievement {
+.achievement-bg {
   background-color: rgb(246, 246, 252);
+}
+
+.achievement {
   padding: 3rem 8rem;
   margin-top: 3rem;
 }
@@ -333,6 +337,7 @@
   border-bottom: 2px dotted #0073e6;
   width: 50%;
   margin: 2rem auto 3rem;
+  white-space: nowrap;
 }
 
 .contact-text {
