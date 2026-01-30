@@ -3,6 +3,7 @@
 #keyvisual {
   width: 100%;
   padding-top: 5rem;
+  position: relative;
 }
 
 .swiper-wrapper {
@@ -10,15 +11,18 @@
   overflow: hidden;
 }
 
-.swiper-img,
-.swiper-slide img {
-  max-width: 63rem;
-  height: 37rem;
+.swiper-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* ← 全スライド共通の比率にする */
+  height: clamp(600px, 85vh, 1000px);
+  overflow: hidden;
 }
 
-.swiper-img {
-  overflow: hidden;
-  position: relative;
+.swiper-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* ← はみ出す分は切る */
+  display: block;
 }
 
 .swiper-slide img {
@@ -40,30 +44,43 @@
   transform: scale(1.15);
 }
 
-#keyvisual h1 {
-  font-size: 4rem;
-  color: #fff;
-  background-color: #0073e6;
-  padding: 1rem;
+.kv-overlay{
   position: absolute;
-  top: 13rem;
-  left: 5rem;
+  inset: 0;
   z-index: 5;
-  transform: rotate(-5deg);
+  pointer-events: none;
+
+  padding-left: 4rem;
+  padding-top: 18rem; /* 基本（PC想定） */
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-start;
 }
 
-.keyvisual-text {
-  font-size: 1.3rem;
-  color: #0073e6;
-  background-color: #fff;
-  padding: 1rem;
-  position: absolute;
-  top: 28rem;
-  left: 7rem;
-  z-index: 5;
-  transform: rotate(-3deg);
-  border: 2px solid #0073e6;
+#keyvisual h1{
+  position: static;     /* ← absolute をやめる */
+  font-size: clamp(1.6rem, 4vw, 4rem);
+  padding: 0.6em 0.9em;
+  transform: rotate(-5deg);
+  background-color: #0073e6;
+  color: #fff;
+  width: fit-content;
 }
+
+.keyvisual-text{
+  position: static;     /* ← absolute をやめる */
+  font-size: clamp(0.9rem, 1.4vw, 1.3rem);
+  padding: 0.8em 1em;
+  transform: rotate(-3deg);
+  background-color: #fff;
+  border: 2px solid #0073e6;
+  color: #0073e6;
+  max-width: min(42rem, 86vw);
+  line-height: 1.5;
+}
+
 
 /* 事業内容 */
 
@@ -273,12 +290,13 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  justify-content: center;
+  justify-items: center;
 }
 
 .program-card {
   color: #333333;
-  width: 20rem;
+  width: 100%;
+  max-width: 20rem;
   background-color: #fff;
   height: 26rem;
   box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.05);
@@ -294,16 +312,21 @@
   margin: 1rem auto;
 }
 
+.program-card-text {
+  width: fit-content;     /* 中身の幅にする */
+  margin: 0 auto;         /* ブロックを中央へ */
+  text-align: left;       /* 文字は左寄せ */
+  padding: 0 1rem;
+}
+
 .program-card h3 {
   font-size: 1rem;
   text-align: left;
-  margin-left: 2.5rem;
 }
 
 .program-card p {
   font-size: 0.833rem;
   text-align: left;
-  margin-left: 2.5rem;
   margin-top: 0.5rem;
 }
 
@@ -335,7 +358,6 @@
   font-size: 4.7rem;
   letter-spacing: 0.47rem;
   color: #fff;
-  text-align: center;
 }
 
 .title-area h2 {
@@ -382,7 +404,8 @@
 .company-link-btn {
   position: absolute;
   bottom: 4rem;
-  left: 22rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .company-link-btn p {
@@ -442,11 +465,8 @@
   padding: 3.75rem 7.5rem;
   background-color: rgba(250, 230, 55, 0.452);
   width: 45%;
-  margin-left: 49.5rem;
-}
-
-#recruit .title-area h2 {
-  margin-left: 2.5rem;
+  margin-left: auto;   /* ← 固定remをやめる */
+  margin-right: 0;
 }
 
 .recruit-text {
@@ -473,7 +493,8 @@
 .recruit-link-btn {
   position: absolute;
   bottom: 4rem;
-  right: 22rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .recruit-link-btn p {
@@ -503,7 +524,7 @@
 #contact-area {
   text-align: center;
   background-color: rgb(246, 246, 252);
-  padding:5rem 0;
+  padding:5rem 0 10rem;
 }
 
 #contact-area h1 {
@@ -549,13 +570,10 @@
   transform: translate(0.1875rem,0.3125rem);
 }
 
-.top-btn {
+.top-btn{
   position: fixed;
-  right: 2rem;
   bottom: 2rem;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  right: 2rem; /* ← まずは安全に画面内 */
   z-index: 1000;
 }
 
@@ -571,6 +589,7 @@
   box-shadow: 0.1875rem 0.3125rem rgb(147, 147, 103);
   border: 0.125rem solid rgb(147, 147, 103);
   border-radius: 7rem;
+  max-width: calc(100vw - 24px);
 }
 
 .top-btn.is-show {
@@ -584,306 +603,612 @@
   transform: translate(0.1875rem,0.3125rem);
 }
 
-@media screen and (max-width: 767px) {
-
-/* モバイル版　メインビジュアル */
-
-#keyvisual {
-  width: 100%;
-  padding-top: 6.5rem;
+@media (min-width: 1400px){
+  .kv-overlay{
+    padding-top: 40rem;
+  }
+    .top-btn{
+    right: calc((100vw - 1200px) / 2 + 2rem);
+  }
 }
 
-.swiper-wrapper {
-  margin-left: 0;
+@media (min-width: 1201px){
+  .top-btn{
+    right: clamp(1.5rem, calc((100vw - 1200px) / 2 + 1.5rem), 4rem);
+  }
 }
 
-@media (max-width: 767px) {
-  .swiper-img,
-  .swiper-slide img {
-    max-width: none;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+:root{ --kv-gutter: 16px; } /* 左余白はお好みで */
+
+  .kv-overlay{
+    padding-top: 22rem;
+  }
+
+  /* keyvisual内だけ、スライダーを“画面幅100vw”にする */
+  #keyvisual .swiper{
+    width: 100vw;
+    margin-left: calc(50% - 50vw); /* 画面中央基準でビューポートに揃える */
+    box-sizing: border-box;
+    overflow: hidden;
+    clip-path: inset(0); /* 端のにじみ対策 */
+  }
+
+  /* 以前の margin-left / padding-left の影響を完全に殺す */
+  #keyvisual .swiper-wrapper{
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* max-width制限が残ってると“右が余る”見え方になるので必ず解除 */
+  #keyvisual .swiper-img,
+  #keyvisual .swiper-slide img{
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  /* 拡大の基準を中央に固定（ズレ防止） */
+  #keyvisual .swiper-slide img{
+    transform-origin: center center;
+    display: block;
+  }
+
+  #keyvisual .swiper-slide,
+  #keyvisual .swiper-img{
     width: 100%;
-    height: 65rem;
-  }
-}
-
-.swiper-img {
-  overflow: hidden;
-  position: relative;
-}
-
-.swiper-slide img {
-  object-fit: cover;
-  object-position: center;
-  transform: scale(1);
-  transition: transform 7s linear;
-}
-
-#keyvisual h1 {
-  font-size: 5rem;
-  color: #fff;
-  background-color: #0073e6;
-  padding: 1rem;
-  position: absolute;
-  top: 40rem;
-  left: 5rem;
-  z-index: 5;
-  transform: rotate(-5deg);
-}
-
-.keyvisual-text {
-  font-size: 1.7rem;
-  color: #0073e6;
-  background-color: #fff;
-  padding: 1rem;
-  position: absolute;
-  top: 55rem;
-  left: 7rem;
-  z-index: 5;
-  transform: rotate(-3deg);
-  border: 1px solid #0073e6;
-}
-
-/* モバイル版　事業内容 */
-
-  #services h1 {
-    font-size: 2.986rem;
-    letter-spacing: 0.2986rem;
+    height: 100%;
   }
 
-  #services h2 {
-    font-size: 6rem;
-    text-align: center;
-    letter-spacing: 0.6rem;
-  }
-
-  #services h2 span {
-    font-size: 7rem;
+  #keyvisual .swiper-img,
+  #keyvisual .swiper-slide img{
+    max-width: none !important; /* 63rem殺す */
+    width: 100% !important;
+    height: 100% !important;   /* ← “枠を埋める” */
+    object-fit: cover;         /* ← はみ出しはトリミング */
+    display: block;
   }
 
   .services-list {
-    height: 100rem;
-  }
+  gap: 4vw;
+}
 
-  .services-list li {
-    position: relative;
-    z-index: 1;
+  /* li：absolute解除してカード化 */
+  .services-list li{
+    position: relative;           /* absolute → relative */
+    height: auto;                 /* 30rem固定を解除 */
+    width: min(28vw, 240px);      /* タブレットで3枚おさまる幅 */
     overflow: hidden;
     border-radius: 0.5rem;
   }
 
-  .services-list img {
+  /* 画像：カード幅に追従して綺麗にトリミング */
+  .services-list img{
+    width: 100%;                  /* 20rem固定を解除 */
+    height: auto;
+    aspect-ratio: 2 / 3;          /* だいたい縦長の比率 */
+    object-fit: cover;
+    display: block;
+  }
+
+    /* 中央ドンの文字を少し小さくして収める */
+  .services-list p{
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    width: 90%;
+    padding: 0.6rem 0.8rem;
+    line-height: 1.2;
+    top: 46%;                 /* 50%だと下のspanと干渉しやすい */
+  }
+
+  /* 下の英字も小さく＆下に寄せる */
+  .services-list span{
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    bottom: 10%;
+    width: 90%;
+    letter-spacing: 0.12em;
+  }
+
+  /* service1/2/3 の位置指定を無効化（absoluteの名残を殺す） */
+  .service1, .service2, .service3{
+    left: auto;
+    right: auto;
+    transform: none;
+  }
+
+  /* 下のグラデ箱もカード幅に追従 */
+  .list-bottom{
     width: 100%;
-  }
-
-  .service1 {
-    margin-bottom: 5rem;
-  }
-
-  .service2 {
-    margin-bottom: 5rem;
-  }
-
-  .service1 p {
-    top: 25%;
-    left: 17%;
-    font-size: 2.986rem;
-    background-color: #89878759;
-  }
-
-  .service2 p {
-    top: 9%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2.986rem;
-    background-color: #89878759;
-  }
-
-  .service3 p {
-    top: 25%;
-    left: 80%;
-    font-size: 2.986rem;
-    background-color: #89878759;
-  }
-
-  .services-list span {
-    bottom: 4%;
-    font-size: 2.07rem;
-    letter-spacing: 0.27rem;
-  }
-
-  .list-bottom {
-    width: 100%;
-    height: 5.5rem;
-  }
-
-  .link-btn p {
-    box-shadow: 0.3rem 0.6rem #195998;
-    padding: 3rem 4rem;
-    font-size: 2.074rem;
-    width: 25rem;
-  }
-
-/* モバイル版　番組制作実績 */
-
-  #project {
-    padding: 10rem 1.5rem;
-  }
-
-  #project h1 {
-    font-size: 2.986rem;
-    letter-spacing: 0.2986rem;
-  }
-
-  #project h2 {
-    font-size: 6rem;
-    text-align: center;
-    letter-spacing: 0.6rem;
-  }
-
-  #project h2 span {
-    font-size: 7rem;
+    left: 0;
+    transform: none;
   }
 
   .program-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;   /* 好みで調整 */
     justify-items: center;
-    margin: 0 2rem;
   }
 
-  .program-card {
+  /* 固定幅が残ってても潰れないように保険 */
+  .program-card{
     width: 100%;
-    height: 52rem;
+    max-width: 100%;
   }
 
-  .program-card img {
-    width: 32rem;
-    height: 24rem;
+    /* COMPANY：左寄せで収める */
+  #company .title-area{
+    width: 52%;          /* 45%固定を緩める */
+    max-width: 90vw;    /* はみ出し防止 */
+    margin-left: 0;     /* 左寄せ */
+    margin-right: auto;
+    padding: 2.5rem 4vw;  /* PCの 7.5rem を弱める */
+    box-sizing: border-box;
   }
 
-  .program-card h3 {
-    font-size: 2.488rem;
+    /* RECRUIT：固定の margin-left を殺して、右寄せで収める */
+  #recruit .title-area{
+    margin-left: auto;     /* ← これで右寄せ */
+    margin-right: 0;
+    width: 52%;            /* 好みで 45%〜60% */
+    max-width: 90vw;       /* はみ出し保険 */
+    box-sizing: border-box;
+    padding: 2.5rem 4vw;     /* PCの 7.5rem が強いので弱める */
   }
 
-  .program-card h4 {
-    font-size: 1.728rem;
+  /* 文字も箱の中に収める（念のため） */
+  #company .title-area h1,
+  #company .title-area h2,
+  #recruit .title-area h1,
+  #recruit .title-area h2{
+    margin: 0;
+    line-height: 1.05;
   }
 
-  .sub-title {
-    text-align: left;
-    margin-left: 2.5rem;
+  #company .title-area h1{
+    letter-spacing: 0.08em;                /* PCの0.47remを弱める */
+    max-width: 100%;
   }
 
-  .program-card p {
-    font-size: 2.074rem;
+  #company .info-list {
+    position: static;      /* absolute を解除 */
+    width: min(620px, 50%);
+    margin-top: 1rem;      /* PCの margin-top をそのまま再現 */
+    margin-left: auto;     /* 右寄せ */
+    margin-right: 5%;      /* PCの right:5% を再現 */
   }
 
-/* モバイル版　会社情報・採用情報 */
+  #company .info-list dt,dd{
+    white-space: nowrap;   /* 折り返さない */
+  }
 
-  #company {
-    height: 68rem;
+  #company .info-list dt {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+  #company .info-list dd {
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+    margin: 0;
+  }
+    /* テキスト箱を少し広げて折返しを回避 */
+  .recruit-text{
+    position: static;       /* absolute解除 → 重なり消える */
+    margin: 1.5rem 0 0 4rem;  /* タイトルの下に置く */
+    width: min(620px, 50%);
+  }
+
+  /* 1行に固定して、溢れは出さない */
+  .recruit-text p{
+    white-space: nowrap;
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+    letter-spacing: 0.03em;  /* 文字間も詰める */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 万一長い場合の保険 */
+  }
+
+  .company-link-btn {
+    bottom: 2.5rem;
+  }
+
+  .recruit-link-btn {
+    bottom: 2.5rem;
+  }
+
+    .recruit-link-btn p,
+    .company-link-btn p {
+    margin: 0; /* 左寄せ指定があれば打ち消す */
+  }
+
+}
+
+
+/* =========================================================
+  index.css / スマホ版だけ土台修正（PCは不変更）
+  - 巨大rem/固定高さ/固定margin-leftを撤去
+  - vw/%/auto中心 → 将来 html{font-size:clamp} でも崩れにくい
+========================================================= */
+@media screen and (max-width: 767px) {
+
+  /* =========================
+     KEYVISUAL（スライダー）
+  ========================= */
+  #keyvisual{
+    padding-top: 5rem;          /* common header高さと整合 */
+    position: relative;
+  }
+
+  .kv-overlay{
+    padding-left: 1.5rem;
+    padding-top: 11rem;
+    gap: 0.8rem;
+  }
+
+  .swiper-wrapper{
+    margin-left: 0;             /* PCの 25rem を殺す */
+  }
+
+  .swiper-img,
+  .swiper-slide img{
+    max-width: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;      /* 固定65rem撤去 */
+    display: block;
+  }
+
+  /* 文字の“貼り紙”はvwで位置とサイズを管理 */
+  #keyvisual h1{
+    font-size: 5.5vw;             /* 5rem撤去 */
+    padding: 0.5em 0.8em;
+    top: 49vw;                  /* 40rem撤去 */
+    left: 4vw;
+  }
+
+  .keyvisual-text{
+    font-size: 2vw;           /* 1.7rem撤去 */
+    padding: 0.7em 0.9em;
+    top: 66vw;                  /* 55rem撤去 */
+    left: 6vw;
+    max-width: 86vw;
+    line-height: 1.5;
+  }
+
+  /* =========================
+     SECTION見出し（共通寄せ）
+  ========================= */
+  #services h1,
+  #project h1{
+    font-size: 5.2vw;
+    letter-spacing: 0.10em;
+    position: relative;
+  }
+
+  #services h2,
+  #project h2{
+    font-size: 9vw;
+    letter-spacing: 0.08em;
+    margin: 2vw auto 6vw;
+  }
+
+  #services h1::before,
+  #project h1::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.4em;          /* ← remじゃなく em（文字基準） */
+  width: 15%;              /* ← h1幅の7割 */
+  height: 0.1em;
+  background-color: #0073e6;
+  border-radius: 999px;
+  }
+
+  #services h2 span,
+  #project h2 span{
+    font-size: 10vw;
+  }
+
+
+  /* =========================
+     SERVICES（カード3枚）
+  ========================= */
+  #services{ padding: 8vw 0 0; }
+
+  .services-list{
+    margin: 8vw 0;
+    display: grid;
+    grid-template-columns: 1fr;  /* 縦積み */
+    gap: 6vw;
+    height: auto;                /* 100rem撤去 */
+    padding: 0 5vw;
+  }
+
+  .services-list li{
+    width: 100%;
+    height: auto;
+    border-radius: 2.5vw;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .services-list img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;       /* ← 下の余白(途切れっぽさ)防止 */
+    border-radius: inherit;
+  }
+
+  .services-list li.service3 img{
+    transform: scale(1.4);
+  }
+
+  .services-list p{
+    font-size: 5vw;              /* 2.986rem撤去 */
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+    padding: 0.6em 0.8em;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff59;
+  }
+
+  .service1 p{ top: 25%; left: 28%; }
+  .service2 p{ top: 45%; left: 50%; }
+  .service3 p{ top: 25%; left: 73%; }
+
+  .services-list span{
+    font-size: 4vw;
+    letter-spacing: 0.08em;
+    bottom: 8%;
+  }
+
+  .list-bottom{
+    width: 100%;
+    height: 14vw;
+  }
+
+  .service1, .service2{ margin-bottom: 0; } /* 5rem撤去 */
+
+  .link-btn p,
+  .company-link-btn p,
+  .recruit-link-btn p,
+  .contact-area-btn p {
+    width: auto;          /* 固定幅やめる */
+    max-width: 55%;
+    padding: 0.9em 2em;   /* 見た目は維持 */
+    font-size: 1.4rem;      /* 今より少しだけ抑えるなら */
+  }
+
+  .link-btn p{
+    box-shadow: 0.2rem 0.4rem #195998;
+  }
+
+  .section-background--blue {
+    padding-bottom: 4rem;
+  }
+
+  .section-background--blue::before {
+    border-width: 3rem 100vw 0 0;
+  }
+
+
+  /* =========================
+     PROJECT（番組制作実績）
+  ========================= */
+  #project{
+    padding: 10vw 5vw;
+  }
+
+  .program-list{
+    margin: 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4vw;
+    justify-items: stretch;
+  }
+
+  .program-card{
+    width: 100%;
+    height: auto;                /* 52rem撤去 */
+    padding: 3vw 0;
+  }
+
+  .program-card img{
+    width: 80%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin: 3vw auto 2vw;
+  }
+
+  .program-card-text{
+    padding: 0 4vw;
+  }
+
+  .program-card h3{
+    font-size: 4vw;
+    margin: 0;
+  }
+
+  .program-card h4{
+    font-size: 3.2vw;
+  }
+
+  .program-card p{
+    font-size: 3.2vw;
+    margin: 2vw 0 0;
+  }
+
+  .sub-title{
+    margin: 0 0 2vw;
+  }
+
+
+  /* =========================
+     COMPANY / RECRUIT（背景セクション）
+     固定高さ・固定margin-leftを撤去して縦積み化
+  ========================= */
+  #company,
+  #recruit{
+    height: auto;                /* 68rem撤去 */
+    padding-bottom: 10vw;
+  }
+
+  #company .title-area,
+  #recruit .title-area{
+    width: 65%;
+    padding: 4vw 5vw;            /* 49.5rem等を殺す */
+    box-sizing: border-box;
   }
 
   #company .title-area {
-    width: 50%;
-  }
-
-  #company .title-area h2 {
-    margin-left: 3rem;
-  }
-
-  .info-list {
-    position: static;
-    width: 60%;
-    margin-top: 5rem;
-    margin-left: 28rem;
-    transform: none;
-  }
-
-  .info-list li dt {
-    width: 15rem;
-    font-size: 2.488rem;
-    letter-spacing: 0.1244rem;
-  }
-
-  .info-list li dd {
-    font-size: 2.074rem;
-    letter-spacing: 0.1037rem;
-  }
-
-  .company-link-btn p {
-    font-size: 2.074rem;
-    letter-spacing: 0.1493rem;
-    padding: 3rem 4rem;
-    box-shadow: 0.3rem 0.6rem #0073e6;
-    width: 25rem;
-  }
-
-  #recruit {
-    height: 68rem;
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
   }
 
   #recruit .title-area {
-    width: 50%;
-    margin-left: 45rem;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: left;
   }
 
+  .title-area h1{
+    font-size: 10vw;
+    letter-spacing: 0.10em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    word-break: keep-all;
+  }
+
+  .title-area h2{
+    font-size: 6vw;
+    letter-spacing: 0.08em;
+    margin: 0;
+    padding: 2vw 0 0 0;
+    line-height: 1.2;
+    word-break: keep-all;
+  }
+
+    /* COMPANY：h1もh2も左寄せ */
+  #company .title-area,
+  #company .title-area h1,
+  #company .title-area h2 {
+    text-align: left;
+  }
+
+  /* RECRUIT：h1もh2も右寄せ */
   #recruit .title-area h2 {
-    margin-left: 5rem;
+    text-align: left;
   }
 
-  .recruit-text {
+  /* 会社情報の表：absolute解除→通常フローで中央 */
+  .info-list{
     position: static;
-    width: 60%;
-    margin-top: 5rem;
-    margin-left: 8rem;
+    width: min(92vw, 36rem);
+    margin: 6vw auto 0;
+    padding: 3vw;
+  }
+
+  .info-list li{
+    display: flex;
+    gap: 3vw;
+    margin: 0;
+    padding: 3vw 1vw;
+  }
+
+  .info-list li dt{
+    width: 8em;
+    font-size: 4vw;
+    letter-spacing: 0.04em;
+  }
+
+  .info-list li dd{
+    margin: 0;
+    font-size: 3.8vw;
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+  }
+
+  .company-link-btn,
+  .recruit-link-btn{
+    position: static;            /* absolute解除 */
+    margin: 3rem auto 0;
+    text-align: center;
     transform: none;
   }
 
-  .recruit-text p {
-    font-size: 2.074rem;
-    padding: 0.5rem;
+  .company-link-btn p,
+  .recruit-link-btn p{
+    box-shadow: 0.2rem 0.4rem currentColor;
+    margin: 0 auto;
   }
 
-  .recruit-link-btn p {
-    font-size: 2.074rem;
-    letter-spacing: 0.1493rem;
-    padding: 3rem 4rem;
-    box-shadow: 0.3rem 0.6rem rgb(250, 211, 70);
-    width: 25rem;
+  /* RECRUITテキスト：absolute解除→通常フロー */
+  .recruit-text{
+    position: static;
+    width: min(92vw, 36rem);
+    margin: 6vw auto 0;
+    padding: 3vw;
   }
 
-/* モバイル版お問い合わせ */
-
-  #contact-area {
-    padding:10rem 0;
+  .recruit-text p{
+    font-size: 3.8vw;
+    line-height: 1.6;
+    margin: 0;
+    padding: 3vw 1vw;
   }
 
-  #contact-area h1 {
-    font-size: 5rem;
-    width: 70%;
+
+  /* =========================
+     COMPANY & RECRUIT 中間見出し
+  ========================= */
+  .company-recruit h2{
+    font-size: 6.5vw;
+    letter-spacing: 0.18em;
+    margin: 8vw auto;
+    white-space: nowrap;
   }
 
-  #contact-area p {
-    font-size: 2.5rem;
-    line-height: 3.5rem;
+  .company-recruit .yellow{ font-size: 7.5vw; }
+  .company-recruit .and{ font-size: 5vw; }
+
+
+  /* =========================
+     CONTACT AREA（下部）
+  ========================= */
+  #contact-area{
+    padding: 10vw 0 30vw;
   }
 
-  .contact-area-btn p {
-    box-shadow: 0.3rem 0.6rem #195998;
-    padding: 3rem 4rem;
-    font-size: 2.986rem;
-    width: 35rem;
+  #contact-area h1{
+    width: min(92vw, 36rem);
+    font-size: 6vw;
+    letter-spacing: 0.06em;
+    white-space: normal;        /* nowrap事故防止 */
   }
 
-  .top-btn p {
-    font-size: 2.074rem;
-    letter-spacing: 0.1493rem;
-    padding: 2rem 4rem;
-    box-shadow: 0.3rem 0.6rem rgb(147, 147, 103);
-    background-color: rgb(250, 211, 70);
-    text-align: center;
-    width: 12.5rem;
+  .contact-text{
+    font-size: 3.6vw;
+    line-height: 1.7;
+    margin-bottom: 8vw;
+    padding: 0 5vw;
+  }
+
+  .contact-text br{ display: none; }
+
+  .contact-area-btn{
+    height: auto;               /* 7rem固定撤去 */
+  }
+
+  .contact-area-btn p{
+    box-shadow: 0.2rem 0.4rem #195998;
+    white-space: nowrap;
+  }
+
+  /* TOPボタン（スマホ用サイズ抑制） */
+  .top-btn p{
+    font-size: 3.8vw;
+    padding: 0.9em 1.2em;
+    width: auto;
   }
 }

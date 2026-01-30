@@ -30,7 +30,7 @@
 .section-background--blue::before {
   border-color: transparent #fff transparent transparent;
   border-style: solid;
-  border-width: 4rem 100vw 0 0;
+  border-width: 6rem 100vw 0 0;
   bottom: 0;
   content: "";
   height: 0;
@@ -80,49 +80,68 @@
 .contact-form {
   padding-top: 5rem;
   width: 80%;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 @media screen and (max-width: 767px) {
-  /* モバイル版　タイトルエリア */
-
-  .contact-form {
-    width: 100%;
-    margin: 0;
-  }
 
   .contact-guide {
-    margin: 10rem 0;
+    margin: 3rem 0;
+    line-height: 1.8;
+    padding: 0 1rem 0 2rem;
   }
 
   .guide-text p {
-    font-size: 2rem;
-    line-height: 3.5rem;
+    font-size: 1rem;
+    line-height: 1.8;
   }
 
+  .section-background--blue {
+  padding-bottom: 4rem;
+}
+
+.section-background--blue::before {
+  border-width: 3rem 100vw 0 0;
+}
+
   .contact-guide img {
-    width: 8rem;
-    height: 8rem;
+    width: 50px;
+    height: 50px;
+    margin-left: 0;
+  }
+
+  #contact {
+    padding-top: 3rem;
   }
 
   #contact h1 {
-    font-size: 2.986rem;
-    letter-spacing: 0.2986rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.12rem;
   }
 
   #contact h2 {
-    font-size: 6rem;
-    text-align: center;
-    letter-spacing: 0.6rem;
+    font-size: 2.4rem;
+    letter-spacing: 0.3rem;
+    margin: 0.75rem auto 0;
   }
 
   #contact h2 span {
-    font-size: 7rem;
-  }
-/* お問い合わせフォームページではフッターに問い合わせボタンが無いため、
-   TOPボタン用に footer-contact-btn の余白を調整 */
-  .footer-contact-btn {
-    margin-left: 5rem;
+    font-size: 3rem;
   }
 
+  .contact-form {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* TOPボタン（フッター内）調整：余白で押すのではなく中央寄せ */
+  .footer-contact-btn {
+    margin-left: 0;
+    text-align: center;
+  }
 }

@@ -1,7 +1,5 @@
-/* タイトルエリア */
-
 .common-title-area {
-  height: 25rem;
+  background: linear-gradient(180deg, #fff,rgb(246, 246, 252));
 }
 
 /* 事業内容　概要 */
@@ -45,6 +43,10 @@
 #s-services h2 span {
   color: rgb(247, 194, 4);
   font-size: 4rem;
+}
+
+.services-title {
+  padding-bottom: 3rem;  /* ← タイトルと円の間をあける */
 }
 
 .services-guide {
@@ -113,7 +115,10 @@
 }
 
 .consulting-circle span {
-  font-size: 0.9rem;
+  white-space: nowrap;
+  font-size: clamp(0.72rem, 1.2vw, 0.9rem); /* 画面に合わせて縮む */
+  line-height: 1;          /* 1行前提 */
+  display: inline-block;
 }
 
 .circle-position {
@@ -326,7 +331,7 @@
 #contact-area {
   text-align: center;
   background-color: rgb(246, 246, 252);
-  padding: 5rem 0;
+  padding: 5rem 0 10rem;
 }
 
 #contact-area h1 {
@@ -375,8 +380,8 @@
 
 .top-btn {
   position: fixed;
-  right: 2rem;
   bottom: 2rem;
+  right: max(2rem, calc((100vw - 1200px) / 2 + 2rem));
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -408,98 +413,222 @@
   transform: translate(4px,4px);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 
-  /* モバイル版　タイトルエリア */
-
-  .common-title-area {
-    height: 57rem;
+  #s-services {
+    padding: 7rem 0 7rem;   /* 15rem 0 10rem → 減らす */
   }
+
+   /* 円レイアウトをPCと同じに戻す */
+  .circle-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 3rem;
+    margin: 4rem 3rem 0;
+  }
+
+  .circle-position {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .program-production-circle {
+    top: -7rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .s-services-flex {
+    top: 11rem;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 10rem; /* タブレットは少し狭め */
+  }
+
+    /* 横並びは維持しつつ、全体をタブレット幅に収める */
+  .circle-flex{
+    gap: 2.5rem;
+    margin: 6rem 3rem 0;  /* 8rem 8rem → 縮める */
+    align-items: flex-start;
+  }
+
+  /* 説明文：少しだけ幅を縮める（縮めすぎない） */
+  .services-guide{
+    width: clamp(18rem, 34vw, 24rem); /* 27rem → 可変 */
+  }
+
+  /* 円：縮小 */
+  .circle{
+    width: clamp(18rem, 36vw, 23rem);
+    height: clamp(18rem, 36vw, 23rem);
+  }
+
+  .circle-logo{
+    width: clamp(18rem, 36vw, 23rem);
+    height: clamp(18rem, 36vw, 23rem);
+  }
+
+  /* 周りの丸ボタン：縮小 */
+  #s-services .circle-title{
+    width:  clamp(96px, 28vw, 150px);
+    height: clamp(96px, 28vw, 150px);
+    line-height: clamp(96px, 28vw, 150px);
+    font-size: clamp(11px, 3vw, 14px);
+  }
+
+  #contact-area h1 {
+    display: inline-block;
+    width: auto;          /* 50%をやめる */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .top-btn {
+    right: 2rem;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
 
   /* モバイル版　事業内容 概要 */
 
   #s-services {
-    padding: 20rem 0 5rem;
+    padding: 5rem 0 0;
   }
 
+  .services-title {
+  padding-bottom: 2rem;  /* ← タイトルと円の間をあける */
+}
+
   #s-services h1 {
-    font-size: 2.986rem;
-    letter-spacing: 0.2986rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.12rem;
   }
 
   #s-services h2 {
-    font-size: 6rem;
+    font-size: 2.4rem;
     text-align: center;
-    letter-spacing: 0.6rem;
+    letter-spacing: 0.25rem;
+    margin: 0.75rem auto;
   }
 
   #s-services h2 span {
-    font-size: 7rem;
+    font-size: 2.8rem;
   }
 
   .circle-flex {
     display: block;
-    margin: 0 8rem;
+    margin: 0 1.5rem;
   }
 
   .services-guide {
-    font-size: 2.986rem;
-    letter-spacing: 0.1493rem;
-    margin-top: 5rem;
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-top: 0;
     width: 100%;
-    height: 29rem;
-    padding: 3rem;
+    height: auto;
+    padding: 1.25rem;
   }
 
   .circle-position {
-    margin-top: 15rem;
+    --circle: min(60vw, 240px); /* 中央の円 */
+    --btn:    min(30vw, 150px); /* 周りの丸ボタン */
+    position: relative;
+    margin-top: 3rem;
+    padding-top: calc(var(--btn) * 0.6);
+    padding-bottom: calc(var(--btn) * 0.9);
   }
 
   #s-services .circle-title {
-    width: 20rem;
-    height: 20rem;
-    line-height: 20rem;
-    font-size: 2.488rem;
-    margin-top: -5rem;
-    box-shadow: 0.7rem 0.7rem 0.7rem #7ebaf6;
-    letter-spacing: 0.144rem;
+    width: var(--btn);
+    height: var(--btn);
+    line-height: var(--btn);
+    font-size: clamp(11px, 2.8vw, 14px); /* ← 1rem をやめる */
+    letter-spacing: 0.04rem; 
+    box-shadow: 0.3rem 0.3rem 0.3rem #7ebaf6;
+    margin-top: 0;
   }
 
   .consulting-circle span {
-    font-size: 1.7rem;
+    font-size: clamp(9px, 2.5vw, 12px);
+    letter-spacing: 0.02rem;
+  }
+
+  /* 上のボタン */
+  .program-production-circle {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -120%);
   }
 
   .circle {
-    margin: 10rem auto;
-    width: 40rem;
-    height: 40rem;
+    width: var(--circle);
+    height: var(--circle);
+    margin: 0 auto;
   }
 
   .circle-logo {
-    top: 55%;
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
   }
 
   .s-services-flex {
-    gap: 20rem;
-    top: 20rem;
+    display: flex;
+    justify-content: center;
+    gap: 22vw;               /* 20rem → 縮小 */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,10%);
+  }
+
+  .section-background--blue {
+  padding-bottom: 4rem;
+  }
+
+  .section-background--blue::before {
+    border-width: 3rem 100vw 0 0;
   }
 
   /* モバイル版　事業内容 詳細 */
 
+  .services-guide-title {
+    padding: 0 1.5rem;
+  }
+
   .services-guide-title span {
-    font-size: 7rem;
+    font-size: 2.8rem;
   }
 
   .services-guide-title h2 {
-    font-size: 5rem;
+    white-space: nowrap;   /* 常に1行 */
+    text-align: center;
+
+    font-size: min(8vw, 2rem);        /* 画面幅に応じて縮む */
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+
+    overflow: hidden;      /* はみ出し保険 */
   }
 
   .services-guide-flex {
     flex-direction: column-reverse;
+    padding: 0 1.5rem;
   }
 
   .services-guide-text {
-    font-size: 2.986rem;
+    font-size: 1rem;
+    line-height: 1.9;
     margin: 0 auto;
     width: 100%;
   }
@@ -509,47 +638,76 @@
     text-align: center;
   }
 
-  #program-production h3 {
-    font-size: 4rem;
+  #program-production {
+    margin-top: 3rem;
+    padding-bottom: 2.5rem;
   }
 
-  #program-production h3:before {
-    left: 35%;
-  }
+#program-production h3 {
+  font-family: 'Franklin Gothic Medium',sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;   /* ← 小さく */
+  color: #0073e6;
+  letter-spacing: 0.3rem; /* ← 詰める */
+  position: relative;
+}
 
-  #program-production h3:after{
-    right: 35%;
-  }
+#program-production h3::before,
+#program-production h3::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* ← 縦中央を安定させる */
+  width: 1rem;
+  content: '';
+  border-top: solid 0.1rem #0073e6;
+}
+
+#program-production h3::before {
+  left: calc(50% - 5rem);
+}
+
+#program-production h3::after {
+  right: calc(50% - 5rem);
+}
 
   #program-production h4 {
-    font-size: 3rem;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
   }
 
   #program-production h4 span {
-    font-size: 3.5rem;
+    font-size: 1.1rem;
+  }
+
+  .services-guide-flex {
+    gap: 2rem;
   }
 
   .achievement {
-    padding: 6rem 8rem;
-    margin-top: 6rem;
+    padding: 3rem 1.5rem;
+    margin-top: 2rem;
   }
 
   .achievement p {
-    font-size: 2.5rem;
-  }
-
-  .swiper-text h5 {
-    font-size: 3rem;
-  }
-
-  .swiper-text p {
-    font-size: 2.5rem;
+    font-size: 1rem;
+    text-align: left;
   }
 
   .services-img img {
     object-fit: cover;
-    width: 60rem;
-    height: 30rem;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  #program-production {
+    margin-top: 3rem;
+    padding-bottom: 2.5rem; /* ← 5rem → 半分くらい */
+  }
+
+  #ses {
+  padding-bottom: 2.5rem;
   }
 
   #ses h3 {
@@ -576,44 +734,83 @@
     flex-direction: column;
   }
 
+  #consulting {
+    padding-bottom: 2.5rem;
+  }
+
+  #consulting .services-guide-title h2 {
+    font-size: min(6vw, 1.8rem);      /* 他より少し小さめ */
+    letter-spacing: 0.12rem;
+  }
+
+  #consulting .services-guide-title span {
+    font-size: 2.4rem;      /* 番号もバランス調整 */
+  }
+
   #consulting img {
     object-fit: cover;
-    width: 60rem;
-    height: 30rem;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
   }
 
 
 /* モバイル版お問い合わせ */
 
   #contact-area {
-    padding: 10rem 0;
+    padding: 2.5rem 0;
   }
 
   #contact-area h1 {
-    font-size: 5rem;
-    width: 70%;
+    display: inline-block;
+    white-space: nowrap;      /* 常に1行 */
+    width: auto;
+    max-width: 100%;
+    margin: 1.5rem auto 2rem;
+    text-align: center;
+
+    font-size: 7vw;           /* 画面幅に応じて縮む */
+    letter-spacing: 0.08em;   /* 詰めすぎ防止 */
+    line-height: 1.2;
+
+    padding: 0 1rem;          /* 端末が細い時の保険 */
   }
 
   #contact-area p {
-    font-size: 2.5rem;
-    line-height: 3.5rem;
-    margin-bottom: 10rem;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    max-width: 30em;             /* 行が長すぎて間延びするのを防ぐ */
+    margin: 0 auto 2.5rem;       /* 中央寄せ + 下余白 */
+    padding: 0 1.25rem;          /* 端末が細いときの左右保険 */
+    text-wrap: pretty;           /* 対応ブラウザでは不自然な改行を減らす */
+    word-break: normal;
+    overflow-wrap: anywhere;     /* 長い単語があってもはみ出さない保険 */
   }
 
-  .contact-area-btn p {
+  #contact-area .contact-text br{
+    display: none;
+  }
+
+  #contact-area .contact-area-btn p {
     box-shadow: 0.3rem 0.6rem #195998;
-    padding: 3rem 4rem;
-    font-size: 2.986rem;
-    width: 35rem;
+    width: 80%;
+    max-width: 320px;
+    height: auto;              /* ← 高さ固定を殺す */
+    padding: 1.8rem 1.6rem;    /* ← ここで「太さ」を作る */
+    font-size: 1.15rem;
+    line-height: 1.2;
+    margin: 0 auto;
   }
 
   .top-btn p {
-    font-size: 2.074rem;
-    letter-spacing: 0.1493rem;
-    padding: 2rem 4rem;
-    box-shadow: 0.3rem 0.6rem rgb(147, 147, 103);
+    font-size: 14px;
+    padding: 10px 20px;
+    width: auto;
+    border-radius: 999px;
+    box-shadow: 0.1rem 0.2rem rgb(147, 147, 103);
     background-color: rgb(250, 211, 70);
     text-align: center;
-    width: 12.5rem;
   }
+
 }

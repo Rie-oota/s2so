@@ -116,7 +116,7 @@
 }
 
 .access-list {
-  padding: 5rem 11rem;
+  padding: 5rem 11rem 10rem;
 }
 
 .sales-office {
@@ -157,8 +157,9 @@
   display: flex;
   border-bottom: 1px solid;
   border-image: linear-gradient(to right, #0073e6, rgb(242, 233, 149)) 1;
-  align-items: center;
   padding: 1.5rem 0;
+  gap: 0.5rem;
+  align-items: flex-start;
 }
 
 .text-list li dt {
@@ -167,6 +168,7 @@
   font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: 0.06rem;
+  white-space: nowrap;
 }
 
 .text-list li dd {
@@ -228,8 +230,8 @@
 
 .top-btn {
   position: fixed;
-  right: 2rem;
   bottom: 2rem;
+  right: max(2rem, calc((100vw - 1200px) / 2 + 2rem));
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -261,95 +263,142 @@
   transform: translate(0.1875rem,0.3125rem);
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .text-list li dt{
+    flex: 0 0 6.25rem; /* ←今のwidthと同じ。必要なら7〜8remに */
+  }
+
+  .text-list li dd{
+    flex: 1;            /* 残り幅を全部使う */
+    min-width: 0;       /* 長文のはみ出し防止 */
+    padding-left: 1.2rem; /* “近すぎ”だけ解消（ddの幅を削りすぎない） */
+  }
+
+  .slide-logo p { font-size: 7rem; }  /* 12rem → 7rem */
+  .slide-logo { height: 60rem; }      /* 82rem → 60rem */
+  .slide-logo-main { left: -4%; } /* -8% → -2% */
+
+  .access-list {
+    padding: 4rem 5rem;  /* ← 11rem はやめる */
+  }
+
+  .top-btn {
+    right: 2rem;
+  }
+}
+
 @media screen and (max-width: 767px) {
 
   /* モバイル版　会社概要 */
 
-  #information {
-    padding: 10rem 0;
-  }
-
   #information h1 {
-    font-size: 2.986rem;
-    letter-spacing: 0.2986rem;
+    font-size: 22px;
+    letter-spacing: 0.12em;
   }
 
   #information h2 {
-    font-size: 6rem;
+    font-size: 34px;
     text-align: center;
-    letter-spacing: 0.6rem;
+    letter-spacing: 0.25em;
   }
 
   #information h2 span {
-    font-size: 7rem;
+    font-size: 44px;
   }
 
   .info-list {
     width: 80%;
+    margin-top: 1rem;
   }
 
   .info-list li {
-    padding: 3rem 0;
+    padding: 1rem 0;
+    flex-direction: column;   /* 横並び → 縦並び */
+    align-items: stretch;
+    gap: 0.3rem;
   }
 
   .info-list li dt {
-    font-size: 2.8rem;
+    font-size: 15px;
     white-space: nowrap;
+    width: auto;
+    text-align: left;
   }
 
   .info-list li dd {
-    font-size: 2.488rem;
+    font-size: 14px;
+    padding-right: 0;
+    text-align: left;
+    margin: 0 auto;
   }
 
   /* モバイル版　アクセス */
 
   #access {
-    padding: 10rem 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   #access h1 {
-    font-size: 2.986rem;
-    letter-spacing: 0.2986rem;
+    font-size: 22px;
+    letter-spacing: 0.12em;
   }
 
+  #information h1::before,#access h1::before {
+  width: 4rem;   /* 8rem → 4rem */
+}
+
   #access h2 {
-    font-size: 6rem;
+    font-size: 34px;
     text-align: center;
-    letter-spacing: 0.6rem;
+    letter-spacing: 0.25em;
   }
 
   #access h2 span {
-    font-size: 7rem;
+    font-size: 44px;
   }
 
   .access-list {
-    padding: 0 10rem;
+    padding: 0 0.5rem;
   }
 
   .office-title {
-    font-size: 2.488rem;
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+    padding: 12px;
   }
 
   .text-list li {
-    padding: 3rem 0;
+    padding: 0.75rem 0;
+    flex-direction: column;   /* 横並び → 縦並び */
+    align-items: stretch;
+    gap: 0.3rem;
   }
 
   .text-list li dt {
-    font-size: 2.3rem;
+    font-size: 14px;
     white-space: nowrap;
+    width: auto;
+    text-align: left;
   }
 
   .text-list li dd {
-    font-size: 2.074rem;
+    margin: 0 auto;           /* ブロックを中央に */
+    font-size: 13px;
+    text-align: left;
+    white-space: nowrap;
   }
 
   .office-info {
     align-items: center;
+    gap: 1rem;
   }
 
   .office-info iframe {
-    margin-top: 4rem;
+    margin-top: 1.5rem;
     width: 85%;
+    height: 200px;
   }
 
   .office-textarea {
@@ -360,6 +409,10 @@
     flex-direction: column-reverse;
   }
 
+  .sales-office {
+    padding-top: 3rem;
+  }
+
   .sales-office .office-info{
     flex-direction: column;
   }
@@ -368,14 +421,18 @@
     margin: 0 auto;
   }
 
+  .slide-logo {
+    display: none;
+  }
+
   .top-btn p {
-    font-size: 2.074rem;
-    letter-spacing: 0.1493rem;
-    padding: 2rem 4rem;
-    box-shadow: 0.3rem 0.6rem rgb(147, 147, 103);
+    font-size: 14px;
+    padding: 10px 20px;
+    width: auto;
+    border-radius: 999px;
+    box-shadow: 0.1rem 0.2rem rgb(147, 147, 103);
     background-color: rgb(250, 211, 70);
     text-align: center;
-    width: 12.5rem;
   }
 
 }

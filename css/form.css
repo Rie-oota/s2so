@@ -83,47 +83,112 @@
   margin: 0 auto;
 }
 
+/* =========================================================
+  form.css / スマホ版だけ修正版（PCは不変更）
+  - 巨大rem撤去（vw/相対へ）
+  - 固定幅/固定余白を弱めて、clamp耐性UP
+  - HubSpotフォームは common.css の保険(max-width:100%)前提
+  ※このブロックを form.css の一番下に追記
+========================================================= */
 @media screen and (max-width: 767px) {
-  /* モバイル版　タイトルエリア */
 
-  .contact-form {
+  /* -------------------------
+     ガイド：横並び固定をやめて自然に積む
+  ------------------------- */
+.contact-guide{
+  margin: 8vw 0;
+  padding: 0 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+
+  flex-wrap: nowrap;   /* ← 横並び固定 */
+  white-space: nowrap; /* ← 途中改行させない */
+
+  line-height: 1.6;
+  text-align: left;
+}
+
+.guide-text{
+  max-width: 70%;   /* 文字が横に伸びすぎない保険 */
+}
+
+  .guide-text p{
+    font-size: 4.2vw;         /* 2rem などの巨大化を避ける */
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+
+  .contact-guide img{
+    width: 14vw;              /* 8rem固定をやめる */
+    max-width: 72px;
+    height: auto;
+    margin: 0;                /* 3.5rem などの固定を避ける */
+    flex: 0 0 auto;
+    padding-top: 1.7rem;
+  }
+
+
+  /* -------------------------
+     青背景のセクション：余白はvwで
+  ------------------------- */
+  .section-background--blue{
+    padding-bottom: 6vw;      /* 4rem固定→可変 */
+  }
+
+  .section-background--blue::before{
+    border-width: 4vw 100vw 0 0; /* 3rem固定→可変 */
+  }
+
+
+  /* -------------------------
+     応募フォーム見出し：巨大rem撤去（clamp前提）
+  ------------------------- */
+  #contact{
+    padding-top: 8vw;         /* 5rem→可変 */
+  }
+
+  #contact h1{
+    font-size: 5.5vw;         /* 2.986rem→vw */
+    letter-spacing: 0.10em;
+  }
+
+  #contact h1::before{
+    width: 7rem;              /* 8remでもOK。崩れるならvwにしても可 */
+    bottom: -0.8rem;
+  }
+
+  #contact h1 span{
+    font-size: 6.2vw;         /* 7remみたいな暴れ方を避ける */
+  }
+
+  #contact h2{
+    font-size: 9vw;           /* 6rem→vw */
+    letter-spacing: 0.08em;
+    padding-bottom: 2vw;
+    margin: 2vw auto 0;
+    white-space: nowrap;      /* 1行にしたいならON。2行OKなら消してOK */
+  }
+
+
+  /* -------------------------
+     HubSpotフォーム枠：幅100%・左右余白だけ
+  ------------------------- */
+  .contact-form{
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
+    padding: 6vw 5vw 0;       /* 余白はvwで */
+    box-sizing: border-box;
   }
 
-  .contact-guide {
-    margin: 10rem 0;
-  }
 
-  .guide-text p {
-    font-size: 2rem;
-    line-height: 3.5rem;
-  }
-
-  .contact-guide img {
-    width: 8rem;
-    height: 8rem;
-  }
-
-  #contact h1 {
-    font-size: 2.986rem;
-    letter-spacing: 0.2986rem;
-  }
-
-  #contact h2 {
-    font-size: 6rem;
-    text-align: center;
-    letter-spacing: 0.6rem;
-  }
-
-  #contact h2 span {
-    font-size: 7rem;
-  }
-
-  /* お問い合わせフォームページではフッターに問い合わせボタンが無いため、
-   TOPボタン用に footer-contact-btn の余白を調整 */
-  .footer-contact-btn {
-    margin-left: 5rem;
+  /* -------------------------
+     TOPボタン：margin-left固定はやめる
+     （common.css側で footer-mobile は中央寄せ/縦積み設計済み）
+  ------------------------- */
+  .footer-contact-btn{
+    margin-left: 0;           /* form.css の「5rem」打ち消し */
   }
 
 }

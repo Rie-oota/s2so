@@ -54,7 +54,7 @@
   color: #333333;
   letter-spacing: 0.072rem;
   line-height: 1.5;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
 }
 
 .section-background--blue {
@@ -222,6 +222,7 @@
   margin-left: 7rem;
   width: 20rem;
   padding: 2rem;
+  position: relative;
 }
 
 .job-description-title-area h3 {
@@ -233,6 +234,7 @@
   position: relative;
   text-align: center;
   margin-bottom: 0.5rem;
+  z-index: 2;
 }
 
 .job-description-title-area h4 {
@@ -241,8 +243,12 @@
   letter-spacing: 0.1728rem;
   text-align: center;
   background-color: rgb(247, 194, 4);
+
   position: absolute;
-  left: 15rem;
+  top: 70%;           /* ← 縦の重なり具合 */
+  left: 30%;          /* ← h3中央基準 */
+  transform: translateX(20%); /* 少し右にずらす */
+  z-index: 1;
   border-radius: 3rem;
   padding: 0 1rem;
   white-space: nowrap;
@@ -414,6 +420,7 @@
   font-size: 1.2rem;
   letter-spacing: 0.6rem;
   color: #0073e6;
+  white-space: nowrap;
 }
 
 .flow-list p {
@@ -423,7 +430,7 @@
 
 .apply-btn {
   text-align: center;
-  padding: 5rem 0;
+  padding: 4rem 0 10rem;
 }
 
   .apply-btn p {
@@ -448,8 +455,8 @@
 
 .top-btn {
   position: fixed;
-  right: 2rem;
   bottom: 2rem;
+  right: 2rem;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -481,228 +488,327 @@
   transform: translate(4px,4px);
 }
 
+.top-btn.is-footer-hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1024px) {
+
+  /* フッターの右切れ防止（タブレット帯） */
+  .footer-pc{
+    padding: 0 1.5rem;     /* 余白を確保 */
+    flex-wrap: wrap;       /* 折り返しOKにする */
+    gap: 2rem;
+  }
+
+  .footer-nav{
+    flex-wrap: wrap;
+    gap: 3rem;             /* 6.25remは広すぎ */
+  }
+
+  .contact-info{
+    margin-left: 0;        /* ★犯人潰し */
+    width: 100%;
+    justify-content: flex-end;
+    padding: 0 1.5rem 1.5rem;
+    white-space: normal;   /* nowrap殺す（はみ出し防止） */
+  }
+}
+
+
+/* =========================================================
+  recruit.css / スマホ版だけ修正版（PCは不変更）
+  - 巨大rem撤去（vw/相対へ）
+  - タブ固定padding撤去→2等分
+  - 募集要項：ddのpadding-right地雷解除 + dt/dd縦化
+  - タイトル帯：h4 absolute解除
+  - 採用フロー：縦積み＋アイコン中央寄せ
+  ※このブロックを recruit.css の一番下に追記
+========================================================= */
 @media screen and (max-width: 767px) {
 
-  /* モバイル版　タイトルエリア */
+  /* -------------------------
+     タブ：固定padding撤去 → 2等分で安定
+  ------------------------- */
+  #recruit-btn-area { padding-top: 6vw; }
 
-  .tab p {
-    font-size: 2.986rem;
+  .tab-container{
+    justify-content: space-between;
+    padding: 0 4vw 6vw;
+    gap: 0;
   }
 
-  /* 採用情報 */
-
-  .content h1 {
-    font-size: 2.5rem;
-    letter-spacing: 0.25rem;
+  .tab-new,.tab-mid{
+    padding: 0;          /* 0.5rem 7rem を殺す */
+    flex: 1;             /* 2等分 */
   }
 
-  .content h2 {
-    font-size: 6rem;
+  .tab {
     text-align: center;
-    letter-spacing: 0.6rem;
   }
 
-  .content h1 span {
-    color: rgb(247, 194, 4);
-    font-size: 2.986rem;
+  .tab p{
+    font-size: 4.4vw;    /* 2.986rem を撤去 */
+    padding: 0.6em 0;
+    display: inline-block;
   }
 
-  .new-graduate-text {
-    font-size: 2.986rem;
+
+  /* -------------------------
+     見出し・本文：スマホの巨大rem撤去
+  ------------------------- */
+  .content{ padding-top: 10vw; }
+
+  .content h1{
+    font-size: 5.6vw;
+    letter-spacing: 0.12em;
   }
 
-  .services-list {
-    height: 100rem;
+  .content h1::before {
+    bottom: -0.4rem;
+    width: 4rem;
   }
 
-  .services-list li {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    border-radius: 0.5rem;
+  .content h1 span{ font-size: 6.4vw; }
+
+  .content h2{
+    font-size: 9vw;          /* 6rem → vw */
+    letter-spacing: 0.08em;
+    margin: 2vw auto 8vw;
+    white-space: nowrap;     /* 1行固定したい場合。2行OKなら消してOK */
   }
 
-  .services-list img {
-    width: 100%;
+  .new-graduate-text{
+    font-size: 4.2vw;        /* 2.986rem → vw */
+    margin-bottom: 20vw;
   }
 
-  .service1 {
-    margin-bottom: 5rem;
+  .section-background--blue {
+    padding-bottom: 4rem;
   }
 
-  .service2 {
-    margin-bottom: 5rem;
+  .section-background--blue::before {
+    border-width: 3rem 100vw 0 0;
   }
 
-  .service1 p {
-    top: 25%;
-    left: 17%;
-    font-size: 2.986rem;
-    background-color: #89878759;
-  }
 
-  .service2 p {
-    top: 9%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2.986rem;
-    background-color: #89878759;
-  }
+  /* -------------------------
+     募集要項：タイトル帯のabsolute地雷を解除
+  ------------------------- */
 
-  .service3 p {
-    top: 25%;
-    left: 80%;
-    font-size: 2.986rem;
-    background-color: #89878759;
-  }
+.job-description-title-area {
+  position: relative;
 
-  .services-list span {
-    bottom: 4%;
-    font-size: 2.07rem;
-    letter-spacing: 0.27rem;
-  }
+  width: 55%;
+  margin-left: 1rem;
+  margin-right: auto;
 
-  .list-bottom {
-    width: 100%;
-    height: 5.5rem;
-  }
+  display: flex;              /* ★追加 */
+  justify-content: center;    /* 横中央 */
+  align-items: center;        /* 縦中央 */
 
-  /* モバイル版募集要項 */
+  padding: 4.5vw 4vw;
+  border-radius: 999px;
+  overflow: visible;
+}
 
-  .job-description-title-area {
-    width: 30rem;
-  }
+.job-description-title-area h3 {
+  font-size: 6vw;
+  letter-spacing: 0.12em;
 
-  .job-description-title-area h3 {
-    font-size: 5rem;
-    letter-spacing: 0.5rem;
-  }
+  width: 55%;          /* ← 半分くらい */
+  text-align: center; /* 箱の中は中央寄せ */
+}
 
+  /* 黄色帯：PCと同じ「重なり構造」に戻す */
   .job-description-title-area h4 {
-    font-size: 3rem;
-    letter-spacing: 0.3rem;
+    position: absolute;
+    top: 70%;              /* 縦位置：下寄り */
+    left: 50%;             /* 中央基準 */
+    transform: translateX(-20%); /* 少し右へずらす */
+
+    font-size: 4vw;
+    letter-spacing: 0.08em;
+    padding: 0.3em 0.9em;
+    border-radius: 999px;
+    white-space: nowrap;
   }
 
   .job-description-title-area h4 span {
-    font-size: 3.5rem;
+    font-size: 1.15em;
   }
 
-  .work-content {
-    font-size: 2.986rem;
-    margin: 8rem auto 5rem;
+  .work-content{
+    width: 88%;
+    font-size: 4vw;          /* 2.986rem → vw */
+    margin: 8vw auto 8vw;
   }
 
-  .employment-title {
-    padding: 1rem 4rem;
-    background: linear-gradient(to right, #0073e6a1, rgb(246, 246, 252));
-    border-radius: 0.5rem;
-    margin: 3.75rem auto;
+  .general-position {
+    padding-bottom: 5rem;
   }
 
-  .employment-title h5{
-    font-size: 3.5rem;
-    letter-spacing: 0.35rem;
+  /* -------------------------
+     info-list：スマホは縦化＋右padding地雷解除（最重要）
+  ------------------------- */
+  .info-list{
+    width: 90%;
+    margin-top: 0;
   }
 
-  .employment-title span {
-    font-size: 2rem;
-    letter-spacing: 0.2rem;
+  .info-list li{
+    display: block;          /* flex解除 */
+    padding: 4.5vw 0;
   }
 
-  .info-list {
-    width: 80%;
+  .info-list li dt{
+    width: auto;
+    font-size: 4.6vw;        /* 2.8rem → vw */
+    margin-bottom: 1.5vw;
+    white-space: normal;     /* nowrap事故防止 */
   }
 
-  .info-list li {
-    padding: 3rem 0;
+  .info-list li dd{
+    margin: 0;
+    padding-right: 0;        /* ← PC側の 10rem 地雷を必ず殺す */
+    font-size: 4.1vw;        /* 2.4rem → vw */
+    line-height: 1.6;
+    letter-spacing: 0.05em;
   }
 
-  .info-list li dt {
-    font-size: 2.8rem;
+  .info-list li dd br{ display: none; }
+
+
+  /* -------------------------
+     採用フロー：スマホは縦積みで耐性を上げる
+  ------------------------- */
+  .flow-title{
+    height: auto;
+    padding: 8vw 0;
+    letter-spacing: 0;
+    position: relative;
+  }
+
+  .flow-title span {
+    font-size: 3vw;
+    opacity: 0.6;
     white-space: nowrap;
-    width: 20rem;
   }
 
-  .info-list li dd {
-    font-size: 2.4rem;
+  /* 左上寄り */
+  .flow-title .title-top {
+    top: 15%;
+    left: 12%;
+    transform: translateX(-50%);
   }
 
-  /* 採用フロー */
-
-  .flow-title {
-    height: 15rem;
+  /* 右下寄り */
+  .flow-title .title-bottom {
+    bottom: 15%;
+    left: 88%;
+    right: auto;        /* もともとの right:0 を打ち消す */
+    transform: translateX(-50%);
   }
 
-  .flow-title h3 {
-    font-size: 5rem;
-    letter-spacing: 0.5rem;
+  .flow-title h3{
+    position: static;
+    transform: none;
+    font-size: 7.2vw;        /* 5rem → vw */
+    letter-spacing: 0.08em;
   }
 
-  .flow-introduce {
-    font-size: 2.986rem;
-    letter-spacing: 0.2986;
-    line-height: 1.5;
+  .flow-introduce{
+    margin:6vw 5vw 6vw;
+    font-size: 4vw;          /* 2.986rem → vw */
+    letter-spacing: 0.02em;
   }
 
-  .flow-list p {
-    font-size: 2.488rem;
+  .flow-introduce br {
+    display: none;
   }
 
-  .flow-list h4 {
-    width: 50%;
-    font-weight: 700;
-    font-size: 2.986rem;
-    color: #0073e6;
+  .flow-list{ padding: 0 4vw; }
+
+  .flow-list li{
+    display: block;
+    padding-top: 10vw;
   }
 
-  .flow-img-bg {
-  position: absolute;
-  top: -2rem;
-  left: 1rem;
-  width: 13rem;
-  height: 13rem;
-  border-radius: 50%;
-  background-color: #fff;
-  border: 1px dotted #0073e6;
+  .flow-img-bg{
+  left: 1.5rem;
+  transform: none;
+  top: 3vw;
+  width: 18vw;
+  height: 18vw;
+  z-index: 2;
 }
 
-.flow-img {
-  position: absolute;
-  top: 0;
-  left: 3rem;
-  width: 9rem;
-  height: 9rem;
-}
+  .flow-img{
+    top: 5.5vw;
+    width: 12vw;
+    height: 12vw;
+    z-index: 2;
+    left: 2.1rem;
+    transform: none;
+  }
 
-.flow-text {
-  margin: 5.5rem 0;
-}
+  .step2{
+    top: 7vw;
+    left: 2.2rem;
+    transform: none;
+    width: 11vw;
+    height: 11vw;
+    z-index: 2;
+  }
 
-.apply-btn {
-  text-align: center;
-  padding: 7rem 0 10rem 0;
-}
+  .flow-text{
+    width: 100%;
+    margin: -3vw 0 0;
+    padding: 5vw 5vw;
+    border-radius: 6vw;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
 
-  .apply-btn p {
-    color: #fff;
-    background-color: #0073e6;
-    box-shadow: 0.4rem 1rem #195998;
-    border: 1px solid #0073e6;
-    border-radius: 6rem;
+  .flow-list h4{
+    width: auto;
+    font-size: 4.9vw;        /* 2.986rem → vw */
+    letter-spacing: 0.12em;
     text-align: center;
-    padding: 3rem 4rem;
-    font-size: 3.5rem;
-    width: 40rem;
+    margin-bottom: 2vw;
   }
 
-  .top-btn p {
-    font-size: 2.074rem;
-    letter-spacing: 0.1493rem;
-    padding: 2rem 4rem;
-    box-shadow: 0.3rem 0.6rem rgb(147, 147, 103);
-    background-color: rgb(250, 211, 70);
+  .flow-list p{
+    font-size: 4vw;          /* 2.488rem → vw */
     text-align: center;
-    width: 12.5rem;
   }
 
+
+  /* -------------------------
+     応募ボタン：固定幅40remを撤去
+  ------------------------- */
+  .apply-btn{ padding: 10vw 0 20vw; }
+
+  .apply-btn p{
+    width: fit-content;           /* 中身基準にする */
+    padding: 1em 2.5em;           /* 横だけ少し余裕 */
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    margin: 0 auto;
+  }
+
+
+  /* TOPボタン：巨大化抑制 */
+  .top-btn p{
+    width: auto;
+    padding: 0.9em 1.4em;
+    font-size: 3.8vw;
+    letter-spacing: 0.05em;
+  }
+
+  .contact-info{
+    padding: 0 0 1.5rem 3rem;
+  }
 }
