@@ -12,69 +12,13 @@
   border-bottom: 0.125rem dotted #0073e691;
   font-size: 1.44rem;
   color: #333;
+  white-space: nowrap;
 }
 
 .contact-guide img {
   margin: 3.5rem 0 0 0.5rem;
   width: 6rem;
   height: 6rem;
-}
-
-.section-background--blue {
-  padding-bottom: 7rem;
-  background-color: #0073e6;
-  position: relative;
-  overflow: hidden;
-}
-
-.section-background--blue::before {
-  border-color: transparent #fff transparent transparent;
-  border-style: solid;
-  border-width: 6rem 100vw 0 0;
-  bottom: 0;
-  content: "";
-  height: 0;
-  position: absolute;
-}
-
-#contact {
-  padding-top: 5rem;
-}
-
-#contact h1 {
-  text-align: center;
-  font-size: 2.074rem;
-  color: #0073e6;
-  letter-spacing: 0.2074rem;
-  position: relative;
-}
-
-#contact h1::before {
-  background-color: #0073e6;
-  border-radius: 5px;
-  bottom: -1rem;
-  content: "";
-  height: 0.1rem;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  width: 8rem;
-}
-
-#contact h2 {
-  font-family: 'Franklin Gothic Medium',sans-serif;
-  font-weight: 900;
-  font-size: 2.986rem;
-  text-align: center;
-  color: #0073e6;
-  padding-bottom: 1rem;
-  margin: 1rem auto;
-  letter-spacing: 0.8rem;
-}
-
-#contact h2 span {
-  color: rgb(247, 194, 4);
-  font-size: 4rem;
 }
 
 .contact-form {
@@ -93,55 +37,23 @@
   }
 
   .guide-text p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 1.8;
   }
-
-  .section-background--blue {
-  padding-bottom: 4rem;
-}
-
-.section-background--blue::before {
-  border-width: 3rem 100vw 0 0;
-}
 
   .contact-guide img {
     width: 50px;
     height: 50px;
     margin-left: 0;
-  }
-
-  #contact {
-    padding-top: 3rem;
-  }
-
-  #contact h1 {
-    font-size: 1.6rem;
-    letter-spacing: 0.12rem;
-  }
-
-  #contact h2 {
-    font-size: 2.4rem;
-    letter-spacing: 0.3rem;
-    margin: 0.75rem auto 0;
-  }
-
-  #contact h2 span {
-    font-size: 3rem;
+    margin-top: 2rem;
   }
 
   .contact-form {
     width: 100%;
     margin: 0 auto;
-    padding-top: 2rem;
+    padding-top: 0;
     padding-left: 1rem;
     padding-right: 1rem;
     box-sizing: border-box;
-  }
-
-  /* TOPボタン（フッター内）調整：余白で押すのではなく中央寄せ */
-  .footer-contact-btn {
-    margin-left: 0;
-    text-align: center;
   }
 }

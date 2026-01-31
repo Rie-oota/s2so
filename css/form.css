@@ -20,59 +20,11 @@
   height: 6rem;
 }
 
-.section-background--blue {
-  padding-bottom: 7rem;
-  background-color: #0073e6;
-  position: relative;
-  overflow: hidden;
-}
-
-.section-background--blue::before {
-  border-color: transparent #fff transparent transparent;
-  border-style: solid;
-  border-width: 4rem 100vw 0 0;
-  bottom: 0;
-  content: "";
-  height: 0;
-  position: absolute;
-}
-
-#contact {
+#entry {
   padding-top: 5rem;
 }
 
-#contact h1 {
-  text-align: center;
-  font-size: 2rem;
-  color: #0073e6;
-  letter-spacing: 0.2rem;
-  position: relative;
-}
-
-#contact h1::before {
-  background-color: #0073e6;
-  border-radius: 5px;
-  bottom: -1rem;
-  content: "";
-  height: 0.1rem;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  width: 8rem;
-}
-
-#contact h2 {
-  font-family: 'Franklin Gothic Medium',sans-serif;
-  font-weight: 900;
-  font-size: 3rem;
-  text-align: center;
-  color: #0073e6;
-  padding-bottom: 1rem;
-  margin: 1rem auto;
-  letter-spacing: 0.5rem;
-}
-
-#contact h1 span {
+#entry h1 span {
   color: rgb(247, 194, 4);
   font-size: 2.5rem;
 }
@@ -83,112 +35,53 @@
   margin: 0 auto;
 }
 
-/* =========================================================
-  form.css / スマホ版だけ修正版（PCは不変更）
-  - 巨大rem撤去（vw/相対へ）
-  - 固定幅/固定余白を弱めて、clamp耐性UP
-  - HubSpotフォームは common.css の保険(max-width:100%)前提
-  ※このブロックを form.css の一番下に追記
-========================================================= */
 @media screen and (max-width: 767px) {
 
-  /* -------------------------
-     ガイド：横並び固定をやめて自然に積む
-  ------------------------- */
-.contact-guide{
-  margin: 8vw 0;
-  padding: 0 5vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3vw;
+  .contact-guide{
+    margin: 8vw 0;
+    padding: 0 1rem 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8vw;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    line-height: 1.6;
+    text-align: left;
+  }
 
-  flex-wrap: nowrap;   /* ← 横並び固定 */
-  white-space: nowrap; /* ← 途中改行させない */
-
-  line-height: 1.6;
-  text-align: left;
-}
-
-.guide-text{
-  max-width: 70%;   /* 文字が横に伸びすぎない保険 */
-}
+  .guide-text{
+    max-width: 70%;
+  }
 
   .guide-text p{
-    font-size: 4.2vw;         /* 2rem などの巨大化を避ける */
+    font-size: 3.9vw;
     line-height: 1.6;
     letter-spacing: 0.02em;
   }
 
   .contact-guide img{
-    width: 14vw;              /* 8rem固定をやめる */
+    width: 14vw;
     max-width: 72px;
     height: auto;
-    margin: 0;                /* 3.5rem などの固定を避ける */
+    margin: 0;
     flex: 0 0 auto;
     padding-top: 1.7rem;
   }
 
-
-  /* -------------------------
-     青背景のセクション：余白はvwで
-  ------------------------- */
-  .section-background--blue{
-    padding-bottom: 6vw;      /* 4rem固定→可変 */
+  #entry h1 span {
+    font-size: 6vw;
   }
 
-  .section-background--blue::before{
-    border-width: 4vw 100vw 0 0; /* 3rem固定→可変 */
-  }
-
-
-  /* -------------------------
-     応募フォーム見出し：巨大rem撤去（clamp前提）
-  ------------------------- */
-  #contact{
-    padding-top: 8vw;         /* 5rem→可変 */
-  }
-
-  #contact h1{
-    font-size: 5.5vw;         /* 2.986rem→vw */
-    letter-spacing: 0.10em;
-  }
-
-  #contact h1::before{
-    width: 7rem;              /* 8remでもOK。崩れるならvwにしても可 */
-    bottom: -0.8rem;
-  }
-
-  #contact h1 span{
-    font-size: 6.2vw;         /* 7remみたいな暴れ方を避ける */
-  }
-
-  #contact h2{
-    font-size: 9vw;           /* 6rem→vw */
-    letter-spacing: 0.08em;
-    padding-bottom: 2vw;
-    margin: 2vw auto 0;
-    white-space: nowrap;      /* 1行にしたいならON。2行OKなら消してOK */
-  }
-
-
-  /* -------------------------
-     HubSpotフォーム枠：幅100%・左右余白だけ
-  ------------------------- */
   .contact-form{
     width: 100%;
     margin: 0 auto;
-    padding: 6vw 5vw 0;       /* 余白はvwで */
+    padding: 0 5vw;
     box-sizing: border-box;
   }
 
-
-  /* -------------------------
-     TOPボタン：margin-left固定はやめる
-     （common.css側で footer-mobile は中央寄せ/縦積み設計済み）
-  ------------------------- */
   .footer-contact-btn{
-    margin-left: 0;           /* form.css の「5rem」打ち消し */
+    margin-left: 0;
   }
 
 }

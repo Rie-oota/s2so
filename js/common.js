@@ -1,13 +1,17 @@
-// 表示領域に入ったらclass付与
+// =========================================
+// 画面内に入ったらclass付与（inview）
+// =========================================
 $(function () {
   $(".inview").on("inview", function () {
     $(this).addClass("show");
   });
 });
 
-// ------------------------------
-// トップ遷移ボタン：表示制御＋フッター直前で停止（少し余白あり）
-// ------------------------------
+// =========================================
+// トップ遷移ボタン：表示制御＋フッター直前で停止（余白あり）
+//  - スマホの慣性スクロールで一瞬フッターを越す現象を抑制
+//  - requestAnimationFrameで更新を同期
+// =========================================
 const $topBtn = $(".top-btn");
 const $footer = $("footer");
 
@@ -16,55 +20,78 @@ const baseBottom = 32; // 2rem相当（root 16px想定）
 
 // フッターとボタンの間に空けたい余白（px）
 const footerMarginPC = 16;  // PC/タブレット
-const footerMarginSP = 24;  // スマホ（少し多め推奨）
+const footerMarginSP = 24;  // スマホ
+
+// showの閾値
+const showThreshold = 300;
+
+// rAF制御
+let topBtnTicking = false;
+
+function getViewportHeight() {
+  // iOS等で$(window).height()が揺れることがあるためinnerHeight優先
+  return window.innerHeight || $(window).height();
+}
+
+function updateTopBtnVisibility(scrollTop) {
+  if (!$topBtn.length) return;
+  if (scrollTop > showThreshold) $topBtn.addClass("is-show");
+  else $topBtn.removeClass("is-show");
+}
 
 function updateTopBtnPosition() {
   if (!$topBtn.length || !$footer.length) return;
 
-  const footerTop = $footer.offset().top;   // フッターのページ内Y
-  const scrollTop = $(window).scrollTop();  // 現在のスクロール量
-  const winH = $(window).height();          // 画面高さ
+  // フッター位置は毎回取り直す（画像遅延読み込み/レイアウト変化に追随）
+  const footerTop = $footer.offset().top;
 
-  // 画面下端のページ内Y
+  const scrollTop = $(window).scrollTop();
+  const winH = getViewportHeight();
   const viewportBottom = scrollTop + winH;
 
   // 画面幅で余白を切り替え
   const margin = window.innerWidth < 768 ? footerMarginSP : footerMarginPC;
 
-  // ★押し上げ量（baseBottomは引く：二重足し防止）
+  // フッターに被る分だけ押し上げる（baseBottomは二重に足さない）
   let overlap = viewportBottom - footerTop - baseBottom + margin;
-
   overlap = Math.max(0, overlap);
 
-  // bottom = 通常余白 + 押し上げ量
   $topBtn.css("bottom", baseBottom + overlap + "px");
 }
 
-$(window).on("scroll resize", function () {
-  // 表示/非表示
-  if ($(this).scrollTop() > 300) {
-    $topBtn.addClass("is-show");
-  } else {
-    $topBtn.removeClass("is-show");
-  }
-
-  // フッター直前で止める（押し上げ）
+function updateTopBtnAll() {
+  const scrollTop = $(window).scrollTop();
+  updateTopBtnVisibility(scrollTop);
   updateTopBtnPosition();
-});
+}
+
+function requestTopBtnUpdate() {
+  if (topBtnTicking) return;
+  topBtnTicking = true;
+  requestAnimationFrame(() => {
+    updateTopBtnAll();
+    topBtnTicking = false;
+  });
+}
+
+// スクロール系：取りこぼし対策で複数拾う
+$(window).on("scroll resize orientationchange", requestTopBtnUpdate);
+window.addEventListener("touchmove", requestTopBtnUpdate, { passive: true });
+window.addEventListener("touchend", requestTopBtnUpdate, { passive: true });
 
 // 初回
-updateTopBtnPosition();
+requestTopBtnUpdate();
 
 // トップ遷移ボタンをクリックするとトップに遷移する
 $(function () {
-  $(".top-btn").click(function () {
+  $(".top-btn-scroll").on("click", function () {
     $("html,body").animate({ scrollTop: 0 }, 400);
   });
 });
 
-// ------------------------------
-// マウスストーカーの実装
-// ------------------------------
+// =========================================
+// マウスストーカー
+// =========================================
 $(function () {
   const $stalker = $("#js-stalker");
   if (!$stalker.length) return;
@@ -76,9 +103,9 @@ $(function () {
   });
 });
 
-// ------------------------------
-// メイン画像の切り替え
-// ------------------------------
+// =========================================
+// メイン画像の切り替え（title点滅）
+// =========================================
 $(function () {
   const CLASSNAME = "-visible";
   const INTERVAL = 1500;
@@ -93,15 +120,16 @@ $(function () {
   }, INTERVAL * 2);
 });
 
+// =========================================
+// Swiper
+// =========================================
 $(function () {
   if (!$(".swiper1").length) return;
 
-  const swiper1 = new Swiper(".swiper1", {
+  new Swiper(".swiper1", {
     loop: true,
     effect: "fade",
-    fadeEffect: {
-      crossFade: true,
-    },
+    fadeEffect: { crossFade: true },
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
@@ -110,26 +138,28 @@ $(function () {
   });
 });
 
-// ------------------------------
-// メニューボタンの実装
-// ------------------------------
+// =========================================
+// ドロワーメニュー
+// =========================================
 $(function () {
-  $(".drawer_button").click(function () {
+  $(".drawer_button").on("click", function () {
     $(this).toggleClass("active");
     $(".drawer_nav_wrapper").toggleClass("open");
-    $(".drawer_bg").fadeToggle();
+    $(".drawer_bg").fadeToggle(150);
+    requestTopBtnUpdate(); // 開閉で高さやスクロール状態が変わる場合に備える
   });
 
-  $(".drawer_bg").click(function () {
+  $(".drawer_bg").on("click", function () {
     $(".drawer_button").removeClass("active");
     $(".drawer_nav_wrapper").removeClass("open");
     $(this).hide();
+    requestTopBtnUpdate();
   });
 });
 
-// ------------------------------
-// 採用情報のタブ切り替え
-// ------------------------------
+// =========================================
+// 採用情報：タブ切り替え
+// =========================================
 $(function () {
   const $tabs = $(".tab");
   if (!$tabs.length) return;
@@ -141,24 +171,30 @@ $(function () {
     const index = $tabs.index(this);
     $(".content").removeClass("show").eq(index).addClass("show");
 
-    // タブ切り替えで高さが変わるので位置再計算
-    updateTopBtnPosition();
+    // 高さが変わるので位置再計算
+    requestTopBtnUpdate();
   });
 });
 
-// ------------------------------
-// リンク遷移（ページ内アンカー）
-// ------------------------------
+// =========================================
+// ページ内アンカー（#）のスムーススクロール
+// =========================================
 $(function () {
-  $('a[href^="#"]').click(function () {
+  $('a[href^="#"]').on("click", function () {
     const adjust = 90;
     const speed = 400;
-    const href = $(this).attr("href");
-    const target = $(href === "#" || href === "" ? "html" : href);
-    const position = target.offset().top - adjust;
 
-    $("body,html").animate({ scrollTop: position }, speed, "swing");
+    const href = $(this).attr("href");
+    const $target = $(href === "#" || href === "" ? "html" : href);
+    if (!$target.length) return false;
+
+    const position = $target.offset().top - adjust;
+
+    $("html,body").animate({ scrollTop: position }, speed, "swing", function () {
+      // アニメ後に位置を確定させる（慣性/揺れ対策）
+      requestTopBtnUpdate();
+    });
+
     return false;
   });
 });
-

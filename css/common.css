@@ -1,25 +1,16 @@
 /* 共通部分 */
 
 html {
-  width: 100%;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: clamp(14px, calc(100vw / (1440 / 16)), 16px);
   font-family: sans-serif,'Yu Gothic UI', 'ヒラギノ角ゴシック','Hiragino Sans';
   background-color: #fff;
-}
-
-html {
-  font-size: clamp(14px, calc(100vw / (1440 / 16)), 16px);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 a {
@@ -42,21 +33,13 @@ a {
   transform: translateY(0);
 }
 
-header li {
-  list-style: none;
-}
-
-main li {
-  list-style: none;
-}
-
 img {
   max-width: 100%;
-  max-height: 100%;
+  height: auto;
 }
 
-.Instagram {
-  color: #fff;
+ul, ol {
+  list-style: none;
 }
 
 .common-title-area {
@@ -67,7 +50,7 @@ img {
 .common-title-inner{
   position: relative;
   display: flex;
-  height: 35rem;        /* いままでの見た目維持 */
+  height: 35rem;
 }
 
 .common-title-area img{
@@ -99,12 +82,101 @@ img {
 }
 
 .common-img-area{
-  position: static;     /* ← absolute解除 */
+  position: static;
   margin-left: -10rem;
   width: 60%;
   height: 35rem;
   z-index: 1;
-  padding-top: 9rem;    /* 既存の見た目を維持したいなら残す */
+  padding-top: 9rem;
+}
+
+/* お問い合わせ */
+
+/* お問い合わせ */
+
+#contact-area {
+  text-align: center;
+  background-color: rgb(246, 246, 252);
+  padding: 5rem 0 10rem;
+}
+
+#contact-area h1 {
+  font-size: 2.986rem;
+  letter-spacing: 0.1493rem;
+  padding-bottom: 1rem;
+  color: #0073e6;
+  border-bottom: 2px dotted #0073e6;
+  width: 50%;
+  margin: 2rem auto 3rem;
+  white-space: nowrap;
+}
+
+.contact-text {
+  font-size: 1rem;
+  line-height: 2;
+  letter-spacing: 0.05rem;
+  margin-bottom: 5rem;
+  color: #333333;
+}
+
+.contact-area-btn {
+  height: 7rem;
+}
+
+.contact-area-btn p {
+  color: #fff;
+  background-color: #0073e6c9;
+  box-shadow: 0.1875rem 0.3125rem #195998;
+  border-radius: 7rem;
+  text-align: center;
+  padding: 2rem 4rem;
+  font-size: 1.44rem;
+  letter-spacing: 0.072rem;
+  transition: 0.3s ease;
+  width: 21rem;
+  margin: 0 auto;
+}
+
+.contact-area-btn p:hover {
+  background-color: #0073e68d;
+  box-shadow: unset;
+  border: none;
+  transform: translate(4px,4px);
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: max(2rem, calc((100vw - 1200px) / 2 + 2rem));
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 1000;
+}
+
+.top-btn p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
+  color: #333333;
+  background-color: rgb(253, 239, 119);
+  box-shadow: 0.1875rem 0.3125rem rgb(147, 147, 103);
+  border: 0.125rem solid rgb(147, 147, 103);
+  border-radius: 7rem;
+}
+
+.top-btn.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.top-btn p:hover {
+  background-color: rgb(250, 240, 149);
+  box-shadow: unset;
+  transform: translate(4px,4px);
 }
 
 /* ヘッダー */
@@ -117,6 +189,7 @@ header {
   height: 5rem;
   background-color: #fff;
   box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 .header-inner {
@@ -125,7 +198,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 11.25rem;
+  padding-inline: clamp(1.5rem, 5vw, 11.25rem);
 }
 
 .logo {
@@ -133,9 +206,25 @@ header {
   height: 8rem;
 }
 
+.header-inner > a{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header .logo {
+  margin: 0;
+  width: auto;
+  height: auto;
+  max-height: 3.5rem;
+  display: block;
+  object-fit: contain;
+  scale: 1.4;
+  transition: opacity 0.5s ease;
+}
+
 header .logo:hover {
   opacity: 0.5;
-  transition: 0.5s ease;
 }
 
 .nav-list ul {
@@ -150,11 +239,11 @@ header .logo:hover {
   padding-bottom: 0.125rem;
   font-weight: 500;
   font-size: 1.2rem;
+  transition: opacity 0.5s ease;
 }
 
 .nav-text a:hover {
   opacity: 0.3;
-  transition: 0.5s ease;
 }
 
 .nav-list img {
@@ -164,26 +253,88 @@ header .logo:hover {
   margin-top: 0.5rem;
 }
 
-.contact-btn p {
+.drawer_menu {
+  display: none;
+}
+
+.contact-btn a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   background-color: #0073e6;
   box-shadow: 0.1875rem 0.3125rem #195998;
   border-radius: 7rem;
-  text-align: center;
   padding: 0.9375rem;
-  transition: 0.5s ease;
   width: 10rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 0.12rem;
+  line-height: 1;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
 }
 
-.contact-btn p:hover {
+.contact-btn:hover{
   background-color: #0073e68d;
   box-shadow: unset;
   transform: translate(0.1875rem,0.3125rem);
-  transition: 0.5s ease;
 }
 
-.drawer_menu {
-  display: none;
+/* 見出し */
+
+.title-line1 {
+  text-align: center;
+  font-size: 2.074rem;
+  color: #0073e6;
+  letter-spacing: 0.2074rem;
+  position: relative;
+  padding-top: 5rem;
+}
+
+.title-line1::before {
+  background-color: #0073e6;
+  border-radius: 5px;
+  bottom: -1rem;
+  content: "";
+  height: 0.1rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 8rem;
+}
+
+.title-line2 {
+  font-family: 'Franklin Gothic Medium',sans-serif;
+  font-weight: 900;
+  font-size: 2.986rem;
+  text-align: center;
+  color: #0073e6;
+  margin: 1rem auto 5rem;
+  letter-spacing: 0.8rem;
+}
+
+.title-line2 span {
+  color: rgb(247, 194, 4);
+  font-size: 4rem;
+}
+
+/* セクションの仕切り装飾（青） */
+
+  .section-background--blue {
+  padding-bottom: 7rem;
+  background-color: #0073e6;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-background--blue::before {
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
+  border-width: 4rem 100vw 0 0;
+  bottom: 0;
+  content: "";
+  height: 0;
+  position: absolute;
 }
 
 /* フッター */
@@ -199,13 +350,14 @@ header .logo:hover {
   gap: 3rem;
 }
 
+.name img {
+  margin-left: -2.5rem;
+}
+
 .name {
   padding: 0 1.7rem 1.7rem 1.7rem;
   border-radius: 1rem;
-}
-
-.name img {
-  margin-left: -2.5rem;
+  transition: background-color 0.5s ease;
 }
 
 .name a{
@@ -215,7 +367,6 @@ header .logo:hover {
 
 .name:hover {
   background-color: #ffffff66;
-  transition: 0.5s ease;
 }
 
 .company-name {
@@ -229,7 +380,7 @@ header .logo:hover {
   letter-spacing: 0.06rem;
 }
 
-.adress {
+.address {
   font-size: 1.2rem;
   letter-spacing: 0.06rem;
   line-height: 1.5;
@@ -245,53 +396,49 @@ header .logo:hover {
 }
 
 .footer-nav p {
-  margin: 0 -1.5rem 1rem;
-  padding: 0.5rem 2rem;
+  margin: 0 0 1rem;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  width: 100%;
   font-size: 1.2rem;
   letter-spacing: 0.12rem;
   font-weight: 700;
   border-bottom: 1px solid #fff;
-  text-align: center;
+  white-space: nowrap;
+  transition: border-bottom-color 0.5s ease;
 }
 
 .footer-nav p:hover {
-  border-bottom: 1px solid rgb(253, 239, 119);
-  transition: 0.5s ease;
-}
-
-.footer-nav p a:hover {
-  color: rgb(253, 239, 119);
-  transition: 0.5s ease;
+  border-bottom-color: rgb(253, 239, 119);
 }
 
 .footer-nav a {
   color: #fff;
+  transition: color 0.5s ease;
+}
+
+.footer-nav a:hover {
+  color: rgb(253, 239, 119);
+}
+
+.footer-nav li a {
+  border-bottom: 1px solid transparent;
+  transition: color 0.5s ease, border-bottom-color 0.5s ease;
 }
 
 .footer-nav li a:hover{
-  color: rgb(250, 240, 149);
-  border-bottom: 1px solid rgb(250, 240, 149);
-  transition: 0.5s ease;
+  border-bottom-color: rgb(250, 240, 149);
 }
 
 .footer-services {
-  width: 7.5rem;
+  width: 10rem;
 }
 
 .footer-company {
-  width: 7.5rem;
-}
-
-.footer-company ul {
-  padding: 0 1rem;
+  width: 10rem;
 }
 
 .footer-recruit {
-  width: 7.5rem;
-}
-
-.footer-recruit ul {
-  padding: 0 1rem;
+  width: 10rem;
 }
 
 .footer-nav ul li {
@@ -329,7 +476,6 @@ header .logo:hover {
 .sns ul {
   display: flex;
   justify-content: center;
-  list-style: none;
   padding: 1rem;
 }
 
@@ -347,13 +493,13 @@ header .logo:hover {
   padding: 2rem 4rem;
   font-size: 1.2rem;
   letter-spacing: 0.06rem;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
 }
 
 .footer-contact-btn p:hover {
   background-color: rgb(250, 240, 149);
   box-shadow: unset;
   transform: translate(0.1875rem,0.3125rem);
-  transition: 0.5s ease;
 }
 
 .copyright {
@@ -376,7 +522,6 @@ header .logo:hover {
   transition: transform .3s ease-out;
 }
 
-/* HubSpot埋め込みが横にはみ出す保険（PCもスマホも） */
 .hs-form-frame,
 .hs-form-frame iframe,
 .hs-form-frame form {
@@ -384,7 +529,7 @@ header .logo:hover {
 }
 
 .hs-form-frame iframe {
-  width: 100% !important; /* iframeの場合の強制 */
+  width: 100% !important;
 }
 
 @media screen and (max-width: 1024px) {
@@ -405,7 +550,7 @@ header .logo:hover {
   }
 
   .drawer_button {
-    margin-top: 1.3rem;
+    margin-top: 1rem;
     width: 44px;
     height: 44px;
     position: relative;
@@ -421,7 +566,7 @@ header .logo:hover {
   .drawer_button .drawer_bar {
     width: 100%;
     height: 2px;
-    transition: all 0.2s;
+    transition: transform 0.2s, opacity 0.2s, background-color 0.2s;
     transform-origin: center;
     transform: translateY(-50%);
     position: absolute;
@@ -505,7 +650,7 @@ header .logo:hover {
     width: min(80vw,360px);
     max-width: 100%;
     height: 100%;
-    transition: all 0.5s;
+    transition: transform 0.5s ease;
     transform: translateX(100%);
     position: fixed;
     top: 0;
@@ -529,21 +674,22 @@ header .logo:hover {
   }
 
   .drawer_menu .drawer_nav {
-    padding: 10rem 2rem 4rem;
+    padding: 5rem 2rem 1rem;
     color: #fff;
   }
 
   .drawer_menu .drawer_nav li {
     border-bottom: 1px solid #fff;
-    padding: 16px 0;
+    padding: 12px 0;
   }
 
   .drawer_menu .drawer_nav li h1 {
-    font-size: 24px;
+    font-size: 18px;
+    font-weight: 600;
   }
 
   .drawer_menu .drawer_nav li h2 {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .drawer_sns {
@@ -573,24 +719,52 @@ header .logo:hover {
     color: #fff;
   }
 
-  .contact-info {
-    margin-left: auto;          /* 60% をやめる */
-    justify-content: flex-end;  /* 右寄せしたいなら */
-  }
-
-    .footer-pc {
-    flex-wrap: wrap;
-  }
-
   .footer-area {
     padding: 3.125rem 2rem 0;
   }
 
-  /* ボタンが横にデカすぎるのを抑える */
   .footer-contact-btn p{
-    padding: 1.2rem 2.2rem;    /* 2rem 4rem → 縮小 */
+    padding: 1.2rem 2.2rem;
     font-size: clamp(1rem, 1.6vw, 1.2rem);
     max-width: 100%;
+  }
+
+  .footer-pc {
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .footer-services,
+  .footer-company,
+  .footer-recruit {
+    width: auto;
+    min-width: 0;
+  }
+
+  .contact-info {
+    margin-left: 0;
+    white-space: normal;
+    justify-content: flex-end;
+  }
+
+  .footer-nav {
+    gap: 3rem;
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  #contact-area h1 {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .top-btn {
+    right: 2rem;
   }
 
 }
@@ -598,13 +772,7 @@ header .logo:hover {
 @media screen and (max-width: 767px) {
 
   html {
-    font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
-    overflow-x: clip;
     font-size: 16px;
-  }
-
-  body {
-    overflow-x: clip;
   }
 
   header {
@@ -614,7 +782,7 @@ header .logo:hover {
   }
 
   .header-inner {
-    padding: 0 1.5rem 0 0;
+    padding-inline: 1.5rem;
   }
 
   .logo {
@@ -626,7 +794,6 @@ header .logo:hover {
 
   .common-title-area {
     position: relative;
-    padding-top: 5rem;
   }
 
   .common-title-inner{
@@ -635,16 +802,16 @@ header .logo:hover {
     align-items: start;
   }
 
-    .common-title-inner::before{
+  .common-title-inner::before{
     content: "";
     position: absolute;
     top: 0;
     bottom: auto;
-    inset: 0 auto 0 0;     /* top:0; bottom:0; left:0; */
+    inset: 0 auto 0 0;
     width: 68%;
     background: linear-gradient(158deg, #0073e6 36.5%, #fff 119.5%);
     z-index: 0;
-    border-radius: 0;      /* 必要なら調整 */
+    border-radius: 0;
     height: calc(100% - (100vw * 5 / 16));
   }
 
@@ -652,17 +819,17 @@ header .logo:hover {
     position: relative;
     z-index: 1;
     width: 68%;
-    min-height: 0;         /* 13rem殺す */
+    min-height: 0;
     height: auto;
     background: transparent;
     padding: 2.5rem 1.5rem 0 2rem;
   }
 
   .common-text-area h1 {
-  font-size: clamp(1.8rem, 7vw, 2.6rem);
-  letter-spacing: 0.15rem;
-  line-height: 1.2;
-  word-break: keep-all;
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+    letter-spacing: 0.15rem;
+    line-height: 1.2;
+    word-break: keep-all;
     padding-top: 0;
     white-space: nowrap;
   }
@@ -675,9 +842,9 @@ header .logo:hover {
   }
 
   .common-img-area {
-    position: relative;   /* absolute やめる */
+    position: relative;
     width: 100%;
-    height: auto;         /* ← 明示的に */
+    height: auto;
     align-self: start;
     padding-top: 10rem;
     overflow: visible;
@@ -689,6 +856,90 @@ header .logo:hover {
     display: block;
   }
 
+  /* モバイル版見出し */
+
+  .title-line1 {
+    font-size: 4.5vw;
+    letter-spacing: 0.10em;
+    position: relative;
+    padding-top: 8vw;
+  }
+
+  .title-line2 {
+    font-size: 7.5vw;
+    letter-spacing: 0.08em;
+    margin: 2vw auto 6vw;
+    padding: 0;
+  }
+
+  .title-line1::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.4em;
+    width: 15%;
+    height: 0.1em;
+    background-color: #0073e6;
+    border-radius: 999px;
+  }
+
+  .title-line2 span {
+    font-size: 8.5vw;
+  }
+
+  /* セクションの仕切り装飾（青） */
+
+  .section-background--blue {
+    padding-bottom: 4rem;
+  }
+
+  .section-background--blue::before {
+    border-width: 3rem 100vw 0 0;
+  }
+
+  /* モバイル版お問い合わせ */
+
+  #contact-area {
+    padding: 8vw 0 12vw;
+  }
+
+  #contact-area h1 {
+    width: min(92vw, 36rem);
+    font-size: 6vw;
+    letter-spacing: 0.06em;
+    white-space: normal;
+  }
+
+  .contact-text {
+    font-size: 3.6vw;
+    line-height: 1.7;
+    margin-bottom: 8vw;
+    padding: 0 5vw;
+  }
+
+  .contact-text br {
+    display: none;
+  }
+
+  .contact-area-btn p {
+    width: auto;
+    max-width: 55%;
+    padding: 1.3em 2em;
+    white-space: nowrap;
+    font-size: 1.1rem;
+  }
+
+  .contact-area-btn p {
+    max-width: 60%;
+  }
+
+  .top-btn p  {
+    font-size: 3.8vw;
+    padding: 0.8em 1.2em;
+    width: auto;
+  }
+
     /* モバイル版フッター */
 
   .footer-contact-btn {
@@ -698,16 +949,15 @@ header .logo:hover {
 
   .footer-contact-btn p {
     box-shadow: 0.1rem 0.3rem rgb(147, 147, 103);
-    background-color: rgb(250, 211, 70);
+    background-color: rgb(253, 239, 119);
     border-radius: 999px;
-
-    white-space: nowrap;   /* 常に1行 */
+    white-space: nowrap;
     width: auto;
     max-width: 100%;
     line-height: 1.2;
     text-align: center;
     font-size: clamp(0.9rem, 3.2vw, 1.2rem);
-    padding: 1em 2em;
+    padding: 1.2em 2em;
     letter-spacing: 0.05em;
   }
 
@@ -753,7 +1003,7 @@ header .logo:hover {
     letter-spacing: 0.05em;
   }
 
-  .adress {
+  .address {
     font-size: 2.7vw;
   }
 
@@ -800,4 +1050,12 @@ header .logo:hover {
     letter-spacing: 0.05em;
   }
 
+}
+
+@media screen and (max-width: 360px) {
+  .footer-contact-btn p {
+    font-size: 0.85rem;
+    padding: 0.9em 1.6em;
+    letter-spacing: 0.03em;
+  }
 }
