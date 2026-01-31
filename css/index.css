@@ -66,6 +66,7 @@
   width: fit-content;
   box-shadow: 0 0.75rem 2.5rem rgba(0, 115, 230, 0.5);
   border-radius: 0.3rem;
+  font-weight: 600;
 }
 
 .keyvisual-text {
@@ -100,6 +101,7 @@
   height: 30rem;
   overflow: hidden;
   border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
 }
 
 .services-list img {
@@ -203,6 +205,14 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   justify-items: center;
+}
+
+.program-list li {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-list li:hover {
+  transform: translateY(-10px);
 }
 
 .program-card {
@@ -799,7 +809,7 @@
   }
 
   #project {
-    padding: 8vw 5vw;
+    padding: 0 5vw 8vw;
   }
 
   .program-list {
