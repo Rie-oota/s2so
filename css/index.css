@@ -52,13 +52,13 @@
   align-items: flex-start;
   justify-content: flex-end;
   padding-left: 4rem;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
   gap: 1.2rem;
 }
 
 .keyvisual-title {
   position: static;
-  font-size: clamp(1.6rem, 4vw, 4rem);
+  font-size: clamp(1.6rem, 6vw, 4rem);
   padding: 0.6em 0.9em;
   transform: rotate(-5deg);
   background-color: #0073e6;
@@ -169,21 +169,22 @@
   background: radial-gradient(circle,#0073e678,#0073e60c);
 }
 
-.link-btn p {
+.link-btn {
   margin: 0 auto 5rem;
   font-size: 1.2rem;
   letter-spacing: 0.12rem;
   color: #fff;
-  background-color: #0073e6;
+  background-color: #0073e6c9;
   box-shadow: 0.1875rem 0.3125rem #195998;
   border-radius: 7rem;
   text-align: center;
   padding: 2rem 4rem;
-  width: 15rem;
   transition: 0.3s ease;
+  display: block;
+  width: fit-content;
 }
 
-.link-btn p:hover {
+.link-btn:hover {
   background-color: #0073e68d;
   box-shadow: unset;
   transform: translate(0.1875rem,0.3125rem);
@@ -304,6 +305,7 @@
   display: flex;
   margin: 1rem;
   line-height: 2;
+  align-items: center;
   border-bottom: 1px solid;
   border-image: linear-gradient(to right, #0073e6, rgb(242, 233, 149)) 1;
 }
@@ -328,9 +330,6 @@
   bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
-}
-
-.company-link-btn p {
   font-size: 1.2rem;
   letter-spacing: 0.12rem;
   color: #0073e6;
@@ -344,11 +343,11 @@
   transition: 0.3s ease;
 }
 
-.company-link-btn p:hover {
+.company-link-btn:hover {
   background-color: #0073e6;
   color: #fff;
   box-shadow: unset;
-  transform: translate(0.1875rem,0.3125rem);
+  transform: translate(calc(-50% + 2px), 3px);
 }
 
 .company-recruit h2 {
@@ -417,9 +416,6 @@
   bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
-}
-
-.recruit-link-btn p {
   font-size: 1.2rem;
   letter-spacing: 0.12rem;
   color: rgb(247, 194, 4);
@@ -433,12 +429,12 @@
   transition: 0.3s ease;
 }
 
-.recruit-link-btn p:hover {
+.recruit-link-btn:hover {
   background-color: rgb(247, 194, 4);
   color: #fff;
   box-shadow: unset;
   border: none;
-  transform: translate(0.1875rem,0.3125rem);
+  transform: translate(calc(-50% + 2px), 3px);
 }
 
 @media (min-width: 1201px){
@@ -654,8 +650,8 @@
     bottom: 2.5rem;
   }
 
-  .recruit-link-btn p,
-  .company-link-btn p {
+  .recruit-link-btn,
+  .company-link-btn {
     margin: 0;
   }
 
@@ -788,24 +784,24 @@
     margin-bottom: 0;
   }
 
-  .link-btn p,
-  .company-link-btn p,
-  .recruit-link-btn p,
-  .contact-area-btn p {
-    width: auto;
-    max-width: 55%;
-    padding: 1.3em 2em;
-    white-space: nowrap;
-    font-size: 1.1rem;
-  }
-
-  .contact-area-btn p {
+  .link-btn,
+  .company-link-btn,
+  .recruit-link-btn {
+    align-items: center;
+    justify-content: center;
+    width: 17rem;
     max-width: 60%;
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    line-height: 1;
+    border-radius: 999px;
+    margin: 0 auto;
+    display: flex;
   }
 
-  .link-btn p {
-    box-shadow: 0.2rem 0.4rem #195998;
-    margin-bottom: 8vw;
+  .link-btn {
+    margin-top: 8vw;
+    margin-bottom: 10vw;
   }
 
   #project {
@@ -922,13 +918,13 @@
 
   .info-list dt {
     width: 8em;
-    font-size: 4vw;
+    font-size: 3.7vw;
     letter-spacing: 0.04em;
   }
 
   .info-list dd {
     margin: 0;
-    font-size: 3.7vw;
+    font-size: 3.5vw;
     letter-spacing: 0.03em;
     line-height: 1.5;
   }
@@ -936,15 +932,15 @@
   .company-link-btn,
   .recruit-link-btn {
     position: static;
-    margin: 3rem auto 0;
+    margin: 8vw auto 0;
     text-align: center;
     transform: none;
+    box-shadow: 0.2rem 0.4rem currentColor;
   }
 
-  .company-link-btn p,
-  .recruit-link-btn p {
-    box-shadow: 0.2rem 0.4rem currentColor;
-    margin: 0 auto;
+  .company-link-btn:hover,
+  .recruit-link-btn:hover {
+    transform: translate(2px, 3px);
   }
 
   .recruit-text {

@@ -83,10 +83,9 @@ window.addEventListener("touchend", requestTopBtnUpdate, { passive: true });
 requestTopBtnUpdate();
 
 // トップ遷移ボタンをクリックするとトップに遷移する
-$(function () {
-  $(".top-btn-scroll").on("click", function () {
-    $("html,body").animate({ scrollTop: 0 }, 400);
-  });
+
+$(".top-btn-scroll").on("click", function () {
+  window.scrollTo({ top: 0 });
 });
 
 // =========================================
