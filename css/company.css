@@ -126,11 +126,11 @@
 }
 
 .slide-logo-main {
-  left: -8%;
+  left: clamp(-6rem, -4vw, -3rem);
 }
 
 .slide-logo-sub {
-  right: -8%;
+  right: clamp(-10rem, -6vw, -5rem);
 }
 
 .slide-logo-main p {
@@ -184,10 +184,6 @@
 
   .slide-logo {
     height: 60rem;
-  }
-
-  .slide-logo-main {
-    left: -4%;
   }
 
   .access-list {

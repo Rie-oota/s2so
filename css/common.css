@@ -87,7 +87,7 @@ header .logo {
   transition: opacity 0.5s ease;
 }
 
-header .logo:hover {
+header a .logo:hover {
   opacity: 0.5;
 }
 
