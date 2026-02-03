@@ -163,7 +163,7 @@
 
   .access-list-content {
     display: grid;
-    grid-template-columns: 6.25rem 1fr; /* dt / dd */
+    grid-template-columns: 6.25rem 1fr;
     column-gap: 1rem;
     align-items: start;
   }

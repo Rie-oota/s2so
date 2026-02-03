@@ -43,138 +43,6 @@ ul, ol {
   list-style: none;
 }
 
-.common-title-area {
-  width: 100%;
-  padding-top: 5rem;
-}
-
-.common-title-inner{
-  position: relative;
-  display: flex;
-  height: 35rem;
-}
-
-.common-title-area img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 3rem;
-}
-
-.common-text-area{
-  width: 60%;
-  height: 25rem;
-  background: linear-gradient(158deg, #0073e6 36.5%, #fff 119.5%);
-  padding-left: 6.25rem;
-  color: #fff;
-  z-index: 1;
-}
-
-.common-text-area h1 {
-  font-family: 'Segoe UI Symbol',sans-serif;
-  padding-top: 3.75rem;
-  font-size: 4rem;
-  letter-spacing: 0.4rem;
-}
-
-.common-text-area h2 {
-  font-size: 2rem;
-  letter-spacing: 0.4rem;
-}
-
-.common-img-area{
-  position: static;
-  margin-left: -10rem;
-  width: 60%;
-  height: 35rem;
-  z-index: 1;
-  padding-top: 9rem;
-}
-
-/* お問い合わせ */
-
-#contact-area {
-  text-align: center;
-  background-color: rgb(246, 246, 252);
-  padding: 5rem 0 10rem;
-}
-
-#contact-area h1 {
-  font-size: 2.986rem;
-  letter-spacing: 0.1493rem;
-  padding-bottom: 1rem;
-  color: #0073e6;
-  border-bottom: 2px dotted #0073e6;
-  width: 50%;
-  margin: 2rem auto 3rem;
-  white-space: nowrap;
-}
-
-.contact-text {
-  font-size: 1rem;
-  line-height: 2;
-  letter-spacing: 0.05rem;
-  margin-bottom: 5rem;
-  color: #333333;
-}
-
-.contact-area-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background-color: #0073e6c9;
-  box-shadow: 0.1875rem 0.3125rem #195998;
-  border-radius: 7rem;
-  text-align: center;
-  padding: 2rem 4rem;
-  font-size: 1.44rem;
-  letter-spacing: 0.072rem;
-  transition: 0.3s ease;
-  width: 21rem;
-  margin: 0 auto;
-}
-
-.contact-area-btn:hover {
-  background-color: #0073e68d;
-  box-shadow: unset;
-  transform: translate(4px,4px);
-}
-
-.top-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: max(2rem, calc((100vw - 1200px) / 2 + 2rem));
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem 3rem;
-  font-size: 1.2rem;
-  letter-spacing: 0.06rem;
-  color: #333333;
-  background-color: rgb(253, 239, 119);
-  box-shadow: 0.1875rem 0.3125rem rgb(147, 147, 103);
-  border: 0.125rem solid rgb(147, 147, 103);
-  border-radius: 7rem;
-}
-
-.top-btn.is-show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.top-btn:hover {
-  background-color: rgb(250, 240, 149);
-  box-shadow: unset;
-  transform: translate(4px,4px);
-}
-
 /* ヘッダー */
 
 header {
@@ -278,6 +146,57 @@ header .logo:hover {
   transform: translate(0.1875rem,0.3125rem);
 }
 
+
+/* タイトルエリア */
+
+.common-title-area {
+  width: 100%;
+  padding-top: 5rem;
+}
+
+.common-title-inner{
+  position: relative;
+  display: flex;
+  height: 35rem;
+}
+
+.common-title-area img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3rem;
+}
+
+.common-text-area{
+  width: 60%;
+  height: 25rem;
+  background: linear-gradient(158deg, #0073e6 36.5%, #fff 119.5%);
+  padding-left: 6.25rem;
+  color: #fff;
+  z-index: 1;
+}
+
+.common-text-area h1 {
+  font-family: 'Segoe UI Symbol',sans-serif;
+  padding-top: 3.75rem;
+  font-size: 4rem;
+  letter-spacing: 0.4rem;
+}
+
+.common-text-area h2 {
+  font-size: 2rem;
+  letter-spacing: 0.4rem;
+}
+
+.common-img-area{
+  position: static;
+  margin-left: -10rem;
+  width: 60%;
+  height: 35rem;
+  z-index: 1;
+  padding-top: 9rem;
+}
+
 /* 見出し */
 
 .title-line1 {
@@ -333,6 +252,92 @@ header .logo:hover {
   content: "";
   height: 0;
   position: absolute;
+}
+
+/* お問い合わせ */
+
+#contact-area {
+  text-align: center;
+  background-color: rgb(246, 246, 252);
+  padding: 5rem 0 10rem;
+}
+
+#contact-area h1 {
+  font-size: 2.986rem;
+  letter-spacing: 0.1493rem;
+  padding-bottom: 1rem;
+  color: #0073e6;
+  border-bottom: 2px dotted #0073e6;
+  width: 50%;
+  margin: 2rem auto 3rem;
+  white-space: nowrap;
+}
+
+.contact-text {
+  font-size: 1rem;
+  line-height: 2;
+  letter-spacing: 0.05rem;
+  margin-bottom: 5rem;
+  color: #333333;
+}
+
+.contact-area-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #0073e6c9;
+  box-shadow: 0.1875rem 0.3125rem #195998;
+  border-radius: 7rem;
+  text-align: center;
+  padding: 2rem 4rem;
+  font-size: 1.44rem;
+  letter-spacing: 0.072rem;
+  transition: 0.5s ease;
+  width: 21rem;
+  margin: 0 auto;
+}
+
+.contact-area-btn:hover {
+  background-color: #0073e68d;
+  box-shadow: unset;
+  transform: translate(4px,4px);
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: max(2rem, calc((100vw - 1200px) / 2 + 2rem));
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.5s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.06rem;
+  color: #333333;
+  background-color: rgb(253, 239, 119);
+  box-shadow: 0.1875rem 0.3125rem rgb(147, 147, 103);
+  border: 0.125rem solid rgb(147, 147, 103);
+  border-radius: 7rem;
+  pointer-events: none;
+}
+
+.top-btn.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.top-btn:hover {
+  background-color: rgb(250, 240, 149);
+  box-shadow: unset;
+  transform: translate(4px,4px);
 }
 
 /* フッター */
@@ -722,6 +727,8 @@ header .logo:hover {
     color: #fff;
   }
 
+  /* モバイル版フッター */
+
   .footer-area {
     padding: 3.125rem 2rem 0;
   }
@@ -764,10 +771,6 @@ header .logo:hover {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .top-btn {
-    right: 2rem;
   }
 
 }
@@ -1049,9 +1052,11 @@ header .logo:hover {
 }
 
 @media screen and (max-width: 360px) {
+
   .footer-contact-btn {
     font-size: 0.85rem;
     padding: 0.9em 1.6em;
     letter-spacing: 0.03em;
   }
+
 }

@@ -266,6 +266,8 @@
   padding-right: 10rem;
 }
 
+/* 採用フロー */
+
 #recruit-flow {
   background-color: rgb(246, 246, 252);
   padding-bottom: 10rem;
@@ -399,6 +401,7 @@
     padding: 0 1.5rem 1.5rem;
     white-space: normal;
   }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -435,6 +438,8 @@
   .content h1 span {
     font-size: 8.5vw;
   }
+
+  /* 募集要項 */
 
   .new-graduate-text {
     font-size: 4.2vw;
@@ -515,6 +520,8 @@
   .job-info-list dd br {
     display: none;
   }
+
+  /* 採用フロー */
 
   #recruit-flow {
     padding-bottom: 20vw;
@@ -625,4 +632,5 @@
   .contact-info{
     padding: 0 0 1.5rem 3rem;
   }
+
 }

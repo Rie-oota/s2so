@@ -16,7 +16,7 @@ const $topBtn = $(".top-btn");
 const $footer = $("footer");
 
 // 通常時の下余白（px）
-const baseBottom = 32; // 2rem相当（root 16px想定）
+const baseBottom = 32;
 
 // フッターとボタンの間に空けたい余白（px）
 const footerMarginPC = 16;  // PC/タブレット
@@ -29,7 +29,6 @@ const showThreshold = 300;
 let topBtnTicking = false;
 
 function getViewportHeight() {
-  // iOS等で$(window).height()が揺れることがあるためinnerHeight優先
   return window.innerHeight || $(window).height();
 }
 
@@ -52,7 +51,7 @@ function updateTopBtnPosition() {
   // 画面幅で余白を切り替え
   const margin = window.innerWidth < 768 ? footerMarginSP : footerMarginPC;
 
-  // フッターに被る分だけ押し上げる（baseBottomは二重に足さない）
+  // フッターに被る分だけ押し上げる
   let overlap = viewportBottom - footerTop - baseBottom + margin;
   overlap = Math.max(0, overlap);
 
@@ -83,7 +82,6 @@ window.addEventListener("touchend", requestTopBtnUpdate, { passive: true });
 requestTopBtnUpdate();
 
 // トップ遷移ボタンをクリックするとトップに遷移する
-
 $(".top-btn-scroll").on("click", function () {
   window.scrollTo({ top: 0 });
 });
@@ -145,7 +143,7 @@ $(function () {
     $(this).toggleClass("active");
     $(".drawer_nav_wrapper").toggleClass("open");
     $(".drawer_bg").fadeToggle(150);
-    requestTopBtnUpdate(); // 開閉で高さやスクロール状態が変わる場合に備える
+    requestTopBtnUpdate();
   });
 
   $(".drawer_bg").on("click", function () {
@@ -170,7 +168,6 @@ $(function () {
     const index = $tabs.index(this);
     $(".content").removeClass("show").eq(index).addClass("show");
 
-    // 高さが変わるので位置再計算
     requestTopBtnUpdate();
   });
 });
@@ -190,7 +187,6 @@ $(function () {
     const position = $target.offset().top - adjust;
 
     $("html,body").animate({ scrollTop: position }, speed, "swing", function () {
-      // アニメ後に位置を確定させる（慣性/揺れ対策）
       requestTopBtnUpdate();
     });
 
